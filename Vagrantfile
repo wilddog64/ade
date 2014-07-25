@@ -14,6 +14,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box     = "docker-host"
 
   config.vm.provision :docker
+  config.omnibus.chef_version = :latest
+
+  config.vm.provision :chef_solo do |chef|
+    chef.roles_path = 'roles'
+    chef.run_list = [
+        'role[bde_packer]'
+    ]
+  end
+
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
