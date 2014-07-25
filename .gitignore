@@ -1,0 +1,27 @@
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
+
+# Berkshelf
+.vagrant
+/cookbooks
+
+# Bundler
+bin/config.sh
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml
+bash_history
+bashrc
+
+ssh_key
+*.bak
+
+data_bags
+homestar
+chef
