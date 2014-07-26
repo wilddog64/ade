@@ -1,0 +1,27 @@
+{
+    "variables": {
+        "version": "",
+        "repo": "bde_base",
+        "private": "docker-reg.cloud.corp.dig.com:5000"
+    },
+    "builders": [
+        {
+            "type": "docker",
+            "image": "hansode/centos-6-x86_64",
+            "export_path": "./bde_devenv.tar.gz"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "/vagrant/bin/install_php.sh"
+        }
+    ],
+    "post-processors": [
+        {
+            "type": "docker-import",
+            "repository": "{{user `private`}}/bde_devenv",
+            "tag": "{{user `version`}}"
+        }
+    ]
+}
