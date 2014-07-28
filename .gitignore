@@ -25,3 +25,4 @@ ssh_key
 data_bags
 homestar
 chef
+*tar.gz
