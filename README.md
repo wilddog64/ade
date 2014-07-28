@@ -1,12 +1,26 @@
 Docker Dev Environment
 ======================
-This readme file explain how to setup docker and use packer to build a docker container.
+This readme file explains how to setup docker and use packer to build a docker container.
 
 Requirement
 -----------
 * Vagrant 1.6.3 - to spin up and configure vagrant box to have packer and docker installed
-* Berkshef      - for managing chef cookbook
-* Bundler       - for managing ruby gem
+* Berkshef      - for managing chef cookbooks
+* Bundler       - for managing ruby gems
+
+Running (OSX)
+--------------
+```
+# assuming you've already setup homebrew:
+# install chef/berkshelf/etc
+brew cask install chefdk;
+# install vagrant
+brew cask install vagrant;
+vagrant plugin install vagrant-omnibus;
+git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
+cd docker_devenv;
+vagrant up;
+```
 
 Directory Structure
 -------------------
