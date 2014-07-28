@@ -16,7 +16,7 @@ Running (OSX)
 brew cask install chefdk;
 # install vagrant
 brew cask install vagrant;
-git clone git@github.disney.com:eivya001/docker_devenv.git;
+git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
 vagrant up;
 ```
