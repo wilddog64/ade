@@ -6,6 +6,8 @@
 *.un~
 pkg/
 
+.DS_Store
+
 # Berkshelf
 .vagrant
 /cookbooks
@@ -26,3 +28,5 @@ data_bags
 homestar
 chef
 *tar.gz
+
+*.lock

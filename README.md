@@ -11,17 +11,9 @@ Requirement
 Running (OSX)
 -------------
 ```
-# assuming you've already setup homebrew:
-# install chef/berkshelf/etc
-brew cask install chefdk;
-# install vagrant
-brew cask install vagrant;
-vagrant plugin install vagrant-omnibus;
-vagrant plugin install vagrant-berkshelf --plugin-version 2.0.1;
-vagrant reload --provison;
 git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
-vagrant up;
+./bin/dev init;
 ```
 
 Pull Request Additions
@@ -38,15 +30,17 @@ Directory Structure
 ```
     .
     ├── Berksfile                   # Chef cookbooks managment file
-    ├── Berksfile.lock
     ├── Gemfile                     # Ruby Gems managment file
-    ├── Gemfile.lock
     ├── README.md                   # This document
     ├── Vagrantfile
-    ├── bin                         # a directory cotains various scripts to configure a given docker container
-    │   └── install_php.sh
+    ├── bin                         # a directory cotains various scripts to configure a given docker 
+    │   ├── config_homebrew.sh
+    │   └── dev
     ├── devenv.json                 # packer template
+    ├── files                       # all files in ./files will be mounted on the docker nodes
+    │   └── test.txt
     ├── metadata.rb                 # a chef metadata file
+    ├── nodes                       # each script in this directory will create a docker node
+    │   └── php.sh                  # php installation script
     └── roles                       # a chef role directory
-        └── bde_packer.json         # a role to install packer into a vagrant box
 ```
