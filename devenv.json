@@ -21,7 +21,8 @@
         {
             "type": "docker-import",
             "repository": "{{user `private`}}/bde_devenv",
-            "tag": "{{user `version`}}"
+            "tag": "{{user `version`}}",
+            "keep_input_artifact": true
         }
     ]
 }
