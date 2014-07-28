@@ -16,6 +16,7 @@ Running (OSX)
 brew cask install chefdk;
 # install vagrant
 brew cask install vagrant;
+vagrant plugin install vagrant-omnibus;
 git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
 vagrant up;
