@@ -9,7 +9,7 @@ Requirement
 * Bundler               - for managing ruby gems
 
 Running (OSX)
---------------
+-------------
 ```
 git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
