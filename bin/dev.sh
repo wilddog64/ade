@@ -21,16 +21,16 @@ function init_devenv() {
 }
 
 case "$1" in
-	init)
+    init)
         init_devenv
-		;;
-	update)
-		git pull
-		vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh update"
-		;;
-	*)
-		vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh $1"
-		;;
+        ;;
+    update)
+        git pull
+        vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh update"
+        ;;
+    *)
+        vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh $1"
+        ;;
 esac
 
 cd - > /dev/null
