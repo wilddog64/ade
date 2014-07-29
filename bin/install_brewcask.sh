@@ -10,5 +10,3 @@ function install_brewcask() {
         brew install brew-cask
     fi
 }
-
-install_brewcask
