@@ -38,6 +38,10 @@ case "$1" in
     vagrant-reload)
         vagrant reload --provision
         ;;
+    vagrant-destroy-up)
+        vagrant destroy -f
+        vagrant up
+        ;;
     update)
         git pull
         vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh update"
