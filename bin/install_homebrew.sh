@@ -2,7 +2,7 @@
 
 function install_homebrew() {
     if [[ $(uname) != 'Darwin' ]]; then
-        echo homebrew can only be installed for OSX Darwin, script $0 abort!
+        echo homebrew can only be installed for OSX Darwin, not action takes!
     fi
 
     brew_bin=$(which brew) 2>&1 > /dev/null
@@ -13,5 +13,6 @@ function install_homebrew() {
     fi
     if [[ $? != 0 ]]; then
         echo unable to install homebrew, script $0 abort!
+        exit -1
     fi
 }
