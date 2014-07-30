@@ -26,9 +26,8 @@ group :tdd do
 end
 
 group :chef_dep do
-  gem 'berkshelf'
-end
-
-group :ruby_dev do
-  gem 'xml-simple'
+  gem 'librarian-chef'
+  gem 'ffi', '1.9.0'
+  gem 'buff-extensions', '0.5.0'
+  gem 'berkshelf', '3.1.1'
 end
