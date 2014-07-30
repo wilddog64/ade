@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
+LIB=$SCRIPT_HOME/../lib
+
+ruby -I$LIB $SCRIPT_HOME/devenv.rb "$@"
