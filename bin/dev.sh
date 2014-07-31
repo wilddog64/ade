@@ -42,6 +42,8 @@ case "$1" in
         vagrant reload --provision
         ;;
     vagrant-destroy-up)
+        rm -rf Vagrantfile
+        thor devenv:vagrant
         vagrant destroy -f
         vagrant up
         ;;
