@@ -3,6 +3,7 @@ module Devenv
     include Thor::Actions
 
     argument :project_root, :type => :string, :default => '.'
+    class_option :vagrant_mount_file, :type => :string, :aliases => [ '-V' ], :default => 'mount.json'
     def self.source_root
       File.join( File.dirname(__FILE__), '..', 'lib', 'templates' )
     end
