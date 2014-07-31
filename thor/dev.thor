@@ -9,12 +9,11 @@ module Devenv
     end
 
     def read_mount_file
-
+      load_json_config_file( project_root, options[:vagrant_mount_file] )
     end
 
     def create_vagrant_file
       say "project root @ #{project_root}", :yellow
-      load_json_config_file( project_root, options[:vagrant_mount_file] )
     end
 
     private
