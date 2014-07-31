@@ -4,16 +4,20 @@ module Devenv
 
     argument :project_root, :type => :string, :default => '.'
     class_option :vagrant_mount_file, :type => :string, :aliases => [ '-V' ], :default => 'mount.json'
+    class_option :output_file, :type => :string, :aliases => [ '-o' ], :default => 'Vagrantfile'
     def self.source_root
-      File.join( File.dirname(__FILE__), '..', 'lib', 'templates' )
-    end
-
-    def read_mount_file
-      load_json_config_file( project_root, options[:vagrant_mount_file] )
+      File.join( File.dirname(__FILE__), '..','lib', 'templates' )
     end
 
     def create_vagrant_file
-      say "project root @ #{project_root}", :yellow
+      config = load_json_config_file( project_root, options[:vagrant_mount_file] )
+      template(
+        'Vagrantfile.erb',
+        options[:output_file],
+        {
+          :vagrant_mounts => config['vagrant_mounts']
+        }
+      )
     end
 
     private
@@ -21,7 +25,6 @@ module Devenv
     def load_json_config_file( path, json_file )
       require 'json'
       current_path = File.expand_path( File.dirname( path ) )
-      say "current path is #{current_path}"
 
       json_file_path = File.join( current_path, json_file )
       say "json file is #{json_file_path}", :yellow
