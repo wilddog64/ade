@@ -23,7 +23,7 @@ cd docker_devenv;
 Configure Vagrant Mount
 -----------------------
 Vagrantfile are generated on the fly via template, which also included mounting local folder into a given vagrant box.
-This is controlled by mount.json. To add a new mounted folder to a vagrant box, add a json hash that contains ```path```,
+This is controlled by mount.json. To add a new mounted folder to a vagrant box, open ./mount.json and  add a json hash that contains ```path```,
 and ```mount_point``` to this.
 
 ```
