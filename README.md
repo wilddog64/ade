@@ -20,6 +20,31 @@ cd docker_devenv;
 ./bin/dev.sh vagrant-destroy-up # cleanup vagrant environment and rebuild everything
 ```
 
+Configure Vagrant Mount
+-----------------------
+Vagrantfile are generated on the fly via template, which also included mounting local folder into a given vagrant box.
+This is controlled by mount.json. To add a new mounted folder to a vagrant box, add a json hash that contains ```path```,
+and ```mount_point``` to this.
+
+```
+    {
+        "vagrant_mounts": [
+            {
+                "path": "~/src/gitrepo/disney/DisneyID_UI/",
+                "mount_point": "/tmp/vagrant/DisneyID_UI"
+            },
+            {
+                "path": "~/src/gitrepo/disney/DisneyID_L10n_Content/",
+                "mount_point": "/tmp/vagrant/DisneyID_L10n_Content"
+            }
+        ]
+    }
+
+```
+
+* path is a physical path to the folder you want to mount
+* mount_point is a mount directory inside a vagrant box
+
 Pull Request Additions to the Baseline
 -------------
 * fork this repo to your own github account or team
