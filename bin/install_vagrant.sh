@@ -24,14 +24,11 @@ function install_vagrant_plugin() {
     fi
 }
 
-function install_bundle() {
-   gem install bundle
-}
-
 # vagrant plugin install vagrant-omnibus
 # vagrant plugin install vagrant-berkshelf --plugin-version 2.0.1
 function install_vagrant_and_plugins() {
     install_vagrant
     install_vagrant_plugin vagrant-omnibus
     install_vagrant_plugin vagrant-berkshelf 2.0.1
+    install_bundle
 }
