@@ -13,7 +13,11 @@ Running (OSX)
 ```
 git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
-./bin/dev init;
+
+./bin/dev.sh init               # initialze working environment, setup vagrant box, and build docker a base image
+./bin/dev.sh vagrant-up         # only spin up vagrant box and a build docker base image
+./bin/dev.sh vagrant-reload     # restart vagrant box and rebuild a docker base image
+./bin/dev.sh vagrant-destroy-up # cleanup vagrant environment and rebuild everything
 ```
 
 Pull Request Additions to the Baseline
@@ -40,18 +44,31 @@ Directory Structure
 -------------------
 ```
     .
-    ├── Berksfile                   # Chef cookbooks managment file
-    ├── Gemfile                     # Ruby Gems managment file
-    ├── README.md                   # This document
-    ├── Vagrantfile
-    ├── bin                         # a directory cotains various scripts to configure a given docker 
-    │   ├── config_homebrew.sh
-    │   └── dev
-    ├── devenv.json                 # packer template
-    ├── files                       # all files in ./files will be mounted on the docker nodes
+    ├── Berksfile                 # Chef cookbooks managment files
+    ├── Gemfile                   # Ruby Gems manage file
+    ├── README.md                 # This document
+    ├── Thorfile                  # Thor initialize file
+    ├── bin                       # A directory contains various scripts related to environment/docker configuration
+    │   ├── dev.sh
+    │   ├── devenv
+    │   ├── devenv.rb
+    │   ├── install_brewcask.sh
+    │   ├── install_homebrew.sh
+    │   ├── install_php.sh
+    │   ├── install_ruby_gems.sh
+    │   └── install_vagrant.sh
+    ├── devenv.json              # A packer template
+    ├── files                    # A directory for uploading files to container
     │   └── test.txt
-    ├── metadata.rb                 # a chef metadata file
-    ├── nodes                       # each script in this directory will create a docker node
-    │   └── php.sh                  # php installation script
-    └── roles                       # a chef role directory
+    ├── lib                      # Thor library
+    │   ├── Devenv
+    │   └── templates
+    ├── metadata.rb              # A chef metadata file
+    ├── mount.json               # A json file that contains vagrant mount info
+    ├── nodes                    # A directory contains scripts to build nodes
+    │   └── php.sh
+    ├── roles                    # A chef role for configuring and setup vagrant box
+    │   └── bde_packer.json
+    └── thor                     # Thor tasks directory
+        └── dev.thor
 ```
