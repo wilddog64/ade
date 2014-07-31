@@ -30,4 +30,5 @@ function install_vagrant_and_plugins() {
     install_vagrant
     install_vagrant_plugin vagrant-omnibus
     install_vagrant_plugin vagrant-berkshelf 2.0.1
+    install_bundle
 }

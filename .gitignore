@@ -30,3 +30,4 @@ chef
 *tar.gz
 
 *.lock
+Vagrantfile

@@ -7,6 +7,7 @@ set -e
 source ./bin/install_homebrew.sh
 source ./bin/install_brewcask.sh
 source ./bin/install_vagrant.sh
+source ./bin/install_ruby_gems.sh
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
 
@@ -20,6 +21,8 @@ function init_devenv() {
     install_homebrew
     install_brewcask
     install_vagrant_and_plugins
+    install_all_rubygems
+    thor devenv:vagrant
 
     if [[ $reload = 1 ]]; then
         vagrant reload --provision
@@ -39,6 +42,8 @@ case "$1" in
         vagrant reload --provision
         ;;
     vagrant-destroy-up)
+        rm -rf Vagrantfile
+        thor devenv:vagrant
         vagrant destroy -f
         vagrant up
         ;;
