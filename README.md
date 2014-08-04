@@ -15,9 +15,9 @@ git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
 
 ./bin/dev.sh init               # initialze working environment, setup vagrant box, and build docker a base image
-./bin/dev.sh vagrant-up         # only spin up vagrant box and a build docker base image
-./bin/dev.sh vagrant-reload     # restart vagrant box and rebuild a docker base image
-./bin/dev.sh vagrant-destroy-up # cleanup vagrant environment and rebuild everything
+./bin/dev.sh start              # only spin up vagrant box and a build docker base image
+./bin/dev.sh reload             # restart vagrant box and rebuild a docker base image
+./bin/dev.sh recreate           # cleanup vagrant environment and rebuild everything
 ```
 
 Configure Vagrant Mount
