@@ -31,12 +31,12 @@ You can or modify mount points in the mount.json file like so
     {
         "vagrant_mounts": [
             {
-                "path": "~/src",
-                "mount_point": "/tmp/vagrant/src"
+                "path": "~/gitrepos",
+                "mount_point": "/tmp/gitrepos"
             },
             {
                 "path": "~/my/awesome/path",
-                "mount_point": "/tmp/vagrant/otherstuff"
+                "mount_point": "/tmp/otherstuff"
             }
         ]
     }
