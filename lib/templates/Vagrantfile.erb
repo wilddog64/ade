@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :docker
   config.omnibus.chef_version = :latest
-  <%- config[:vagrant_mounts].each do | mount | -%>
+  <%- config[:mounts].each do | mount | -%>
   config.vm.synced_folder '<%=mount['path']%>', '<%=mount['mount_point']-%>'
   <%- end -%>
 

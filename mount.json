@@ -1,12 +1,8 @@
 {
-    "vagrant_mounts": [ 
+    "mounts": [ 
         {
-            "path": "~/src/gitrepo/disney/DisneyID_UI/",
-            "mount_point": "/tmp/vagrant/DisneyID_UI"
-        },
-        {
-            "path": "~/src/gitrepo/disney/DisneyID_L10n_Content/",
-            "mount_point": "/tmp/vagrant/DisneyID_L10n_Content"
+            "path": "~/src",
+            "mount_point": "/tmp/vagrant/src"
         },
         {
             "path": "./files/conf.d/",
