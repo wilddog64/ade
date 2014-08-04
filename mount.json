@@ -1,8 +1,8 @@
 {
     "vagrant_mounts": [ 
         {
-            "path": "~/src/",
-            "mount_point": "/tmp/vagrant/src/"
+            "path": "~/src",
+            "mount_point": "/tmp/vagrant/src"
         },
         {
             "path": "./files/conf.d/",
