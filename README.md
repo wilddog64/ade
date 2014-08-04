@@ -20,30 +20,32 @@ cd docker_devenv;
 ./bin/dev.sh recreate           # cleanup vagrant environment and rebuild everything
 ```
 
-Configure Vagrant Mount
+Configure Mount Directories
 -----------------------
-Vagrantfile are generated on the fly via template, which also included mounting local folder into a given vagrant box.
-This is controlled by mount.json. To add a new mounted folder to a vagrant box, open ./mount.json and  add a json hash that contains ```path```,
-and ```mount_point``` to this.
+If you need to mount directories into your node(s), you can add mount locations to mount.json
+By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can ln -s /path/to/git/repos ~/src).
+
+You can or modify mount points in the mount.json file like so
 
 ```
     {
         "vagrant_mounts": [
             {
-                "path": "~/src/gitrepo/disney/DisneyID_UI/",
-                "mount_point": "/tmp/vagrant/DisneyID_UI"
+                "path": "~/src",
+                "mount_point": "/tmp/vagrant/src"
             },
             {
-                "path": "~/src/gitrepo/disney/DisneyID_L10n_Content/",
-                "mount_point": "/tmp/vagrant/DisneyID_L10n_Content"
+                "path": "~/my/awesome/path",
+                "mount_point": "/tmp/vagrant/otherstuff"
             }
         ]
     }
 
 ```
 
-* path is a physical path to the folder you want to mount
-* mount_point is a mount directory inside a vagrant box
+* path is the location of the folder on your native host
+* mount_point is a mount directory inside a vagrant box, which you can use in your /node/* scripts when setting up your nodes
+* these directories will be mounted on all nodes (in case you are building a multi-node project)
 
 Pull Request Additions to the Baseline
 -------------
