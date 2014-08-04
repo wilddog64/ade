@@ -1,29 +1,43 @@
-Automated Development Environments (ADE)
-======================
-This project will install, configure and run a development environment using Vagrant and Docker instances.
+## Automated Development Environments (ADE)
 
-Requirements (installed via ./bin/dev.sh init)
------------
+Ever wish Java and PHP projects were as simple as `git clone {project}; cd {project}; npm install; grunt server`? Well, now it can be.
+This project will install, configure and run a development environment using Vagrant and Docker instances with minimal configuration by a development team (and no knowledge of Vagrant/Docker required).
+
+### Getting Started
+
+The simplest way to get started with a fresh new machine is to download this repository as a zip file (that's right, you don't even need git!). Then do the following:
+
+- unzip the file
+- in a command line (terminal for OSX, cygwin for Windows), cd into the folder
+- run `./bin/dev.sh init`
+
+> NOTE: OSX is currently supported, Windows is coming soon :)
+
+### Requirements (installed via ./bin/dev.sh init)
+
+* git                   - for cloning this repo
 * Vagrant >= 1.6.3      - to spin up and configure vagrant box to have packer and docker installed
 * Berkshef >= 2.0.1     - for managing chef cookbooks
 * Bundler               - for managing ruby gems
 
-Running (OSX)
--------------
+### Managing Environment
+
 ```
+# basic setup
 git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
 cd docker_devenv;
-
 ./bin/dev.sh init               # initialze working environment, setup vagrant box, and build docker a base image
+
+# extra commands
 ./bin/dev.sh start              # only spin up vagrant box and a build docker base image
 ./bin/dev.sh reload             # restart vagrant box and rebuild a docker base image
 ./bin/dev.sh recreate           # cleanup vagrant environment and rebuild everything
 ```
 
-Configure Mount Directories (optional)
------------------------
+### Configure Mount Directories (optional)
+
 If you need to mount directories into your node(s), you can add mount locations to mount.json
-By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can ln -s /path/to/git/repos ~/src).
+By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can `ln -s /path/to/git/repos ~/src`).
 
 You can or modify mount points in the mount.json file like so
 
@@ -47,28 +61,28 @@ You can or modify mount points in the mount.json file like so
 * mount_point is a mount directory inside a vagrant box, which you can use in your /node/* scripts when setting up your nodes
 * these directories will be mounted on all nodes (in case you are building a multi-node project)
 
-Pull Request Additions to the Baseline
--------------
-* fork this repo to your own github account or team
-* git clone your fork
-* add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
-* make changes in a feature branch `git checkout -b my_feature; git commit -m 'my change'; git push -u origin my_feature`
-* pull-request your feature branch to this repo
+### Pull Request Additions to the Baseline
+
+- fork this repo to your own github account or team
+- git clone your fork
+- add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
+- make changes in a feature branch `git checkout -b my_feature; git commit -m 'my change'; git push -u origin my_feature`
+- pull-request your feature branch to this repo
 
 
-Create Your Own Docker Dev Setup!
-----------
-* fork this repo into your own github profile or team account
-* git clone your fork
-* add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
-* add files needed to build your nodes into the ./files directory
-* add a script for each node you want to run locally in ./nodes
-* commit and push to your own repo
-* now new team members can download your fork, run `./bin/dev init` and be off running!
+### Create Your Own Docker Dev Setup!
+
+- fork this repo into your own github profile or team account
+- git clone your fork
+- add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
+- add files needed to build your nodes into the ./files directory
+- add a script for each node you want to run locally in ./nodes
+- commit and push to your own repo
+- now new team members can download your fork, run `./bin/dev init` and be off running!
 
 
-Directory Structure
--------------------
+### Directory Structure
+
 ```
     .
     ├── Berksfile                 # Chef cookbooks managment files
