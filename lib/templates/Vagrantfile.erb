@@ -26,7 +26,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ]
   end
 
-  config.vm.provision :shell, inline: 'packer build /vagrant/devenv.json'
+  if not ENV.has_key?( 'RELOAD' )
+    config.vm.provision :shell, inline: 'packer build /vagrant/devenv.json'
+  end
 
 
   # Disable automatic box update checking. If you disable this, then
