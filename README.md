@@ -2,7 +2,7 @@ Automated Development Environments (ADE)
 ======================
 This project will install, configure and run a development environment using Vagrant and Docker instances.
 
-Requirement
+Requirements (installed via ./bin/dev.sh init)
 -----------
 * Vagrant >= 1.6.3      - to spin up and configure vagrant box to have packer and docker installed
 * Berkshef >= 2.0.1     - for managing chef cookbooks
@@ -20,7 +20,7 @@ cd docker_devenv;
 ./bin/dev.sh recreate           # cleanup vagrant environment and rebuild everything
 ```
 
-Configure Mount Directories
+Configure Mount Directories (optional)
 -----------------------
 If you need to mount directories into your node(s), you can add mount locations to mount.json
 By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can ln -s /path/to/git/repos ~/src).
