@@ -1,5 +1,5 @@
 {
-    "vagrant_mounts": [ 
+    "mounts": [ 
         {
             "path": "~/src",
             "mount_point": "/tmp/vagrant/src"

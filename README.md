@@ -29,7 +29,7 @@ You can or modify mount points in the mount.json file like so
 
 ```
     {
-        "vagrant_mounts": [
+        "mounts": [
             {
                 "path": "~/gitrepos",
                 "mount_point": "/tmp/gitrepos"
