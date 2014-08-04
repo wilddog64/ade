@@ -7,6 +7,10 @@
         {
             "path": "~/src/gitrepo/disney/DisneyID_L10n_Content/",
             "mount_point": "/tmp/vagrant/DisneyID_L10n_Content"
+        },
+        {
+            "path": "./files/conf.d/",
+            "mount_point": "/tmp/vagrant/"
         }
     ]
 }
