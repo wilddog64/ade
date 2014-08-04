@@ -7,5 +7,5 @@
 # Example chef_disneyidui.json:
 # {
 #     "repo": "git://github.disney.com:DisneyID/DisneyID_UI_Chef.git",
-#     "env": "UI-Desktop"
+#     "env": "https://github.disney.com/DisneyID/DisneyID_UI_Chef/raw/master/environments/did-qa/UI-Desktop.json"
 # }
