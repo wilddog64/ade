@@ -1,6 +1,6 @@
-Docker Dev Environment
+Automated Development Environments (ADE)
 ======================
-This readme file explains how to setup docker and use packer to build a docker container.
+This project will install, configure and run a development environment using Vagrant and Docker instances.
 
 Requirement
 -----------
