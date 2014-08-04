@@ -35,13 +35,13 @@ case "$1" in
     init)
         init_devenv
         ;;
-    vagrant-up)
+    start)
         vagrant up
         ;;
-    vagrant-reload)
+    reload)
         vagrant reload --provision
         ;;
-    vagrant-destroy-up)
+    recreate)
         rm -rf Vagrantfile
         thor devenv:vagrant
         vagrant destroy -f
