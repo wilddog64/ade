@@ -25,7 +25,7 @@ function install_vagrant_plugin() {
         # we are only looking for the name
         grepStatus=${grepStatus%% *}
     fi
-    
+
     #echo 'checking if '$grepExpect' is installed via grepStatus: '$grepStatus
 
     if [[ $grepStatus == $grepExpect ]];
@@ -34,7 +34,7 @@ function install_vagrant_plugin() {
         else
             echo $vagrant_plugin' missing';
             if [[ ! -z $vagrant_plugin_version ]]; then
-                vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version 
+                vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
             else
                 vagrant plugin install $vagrant_plugin
             fi
