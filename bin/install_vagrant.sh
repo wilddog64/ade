@@ -16,11 +16,28 @@ function install_vagrant() {
 function install_vagrant_plugin() {
     local vagrant_plugin=$1
     local vagrant_plugin_version=$2
+    local grepExpect=$vagrant_plugin
+    local grepStatus=$(vagrant plugin list | grep $vagrant_plugin)
 
     if [[ ! -z $vagrant_plugin_version ]]; then
-       vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version 
+        grepExpect=$grepExpect' ('$vagrant_plugin_version')'
     else
-       vagrant plugin install $vagrant_plugin
+        # we are only looking for the name
+        grepStatus=${grepStatus%% *}
+    fi
+    
+    #echo 'checking if '$grepExpect' is installed via grepStatus: '$grepStatus
+
+    if [[ $grepStatus == $grepExpect ]];
+        then
+            echo $vagrant_plugin' is already installed, skipping';
+        else
+            echo $vagrant_plugin' missing';
+            if [[ ! -z $vagrant_plugin_version ]]; then
+                vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version 
+            else
+                vagrant plugin install $vagrant_plugin
+            fi
     fi
 }
 
