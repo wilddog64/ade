@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+
 function install_rbenv() {
-    brew install rbenv
-    brew install ruby-build
+    require_brew rbenv
+    require_brew ruby-build
     if [[ $(grep rbenv ~/.bashrc) != 0 ]]; then
         echo 'eval "$(rbenv init -)"' >> ~/.bashrc
     fi

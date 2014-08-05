@@ -4,6 +4,7 @@ set -e
 
 # vagrant up
 
+source ./bin/lib.sh
 source ./bin/install_homebrew.sh
 source ./bin/install_brewcask.sh
 source ./bin/install_vagrant.sh
