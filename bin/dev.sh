@@ -25,6 +25,10 @@ function init_devenv() {
     install_all_rubygems
     thor devenv:vagrant
 
+    # make sure mount directories exist
+    # TODO: might move these into Vagrant stuff
+    mkdir -p ~/src
+
     if [[ $reload = 1 ]]; then
         action "reloading vagrant..."
         vagrant reload --provision

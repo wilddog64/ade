@@ -25,6 +25,7 @@ function error() {
 }
 
 function require_cask() {
+    echo "checking brew cask $1..."
     brew cask list $1 >> /dev/null | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
         action "installing $1..."
@@ -39,6 +40,7 @@ function require_cask() {
 }
 
 function require_brew() {
+    echo "checking brew $1..."
     brew list $1 >> /dev/null | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
         action "$1 installing..."
@@ -47,10 +49,13 @@ function require_brew() {
             error "failed to install $1! aborting..."
             exit -1
         fi
+    else
+        ok "$1 is installed"
     fi
 }
 
 function require_gem() {
+    echo "checking gem install of $1..."
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
         then
             ok "$1 is installed"
@@ -61,6 +66,7 @@ function require_gem() {
 }
 
 function require_vagrant_plugin() {
+    echo "checking vagrant plugin $1..."
     local vagrant_plugin=$1
     local vagrant_plugin_version=$2
     local grepExpect=$vagrant_plugin
