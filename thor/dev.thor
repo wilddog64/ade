@@ -5,8 +5,20 @@ module Devenv
     argument :project_root, :type => :string, :default => '.'
     class_option :vagrant_mount_file, :type => :string, :aliases => [ '-V' ], :default => 'config.json'
     class_option :output_file, :type => :string, :aliases => [ '-o' ], :default => 'Vagrantfile'
+    class_option :shell_script_output_dir, :type => :string, :aliases => [ '-s' ], :default => './bin'
     def self.source_root
       File.join( File.dirname(__FILE__), '..','lib', 'templates' )
+    end
+
+    def create_install_vagrant_plugins_script
+      config           = load_json_config_file( project_root, options[:vagrant_mount_file] )
+      template_name    = 'install_vagrant_plugins.sh.erb'
+      output_file_name = File.join( options[:shell_script_output_dir],  'install_vagrant_plugins.sh' )
+      template(
+        template_name,
+        output_file_name,
+        :vagrant_plugins => config['vagrant_plugins']
+      )
     end
 
     def create_vagrant_file
