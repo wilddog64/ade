@@ -5,9 +5,7 @@ function install_rbenv() {
     require_brew rbenv
     require_brew ruby-build
     init_rbenv ~/.bashrc
-    # if [[ $(grep rbenv ~/.bashrc) != 0 ]]; then
-    #     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-    # fi
+    source ~/.bashrc
 }
 
 function install_ruby() {
