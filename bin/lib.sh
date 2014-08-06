@@ -16,6 +16,10 @@ function ok() {
 function action() {
     echo -e "$COL_YELLOW[action]$COL_RESET "$1
 }
+function warn() {
+    echo -e "$COL_YELLOW[warning]$COL_RESET "$1
+}
+
 function error() {
     echo -e "$COL_RED[error]$COL_RESET "$1
 }
