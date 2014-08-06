@@ -34,6 +34,16 @@ function require_gem() {
     fi
 }
 
+function require_vagrant_plugin() {
+    if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
+        then
+            echo '[ok] '$1' is already installed';
+        else
+            echo '[missing] '$1'. installing...';
+            gem install $1
+    fi
+}
+
 function init_rbenv() {
     local rcfile=$1
     local rc=0
