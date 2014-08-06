@@ -4,9 +4,10 @@
 function install_rbenv() {
     require_brew rbenv
     require_brew ruby-build
-    if [[ $(grep rbenv ~/.bashrc) != 0 ]]; then
-        echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-    fi
+    init_rbenv ~/.bashrc
+    # if [[ $(grep rbenv ~/.bashrc) != 0 ]]; then
+    #     echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+    # fi
 }
 
 function install_ruby_19() {

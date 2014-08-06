@@ -33,3 +33,16 @@ function require_gem() {
             gem install $1
     fi
 }
+
+function init_rbenv() {
+    local rcfile=$1
+    local rc=0
+
+    if [[ ! -e $rcfile ]]; then
+        touch $rcfile
+    fi
+
+    if [[ $(grep rbenv $rcfile) != 0 ]]; then
+        echo 'eval "$(rbenv init -)"' >> $rcfile
+    fi
+}
