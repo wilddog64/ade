@@ -23,13 +23,11 @@ function require_brew() {
     fi
 }
 function require_gem() {
-	gem list --local $1
-    if [[ $? != 0 ]]; then
-        echo $1 is not installed yet, installing...
-        gem install $1
-        if [[ $? != 0 ]]; then
-            echo failed to install $1! aborting...
-            exit -1
-        fi
+    if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
+        then
+            echo $1' is already installed, skipping...';
+        else
+            echo $1' missing. installing...';
+            gem install $1
     fi
 }
