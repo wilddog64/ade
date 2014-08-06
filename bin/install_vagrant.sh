@@ -7,5 +7,4 @@ function install_vagrant_and_plugins() {
     require_vagrant_plugin vagrant-omnibus
     require_vagrant_plugin vagrant-berkshelf 2.0.1
     require_vagrant_plugin vagrant-cachier
-    require_gem bundle
 }

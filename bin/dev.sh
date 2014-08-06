@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 # vagrant up
 
@@ -40,9 +40,9 @@ case "$1" in
         ;;
     purge)
         rm -rf Vagrantfile
-        trap $(brew cask uninstall vagrant) 
-        trap $(gem uninstall bundle) 
-        trap $(brew uninstall rbenv) 
+        brew cask uninstall vagrant | true 
+        gem uninstall bundle | true
+        brew uninstall rbenv | true
         ok "all clear - now run ./bin/dev.sh init again :)"
         ;;
     start)
