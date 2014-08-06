@@ -11,6 +11,7 @@ function require_cask() {
         fi
     fi
 }
+
 function require_brew() {
     brew list $1
     if [[ $? != 0 ]]; then
@@ -22,6 +23,7 @@ function require_brew() {
         fi
     fi
 }
+
 function require_gem() {
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
         then
