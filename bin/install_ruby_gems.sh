@@ -7,16 +7,16 @@ function install_all_rubygems() {
     source ~/.bashrc
     require_ruby 1.9.3-p547
     require_gem bundle
-    bundle update
-    bundle install
+    bundle update >> /dev/null
+    bundle install >> /dev/null
 }
 
 function require_ruby() {
     local version=$1
-
+    echo "looking for ruby version $version..."
     output=$(rbenv version | grep $version);
     if [[ $? != 0 ]]; then
-        action "installing ruby 1.9.3-p547"
+        action "installing ruby $version"
         rbenv install $version
         rbenv local $version
     else
