@@ -14,7 +14,7 @@ function install_ruby_19() {
 }
 
 function install_bundle() {
-   gem install bundle
+   require_gem bundle
 }
 
 function install_ruby_gems() {
