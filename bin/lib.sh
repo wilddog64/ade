@@ -1,12 +1,32 @@
 #!/usr/bin/env bash
 
+# Colors
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
+COL_YELLOW=$ESC_SEQ"33;01m"
+COL_BLUE=$ESC_SEQ"34;01m"
+COL_MAGENTA=$ESC_SEQ"35;01m"
+COL_CYAN=$ESC_SEQ"36;01m"
+
+function ok() {
+    echo -e "$COL_GREEN[ok]$COL_RESET "$1
+}
+function action() {
+    echo -e "$COL_YELLOW[action]$COL_RESET "$1
+}
+function error() {
+    echo -e "$COL_RED[error]$COL_RESET "$1
+}
+
 function require_cask() {
     output=$(brew cask list $1)
     if [[ $? != 0 ]]; then
-        echo '[missing] '$1'. installing...'
+        action "$1 installing..."
         brew cask install $1
         if [[ $? != 0 ]]; then
-            echo '[error] failed to install $1! aborting...'
+            error "failed to install $1! aborting..."
             exit -1
         fi
     fi
@@ -15,10 +35,10 @@ function require_cask() {
 function require_brew() {
     output=$(brew list $1)
     if [[ $? != 0 ]]; then
-        echo '[missing] '$1'. installing...'
+        action "$1 installing..."
         brew install $1
         if [[ $? != 0 ]]; then
-            echo '[error] failed to install $1! aborting...'
+            error "failed to install $1! aborting..."
             exit -1
         fi
     fi
@@ -27,9 +47,9 @@ function require_brew() {
 function require_gem() {
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
         then
-            echo '[ok] '$1' is already installed';
+            ok "$1 is installed"
         else
-            echo '[missing] '$1'. installing...';
+            action "$1 installing..."
             gem install $1
     fi
 }
@@ -51,9 +71,9 @@ function require_vagrant_plugin() {
 
     if [[ $grepStatus == $grepExpect ]];
         then
-            echo '[ok] '$vagrant_plugin' is already installed, skipping';
+            ok "$vagrant_plugin is installed"
         else
-            echo '[missing] '$vagrant_plugin', installing...';
+            action "missing $vagrant_plugin..."
             if [[ ! -z $vagrant_plugin_version ]]; then
                 vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
             else

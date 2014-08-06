@@ -18,10 +18,6 @@ function install_ruby() {
     fi
 }
 
-function install_bundle() {
-   require_gem bundle
-}
-
 function install_ruby_gems() {
     bundle install
 }
@@ -33,7 +29,7 @@ function update_ruby_gems() {
 function install_all_rubygems() {
     install_rbenv
     install_ruby 1.9.3-p547
-    install_bundle
+    require_gem bundle
     update_ruby_gems
     install_ruby_gems
 }
