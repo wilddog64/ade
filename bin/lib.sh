@@ -13,9 +13,11 @@ COL_CYAN=$ESC_SEQ"36;01m"
 function ok() {
     echo -e "$COL_GREEN[ok]$COL_RESET "$1
 }
+
 function action() {
     echo -e "$COL_YELLOW[action]$COL_RESET "$1
 }
+
 function warn() {
     echo -e "$COL_YELLOW[warning]$COL_RESET "$1
 }
