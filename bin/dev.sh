@@ -26,8 +26,10 @@ function init_devenv() {
     thor devenv:vagrant
 
     if [[ $reload = 1 ]]; then
+        echo 'reloading vagrant...'
         vagrant reload --provision
     else
+        echo 'starting vagrant...'
         vagrant up
     fi
 }
