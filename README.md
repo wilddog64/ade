@@ -36,7 +36,7 @@ cd docker_devenv;
 
 ### Configure Mount Directories (optional)
 
-If you need to mount directories into your node(s), you can add mount locations to mount.json
+If you need to mount directories into your node(s), you can add mount locations to mount section in config.json
 By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can `ln -s /path/to/git/repos ~/src`).
 
 You can or modify mount points in the mount.json file like so

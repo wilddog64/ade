@@ -31,3 +31,4 @@ chef
 
 *.lock
 Vagrantfile
+Gemfile.lock
