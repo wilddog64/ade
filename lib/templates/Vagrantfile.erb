@@ -21,9 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   <%- config[:vagrant_plugins].each do | vagrant_plugin |  %>
   if Vagrant.has_plugin?( '<%=vagrant_plugin["name"]-%>' )
-    <% if vagrant_plugin['options'].count > 0 -%>
-      <%= vagrant_plugin['options'].join("\n") %>
-    <% end %>
+    <%- if vagrant_plugin['options'].count > 0 -%>
+      <%= vagrant_plugin['options'].join("\n") -%>
+    <%- end %>
   end
   <%- end %>
 
