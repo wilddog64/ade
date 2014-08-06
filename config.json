@@ -8,5 +8,19 @@
             "path": "./files/conf.d/",
             "mount_point": "/tmp/vagrant/"
         }
+    ],
+    "vagrant-plugins": [
+        {
+            "name": "vagrant-omnibus",
+            "version": ""
+        },
+        {
+            "name": "vagrant-berkshelf",
+            "version": "2.0.1"
+        },
+        {
+            "name": "vagrant-cachier",
+            "version": ""
+        }
     ]
 }
