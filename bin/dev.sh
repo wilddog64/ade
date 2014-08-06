@@ -35,6 +35,7 @@ function init_devenv() {
     else
         action "starting vagrant..."
         vagrant up
+        vagrant provision
     fi
 }
 
