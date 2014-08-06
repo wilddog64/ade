@@ -39,8 +39,8 @@ function require_cask() {
 }
 
 function require_brew() {
-    output=$(brew list $1)
-    if [[ $? != 0 ]]; then
+    brew list $1 >> /dev/null | true
+    if [[ ${PIPESTATUS[0]} != 0 ]]; then
         action "$1 installing..."
         brew install $1
         if [[ $? != 0 ]]; then
