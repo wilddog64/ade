@@ -15,7 +15,8 @@ module Devenv
         'Vagrantfile.erb',
         options[:output_file],
         {
-          :mounts => config['mounts']
+          :mounts          => config['mounts'],
+          :vagrant_plugins => config['vagrant_plugins'],
         }
       )
     end
