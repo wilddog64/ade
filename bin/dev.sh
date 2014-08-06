@@ -38,6 +38,13 @@ case "$1" in
     init)
         init_devenv
         ;;
+    purge)
+        rm -rf Vagrantfile
+        trap $(brew cask uninstall vagrant) 
+        trap $(gem uninstall bundle) 
+        trap $(brew uninstall rbenv) 
+        ok "all clear - now run ./bin/dev.sh init again :)"
+        ;;
     start)
         vagrant up
         ;;
