@@ -19,11 +19,12 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 function init_devenv() {
     local reload=$1
 
+    thor devenv:vagrant
+    source ./bin/install_vagrant_plugins.sh
     install_homebrew
     install_brewcask
     install_vagrant_and_plugins
     install_all_rubygems
-    thor devenv:vagrant
 
     # make sure mount directories exist
     # TODO: might move these into Vagrant stuff

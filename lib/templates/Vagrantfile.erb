@@ -19,6 +19,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '<%=mount['path']%>', '<%=mount['mount_point']-%>'
   <%- end -%>
 
+  <%- config[:vagrant_plugins].each do | vagrant_plugin | -%>
+  if Vagrant.has_plugin?( '<%=vagrant_plugin["name"]-%>' )
+    <%- if vagrant_plugin['options'].count > 0 -%>
+      <%- vagrant_plugin['options'].each do | opt | -%>
+      <%= opt %>
+      <%- end -%>
+    <%- end -%>
+  end
+  <%- end -%>
+
   config.vm.provision :chef_solo do |chef|
     chef.roles_path = 'roles'
     chef.run_list = [
