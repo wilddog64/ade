@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function require_cask() {
-    brew cask list $1
+    output=$(brew cask list $1)
     if [[ $? != 0 ]]; then
         echo '[missing] '$1'. installing...'
         brew cask install $1
@@ -13,7 +13,7 @@ function require_cask() {
 }
 
 function require_brew() {
-    brew list $1
+    output=$(brew list $1)
     if [[ $? != 0 ]]; then
         echo '[missing] '$1'. installing...'
         brew install $1
