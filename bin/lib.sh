@@ -25,7 +25,9 @@ function error() {
 }
 
 function require_cask() {
+    action "checking for required cask $1"
     output=$(brew cask list $1)
+    echo "return code $?"
     if [[ $? != 0 ]]; then
         action "$1 installing..."
         brew cask install $1
@@ -33,6 +35,8 @@ function require_cask() {
             error "failed to install $1! aborting..."
             exit -1
         fi
+    else
+        ok "$1 is installed"
     fi
 }
 
