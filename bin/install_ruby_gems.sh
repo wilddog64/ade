@@ -4,13 +4,18 @@
 function install_rbenv() {
     require_brew rbenv
     require_brew ruby-build
-    if [[ $(grep rbenv ~/.bashrc) != 0 ]]; then
-        echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-    fi
+    init_rbenv ~/.bashrc
+    source ~/.bashrc
 }
 
-function install_ruby_19() {
-    rbenv install 1.9.3-p547
+function install_ruby() {
+    local version=$1
+
+    rbenv version | grep $version
+    if [[ $? != 0 ]]; then
+        rbenv install $version
+        rbenv local $version
+    fi
 }
 
 function install_bundle() {
@@ -27,7 +32,7 @@ function update_ruby_gems() {
 
 function install_all_rubygems() {
     install_rbenv
-    install_ruby_19
+    install_ruby 1.9.3-p547
     install_bundle
     update_ruby_gems
     install_ruby_gems

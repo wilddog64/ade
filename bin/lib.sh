@@ -11,6 +11,7 @@ function require_cask() {
         fi
     fi
 }
+
 function require_brew() {
     brew list $1
     if [[ $? != 0 ]]; then
@@ -22,6 +23,7 @@ function require_brew() {
         fi
     fi
 }
+
 function require_gem() {
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
         then
@@ -29,5 +31,18 @@ function require_gem() {
         else
             echo '[missing] '$1'. installing...';
             gem install $1
+    fi
+}
+
+function init_rbenv() {
+    local rcfile=$1
+    local rc=0
+
+    if [[ ! -e $rcfile ]]; then
+        touch $rcfile
+    fi
+
+    if [[ $(grep rbenv $rcfile) != 0 ]]; then
+        echo 'eval "$(rbenv init -)"' >> $rcfile
     fi
 }
