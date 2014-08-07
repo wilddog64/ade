@@ -31,3 +31,6 @@ chef
 
 *.lock
 Vagrantfile
+Gemfile.lock
+bin/install_vagrant_plugins.sh
+.ruby-version

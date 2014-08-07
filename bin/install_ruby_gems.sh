@@ -1,21 +1,25 @@
 #!/usr/bin/env bash
 
-function install_bundle() {
-   gem install bundle
-}
-
-function install_ruby_gems() {
-    bundle install
-}
-
-function update_ruby_gems() {
-    bundle update
-}
-
 function install_all_rubygems() {
-    install_bundle
-    update_ruby_gems
-    install_ruby_gems
+    require_brew rbenv
+    require_brew ruby-build
+    init_rbenv ~/.bashrc
+    source ~/.bashrc
+    require_ruby 1.9.3-p547
+    require_gem bundle
+    bundle update >> /dev/null
+    bundle install >> /dev/null
 }
 
-
+function require_ruby() {
+    local version=$1
+    echo "looking for ruby version $version..."
+    output=$(rbenv version | grep $version);
+    if [[ $? != 0 ]]; then
+        action "installing ruby $version"
+        rbenv install $version
+        rbenv local $version
+    else
+        ok "ruby $version installed"
+    fi
+}

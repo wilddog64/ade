@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function install_vagrant_plugins() {
+<%- config[:vagrant_plugins].each do | vagrant_plugin | -%>
+    <%- if vagrant_plugin['version'].nil? -%>
+        require_vagrant_plugin <%= vagrant_plugin['name'] %>
+    <%- else -%>
+        require_vagrant_plugin <%= vagrant_plugin['name'] -%> <%= vagrant_plugin['version'] %>
+    <%- end -%>
+<%- end %>
+}

@@ -1,9 +1,10 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 # vagrant up
 
+source ./bin/lib.sh
 source ./bin/install_homebrew.sh
 source ./bin/install_brewcask.sh
 source ./bin/install_vagrant.sh
@@ -18,37 +19,64 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 function init_devenv() {
     local reload=$1
 
+    thor devenv:vagrant
+    source ./bin/install_vagrant_plugins.sh
     install_homebrew
     install_brewcask
     install_vagrant_and_plugins
     install_all_rubygems
-    thor devenv:vagrant
+
+    # make sure mount directories exist
+    # TODO: might move these into Vagrant stuff
+    mkdir -p ~/src
 
     if [[ $reload = 1 ]]; then
+        action "reloading vagrant..."
         vagrant reload --provision
     else
+        action "starting vagrant..."
         vagrant up
     fi
+}
+
+function purge() {
+    rm -rf Vagrantfile
+    brew cask uninstall vagrant | true 
+    gem uninstall bundle | true
+    brew uninstall rbenv | true
+    ok "all clear - now run ./bin/dev.sh init again :)"
+}
+
+function reload_devenv() {
+    export RELOAD=1
+    rm -rf Vagrantfile
+    thor devenv:vagrant
+    vagrant reload --provision
+}
+
+function recreate() {
+    rm -rf Vagrantfile
+    rm -rf ./bin/install_vagrant_plugins.sh
+    thor devenv:vagrant
+    vagrant destroy -f
+    vagrant up
 }
 
 case "$1" in
     init)
         init_devenv
         ;;
+    purge)
+        purge
+        ;;
     start)
         vagrant up
         ;;
     reload)
-        export RELOAD=1
-        rm -rf Vagrantfile
-        thor devenv:vagrant
-        vagrant reload --provision
+        reload_devenv
         ;;
     recreate)
-        rm -rf Vagrantfile
-        thor devenv:vagrant
-        vagrant destroy -f
-        vagrant up
+        recreate
         ;;
     update)
         git pull

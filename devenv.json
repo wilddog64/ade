@@ -14,7 +14,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "/vagrant/bin/install_php.sh"
+            "script": "/vagrant/bin/install_nodes.sh"
         }
     ],
     "post-processors": [

@@ -1,0 +1,29 @@
+{
+    "mounts": [
+        {
+            "path": "~/src",
+            "mount_point": "/tmp/vagrant/src"
+        },
+        {
+            "path": "./files/conf.d/",
+            "mount_point": "/tmp/vagrant/"
+        }
+    ],
+    "vagrant_plugins": [
+        {
+            "name": "vagrant-omnibus",
+            "options": ["config.omnibus.chef_version = :latest"],
+            "version": ""
+        },
+        {
+            "name": "vagrant-berkshelf",
+            "options": ["config.berkshelf.enabled = true"],
+            "version": "2.0.1"
+        },
+        {
+            "name": "vagrant-cachier",
+            "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
+            "version": ""
+        }
+    ]
+}
