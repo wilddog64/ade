@@ -61,6 +61,7 @@ case "$1" in
         ;;
     recreate)
         rm -rf Vagrantfile
+        rm -rf ./bin/install_vagrant_plugins.sh
         thor devenv:vagrant
         vagrant destroy -f
         vagrant up
