@@ -18,6 +18,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '<%=mount['path']%>', '<%=mount['mount_point']-%>'
   <%- end -%>
 
+  <%- if config[:vagrant_port_forwards].count > 0 -%>
+    <%- config[:vagrant_port_forwards].each do | port_forward | -%>
+    config.vm.network :forwarded_port, guest: <%=port_forward['guest']-%>, host: <%=port_forward['host']%>, auto_correct: true
+    <%- end -%>
+  <%- end -%>
+
   <%- config[:vagrant_plugins].each do | vagrant_plugin | -%>
   if Vagrant.has_plugin?( '<%=vagrant_plugin["name"]-%>' )
     <%- if vagrant_plugin['options'].count > 0 -%>

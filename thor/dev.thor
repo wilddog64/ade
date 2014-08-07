@@ -29,6 +29,7 @@ module Devenv
         {
           :mounts          => config['mounts'],
           :vagrant_plugins => config['vagrant_plugins'],
+          :vagrant_port_forwards => config['vagrant_port_forwards']
         }
       )
     end

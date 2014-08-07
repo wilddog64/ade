@@ -25,5 +25,11 @@
             "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
             "version": ""
         }
+    ],
+    "vagrant_port_forwards": [
+        {
+            "guest": 8080,
+            "host": 8080
+        }
     ]
 }
