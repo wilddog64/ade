@@ -39,32 +39,44 @@ function init_devenv() {
     fi
 }
 
+function purge() {
+    rm -rf Vagrantfile
+    brew cask uninstall vagrant | true 
+    gem uninstall bundle | true
+    brew uninstall rbenv | true
+    ok "all clear - now run ./bin/dev.sh init again :)"
+}
+
+function reload_devenv() {
+    export RELOAD=1
+    rm -rf Vagrantfile
+    thor devenv:vagrant
+    vagrant reload --provision
+}
+
+function recreate() {
+    rm -rf Vagrantfile
+    rm -rf ./bin/install_vagrant_plugins.sh
+    thor devenv:vagrant
+    vagrant destroy -f
+    vagrant up
+}
+
 case "$1" in
     init)
         init_devenv
         ;;
     purge)
-        rm -rf Vagrantfile
-        brew cask uninstall vagrant | true 
-        gem uninstall bundle | true
-        brew uninstall rbenv | true
-        ok "all clear - now run ./bin/dev.sh init again :)"
+        purge
         ;;
     start)
         vagrant up
         ;;
     reload)
-        export RELOAD=1
-        rm -rf Vagrantfile
-        thor devenv:vagrant
-        vagrant reload --provision
+        reload_devenv
         ;;
     recreate)
-        rm -rf Vagrantfile
-        rm -rf ./bin/install_vagrant_plugins.sh
-        thor devenv:vagrant
-        vagrant destroy -f
-        vagrant up
+        recreate
         ;;
     update)
         git pull
