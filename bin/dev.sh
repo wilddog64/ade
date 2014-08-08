@@ -42,6 +42,7 @@ function init_devenv() {
 function purge() {
     vagrant halt > /dev/null 2>&1
     rm -rf Vagrantfile
+    rm -rf ./bin/install_vagrant_plugins.sh
     brew cask uninstall vagrant > /dev/null 2>&1
     gem uninstall bundle > /dev/null 2>&1
     brew uninstall rbenv > /dev/null 2>&1
