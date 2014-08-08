@@ -7,7 +7,6 @@
 source ./bin/lib.sh
 source ./bin/install_homebrew.sh
 source ./bin/install_brewcask.sh
-source ./bin/install_vagrant.sh
 source ./bin/install_ruby_gems.sh
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
@@ -19,13 +18,14 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 function init_devenv() {
     local reload=$1
 
-    thor devenv:vagrant
-    source ./bin/install_vagrant_plugins.sh
     install_homebrew
     install_brewcask
-    install_vagrant_and_plugins
+    require_cask vagrant
     install_all_rubygems
-
+    
+    thor devenv:vagrant
+    source ./bin/install_vagrant_plugins.sh
+    install_vagrant_plugins
     # make sure mount directories exist
     # TODO: might move these into Vagrant stuff
     mkdir -p ~/src
@@ -40,11 +40,12 @@ function init_devenv() {
 }
 
 function purge() {
+    vagrant halt > /dev/null 2>&1
     rm -rf Vagrantfile
-    brew cask uninstall vagrant | true 
-    gem uninstall bundle | true
-    brew uninstall rbenv | true
-    ok "all clear - now run ./bin/dev.sh init again :)"
+    brew cask uninstall vagrant > /dev/null 2>&1
+    gem uninstall bundle > /dev/null 2>&1
+    brew uninstall rbenv > /dev/null 2>&1
+    ok "all clear - now run ./bin/dev.sh init again to spin up anew :)"
 }
 
 function reload_devenv() {
