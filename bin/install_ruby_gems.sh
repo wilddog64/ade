@@ -14,7 +14,7 @@ function install_all_rubygems() {
 function require_ruby() {
     local version=$1
     echo "looking for ruby version $version..."
-    output=$(rbenv version | grep $version);
+    output=$(rbenv versions | grep $version);
     if [[ $? != 0 ]]; then
         action "installing ruby $version"
         rbenv install $version
