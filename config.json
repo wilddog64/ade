@@ -5,8 +5,12 @@
             "mount_point": "/tmp/vagrant/src"
         },
         {
-            "path": "./files/conf.d/",
-            "mount_point": "/tmp/vagrant/"
+            "path": "./scripts",
+            "mount_point": "/tmp/scripts"
+        },
+        {
+            "path": "./files/conf.d",
+            "mount_point": "/tmp/vagrant"
         }
     ],
     "vagrant_plugins": [
