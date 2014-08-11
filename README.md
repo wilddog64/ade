@@ -39,27 +39,36 @@ cd docker_devenv;
 If you need to mount directories into your node(s), you can add mount locations to mount section in config.json
 By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can `ln -s /path/to/git/repos ~/src`).
 
-You can or modify mount points in the mount.json file like so
+Additionally, each node has it's own config where you can specify mount points specific for a single node!
+
+### Node Config
+
+Each node config can contain any of these options:
 
 ```
-    {
-        "mounts": [
-            {
-                "path": "~/gitrepos",
-                "mount_point": "/tmp/gitrepos"
-            },
-            {
-                "path": "~/my/awesome/path",
-                "mount_point": "/tmp/otherstuff"
-            }
-        ]
-    }
+{
+    // if there is a chef section in your node config
+    // then chef will be used to create this node
+    "chef":{
+        // a chef cookbook repo is required
+        "repo": "git://github.disney.com:DisneyID/DisneyID_UI_Chef.git",
+        // also a raw link to the environment config file is required
+        "env": "https://github.disney.com/DisneyID/DisneyID_UI_Chef/raw/master/environments/did-qa/UI-Desktop.json"
+    },
+    // specific mounts for this node only
+    "mounts": [
+        {
+            // path is the location of the host directory
+            "path": "~/src",
+            // mount_point is where it will be located on the node
+            "mount_point": "/var/www/html"
+        }
+    ],
+    // a shell script to add additional config to this node (after chef runs or instead of chef)
+    "script":"disneyid_ui.sh"
+}
 
 ```
-
-* path is the location of the folder on your native host
-* mount_point is a mount directory inside a vagrant box, which you can use in your /node/* scripts when setting up your nodes
-* these directories will be mounted on all nodes (in case you are building a multi-node project)
 
 ### Pull Request Additions to the Baseline
 
