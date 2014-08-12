@@ -5,9 +5,6 @@
 
 echo "starting OSX configuration..."
 
-# (~/src will be automatically shared into dev nodes)
-mkdir -p ~/src
-
 # TODO: git clone projects into ~/src
 # ...
 

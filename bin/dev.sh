@@ -30,6 +30,9 @@ function init_devenv() {
         error "Sorry, your environment is unsupported. Please order a macbook :)"
     fi
 
+    # (~/src will be automatically shared into dev nodes)
+    mkdir -p ~/src
+
     require_cask vagrant
     install_all_rubygems
     
