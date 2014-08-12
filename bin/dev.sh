@@ -24,7 +24,7 @@ function init_devenv() {
         ./scripts/osx_setup.sh
         install_homebrew
         install_brewcask
-    elif [[ "$unamestr" == "cygwin" ]]; then
+    elif [[ "$platform" == "cygwin" ]]; then
         error "This setup is not yet tested on cygwin. Please pull request updates!"
     else
         error "Sorry, your environment is unsupported. Please order a macbook :)"
