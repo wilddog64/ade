@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 function install_homebrew() {
-    if [[ $(uname) != 'Darwin' ]]; then
-        warn "homebrew can only be installed for OSX Darwin!"
-    fi
-
     brew_bin=$(which brew) 2>&1 > /dev/null
     if [[ $? != 0 ]]; then
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"

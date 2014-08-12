@@ -18,17 +18,28 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 function init_devenv() {
     local reload=$1
 
-    install_homebrew
-    install_brewcask
+    platform=`uname`
+    if [[ "$platform" == "Darwin" ]]; then
+        ok "Compatible OS detected. Installing..."
+        ./scripts/osx_setup.sh
+        install_homebrew
+        install_brewcask
+    elif [[ "$unamestr" == "cygwin" ]]; then
+        error "This setup is not yet tested on cygwin. Please pull request updates!"
+    else
+        error "Sorry, your environment is unsupported. Please order a macbook :)"
+    fi
+
     require_cask vagrant
     install_all_rubygems
     
+    # ensure we can run dev.sh init more than once without intervention
+    rm -rf Vagrantfile
+
+    # create new Vagrantfile from template
     thor devenv:vagrant
     source ./bin/install_vagrant_plugins.sh
     install_vagrant_plugins
-    # make sure mount directories exist
-    # TODO: might move these into Vagrant stuff
-    mkdir -p ~/src
 
     if [[ $reload = 1 ]]; then
         action "reloading vagrant..."
