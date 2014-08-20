@@ -3,6 +3,9 @@
 Ever wish Java and PHP projects were as simple as `git clone {project}; cd {project}; npm install; grunt server`? Well, now it can be.
 This project will install, configure and run a development environment using Vagrant and Docker instances with minimal configuration by a development team (and no knowledge of Vagrant/Docker is required).
 
+### \\[._.]/ - On OSX?
+If you are running a mac, you might want to setup a better developer experience using [the dotfiles project](https://github.disney.com/DTSS/dotfiles) before you begin.
+
 ### Getting Started
 
 The simplest way to get started with a fresh new machine is to download this repository as a zip file (that's right, you don't even need git!). Then do the following:
@@ -64,6 +67,14 @@ Each node config can contain any of these options:
             "mount_point": "/var/www/html"
         }
     ],
+    // any ports that should forward from your native OS into the node
+    ports:[{
+    	// the port inside the VM
+        "guest": 80,
+        // the port on your native OS that will direct into the box on the guest port
+        "host": 8080
+        // so with this config, you can access localhost:8080 and it will load :80 on the node
+    }],
     // a shell script to add additional config to this node (after chef runs or instead of chef)
     "script":"disneyid_ui.sh"
 }

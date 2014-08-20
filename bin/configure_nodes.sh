@@ -38,7 +38,7 @@ for f in ../nodes/*.json; do
 	script=$(echo $json | jq ".script")
 	if [[ "$script" -ne "null" ]]; then
 		echo "found script: "$script
-
+		source $script
 		# TODO: pass this script to vagrant to run on the docker node after first boot
 	fi
 done

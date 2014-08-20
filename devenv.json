@@ -14,7 +14,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "/vagrant/bin/install_nodes.sh"
+            "script": "/vagrant/scripts/lamp.sh"
         }
     ],
     "post-processors": [
