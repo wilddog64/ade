@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 # Colors
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
@@ -12,6 +13,15 @@ COL_CYAN=$ESC_SEQ"36;01m"
 
 function ok() {
     echo -e "$COL_GREEN[ok]$COL_RESET "$1
+}
+
+function bot() {
+    echo
+    echo -e "$COL_GREEN\[._.]/$COL_RESET - "$1
+}
+
+function running() {
+    echo -en $1"..."
 }
 
 function action() {
@@ -27,44 +37,44 @@ function error() {
 }
 
 function require_cask() {
-    echo "checking brew cask $1..."
+    running "installing brew cask $1"
     brew cask list $1 > /dev/null 2>&1 | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
-        action "installing $1..."
         brew cask install $1
         if [[ $? != 0 ]]; then
             error "failed to install $1! aborting..."
             exit -1
+        else
+            ok
         fi
     else
-        ok "$1 is installed"
+        ok
     fi
 }
 
 function require_brew() {
-    echo "checking brew $1..."
+    running "installing brew $1 $2"
     brew list $1 > /dev/null 2>&1 | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
-        action "$1 installing..."
-        brew install $1
+        brew install $1 $2
         if [[ $? != 0 ]]; then
             error "failed to install $1! aborting..."
             exit -1
+        else
+            ok
         fi
     else
-        ok "$1 is installed"
+        ok
     fi
 }
 
 function require_gem() {
-    echo "checking gem install of $1..."
-    if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) == $1 ]];
+    running "install gem $1"
+    if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) != $1 ]];
         then
-            ok "$1 is installed"
-        else
-            action "$1 installing..."
             gem install $1
     fi
+    ok
 }
 
 function require_vagrant_plugin() {

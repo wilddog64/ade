@@ -1,7 +1,7 @@
 ## Automated Development Environments (ADE)
 
 Ever wish Java and PHP projects were as simple as `git clone {project}; cd {project}; npm install; grunt server`? Well, now it can be.
-This project will install, configure and run a development environment using Vagrant and Docker instances with minimal configuration by a development team (and no knowledge of Vagrant/Docker required).
+This project will install, configure and run a development environment using Vagrant and Docker instances with minimal configuration by a development team (and no knowledge of Vagrant/Docker is required).
 
 ### Getting Started
 
