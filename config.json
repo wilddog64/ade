@@ -30,10 +30,16 @@
             "version": ""
         }
     ],
-    "vagrant_port_forwards": [
+    "vagrant_port_forwards": [{
+            "guest": 80,
+            "host": 80
+        },
         {
             "guest": 8080,
             "host": 8080
+        },{ // shipyard
+            "guest": 8005,
+            "host": 8005
         }
     ]
 }

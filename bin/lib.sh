@@ -21,11 +21,12 @@ function bot() {
 }
 
 function running() {
-    echo -en $1"..."
+    echo -en " ⇒ "$1"..."
 }
 
 function action() {
-    echo -e "$COL_YELLOW[action]$COL_RESET "$1
+    echo -e "$COL_YELLOW[action]$COL_RESET"
+    running $1"..."
 }
 
 function warn() {
@@ -37,7 +38,7 @@ function error() {
 }
 
 function require_cask() {
-    running "installing brew cask $1"
+    running "brew cask $1"
     brew cask list $1 > /dev/null 2>&1 | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
         brew cask install $1
@@ -53,7 +54,7 @@ function require_cask() {
 }
 
 function require_brew() {
-    running "installing brew $1 $2"
+    running "brew $1 $2"
     brew list $1 > /dev/null 2>&1 | true
     if [[ ${PIPESTATUS[0]} != 0 ]]; then
         brew install $1 $2
@@ -69,7 +70,7 @@ function require_brew() {
 }
 
 function require_gem() {
-    running "install gem $1"
+    running "gem $1"
     if [[ $(gem list --local | grep $1 | head -1 | cut -d' ' -f1) != $1 ]];
         then
             gem install $1
@@ -78,7 +79,7 @@ function require_gem() {
 }
 
 function require_vagrant_plugin() {
-    echo "checking vagrant plugin $1..."
+    running "vagrant plugin $1"
     local vagrant_plugin=$1
     local vagrant_plugin_version=$2
     local grepExpect=$vagrant_plugin
@@ -93,28 +94,14 @@ function require_vagrant_plugin() {
 
     #echo 'checking if '$grepExpect' is installed via grepStatus: '$grepStatus
 
-    if [[ $grepStatus == $grepExpect ]];
+    if [[ $grepStatus != $grepExpect ]];
         then
-            ok "$vagrant_plugin is installed"
-        else
-            action "missing $vagrant_plugin..."
+            action "installing vagrant plugin $1 $2"
             if [[ ! -z $vagrant_plugin_version ]]; then
                 vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
             else
                 vagrant plugin install $vagrant_plugin
             fi
     fi
-}
-
-function init_rbenv() {
-    local rcfile=$1
-    local rc=0
-
-    if [[ ! -e $rcfile ]]; then
-        touch $rcfile
-    fi
-
-    if [[ $(grep rbenv $rcfile) != 0 ]]; then
-        echo 'eval "$(rbenv init -)"' >> $rcfile
-    fi
+    ok
 }

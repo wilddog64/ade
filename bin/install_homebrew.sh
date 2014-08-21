@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 function install_homebrew() {
+	running "checking homebrew"
     brew_bin=$(which brew) 2>&1 > /dev/null
     if [[ $? != 0 ]]; then
+    	action "installing homebrew"
         ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-    else
-        ok "$brew_bin exists"
+        if [[ $? != 0 ]]; then
+        	error "unable to install homebrew, script $0 abort!"
+        	exit -1
+    	fi
     fi
-    if [[ $? != 0 ]]; then
-        error "unable to install homebrew, script $0 abort!"
-        exit -1
-    fi
+    ok
 }

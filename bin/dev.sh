@@ -19,8 +19,9 @@ function init_devenv() {
     local reload=$1
 
     platform=`uname`
+    running "checking OS compatibility"
     if [[ "$platform" == "Darwin" ]]; then
-        ok "Compatible OS detected. Installing..."
+        ok
         ./scripts/osx_setup.sh
         install_homebrew
         install_brewcask
@@ -35,7 +36,7 @@ function init_devenv() {
 
     require_cask vagrant
     install_all_rubygems
-    
+
     # ensure we can run dev.sh init more than once without intervention
     rm -rf Vagrantfile
 
@@ -45,11 +46,13 @@ function init_devenv() {
     install_vagrant_plugins
 
     if [[ $reload = 1 ]]; then
-        action "reloading vagrant..."
+        running "reloading vagrant"
         vagrant reload --provision
+        ok
     else
-        action "starting vagrant..."
+        running "starting vagrant"
         vagrant up
+        ok
     fi
 }
 
