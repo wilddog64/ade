@@ -5,9 +5,7 @@ function install_brewcask() {
     output=$(brew tap | grep cask)
     if [[ $? != 0 ]]; then
     	action "installing brew-cask"
-        # tap
-        brew tap caskroom/cask
-        brew install brew-cask
+		require_brew caskroom/cask/brew-cask
     fi
     ok
 }
