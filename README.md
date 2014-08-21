@@ -27,8 +27,8 @@ The simplest way to get started with a fresh new machine is to download this rep
 
 ```
 # basic setup
-git clone git@github.disney.com:BDE-Chef/docker_devenv.git;
-cd docker_devenv;
+git clone git@github.disney.com:DTSS/ADE.git;
+cd ADE;
 ./bin/dev.sh init               # initialze working environment, setup vagrant box, and build docker a base image
 
 # extra commands
@@ -85,7 +85,7 @@ Each node config can contain any of these options:
 
 - fork this repo to your own github account or team
 - git clone your fork
-- add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
+- add the original as an upstream remote `git remote add upstream git@github.disney.com:DTSS/ADE.git`
 - make changes in a feature branch `git checkout -b my_feature; git commit -m 'my change'; git push -u origin my_feature`
 - pull-request your feature branch to this repo
 
@@ -94,7 +94,7 @@ Each node config can contain any of these options:
 
 - fork this repo into your own github profile or team account
 - git clone your fork
-- add the original as an upstream remote `git remote add upstream git@github.disney.com:BDE-Chef/docker_devenv.git`
+- add the original as an upstream remote `git remote add upstream git@github.disney.com:DTSS/ADE.git`
 - add files needed to build your nodes into the ./files directory
 - add a script for each node you want to run locally in ./nodes
 - commit and push to your own repo
