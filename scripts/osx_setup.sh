@@ -7,5 +7,10 @@ source ./bin/lib.sh
 # TODO: git clone projects into ~/src
 # ...
 
+# example: install a whole configuration and default software set for OSX
+# git clone --recurse-submodules https://github.com/atomantic/dotfiles ~/.dotfiles
+# cd ~/.dotfiles
+# ./install.sh
+
 
 # all done

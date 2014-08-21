@@ -14,5 +14,6 @@
       "recipe[packer]"
   ],
   "env_run_lists": {
-  }
+  },
+  "run_command":["run", "-d", "-t", "-v", "/var/run/docker.sock:/docker.sock", "shipyard/deploy", "setup"]
 }

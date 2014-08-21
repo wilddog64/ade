@@ -58,6 +58,9 @@ function init_devenv() {
         vagrant up
         ok
     fi
+
+    # now we can load shipyard
+    open http://localhost:8000
 }
 
 function purge() {
@@ -67,7 +70,7 @@ function purge() {
     brew cask uninstall vagrant > /dev/null 2>&1
     gem uninstall bundle > /dev/null 2>&1
     brew uninstall rbenv > /dev/null 2>&1
-    ok "all clear - now run ./bin/dev.sh init again to spin up anew :)"
+    ok "all clear - now run './bin/dev init' again to spin up anew :)"
 }
 
 function reload_devenv() {

@@ -12,11 +12,11 @@ The simplest way to get started with a fresh new machine is to download this rep
 
 - unzip the file
 - in a command line (terminal for OSX, cygwin for Windows), cd into the folder
-- run `./bin/dev.sh init`
+- run `./bin/dev init`
 
 > NOTE: OSX is currently supported, Windows is coming soon :)
 
-### Requirements (installed via ./bin/dev.sh init)
+### Requirements (installed via ./bin/dev init)
 
 * git                   - for cloning this repo
 * Vagrant >= 1.6.3      - to spin up and configure vagrant box to have packer and docker installed
@@ -29,12 +29,12 @@ The simplest way to get started with a fresh new machine is to download this rep
 # basic setup
 git clone git@github.disney.com:DTSS/ADE.git;
 cd ADE;
-./bin/dev.sh init               # initialze working environment, setup vagrant box, and build docker a base image
+./bin/dev init               # initialze working environment, setup vagrant box, and build docker a base image
 
 # extra commands
-./bin/dev.sh start              # only spin up vagrant box and a build docker base image
-./bin/dev.sh reload             # restart vagrant box and rebuild a docker base image
-./bin/dev.sh recreate           # cleanup vagrant environment and rebuild everything
+./bin/dev start              # only spin up vagrant box and a build docker base image
+./bin/dev reload             # restart vagrant box and rebuild a docker base image
+./bin/dev recreate           # cleanup vagrant environment and rebuild everything
 ```
 
 ### Configure Mount Directories (optional)
@@ -110,7 +110,7 @@ Each node config can contain any of these options:
     ├── README.md                 # This document
     ├── Thorfile                  # Thor initialize file
     ├── bin                       # A directory contains various scripts related to environment/docker configuration
-    │   ├── dev.sh
+    │   ├── dev
     │   ├── devenv
     │   ├── devenv.rb
     │   ├── install_brewcask.sh

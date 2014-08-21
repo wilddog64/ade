@@ -44,13 +44,6 @@ start(){
 	sleep 1
 }
 
-update() {
-	apt-get update
-	apt-get install -y lxc-docker
-
-    /vagrant/bin/update.sh
-}
-
 imp() {
     echo "Importing registry: DISABLED as import seems to miss CMD in the image"
 	# /vagrant/bin/import-repo.sh

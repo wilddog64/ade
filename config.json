@@ -33,8 +33,10 @@
     "vagrant_port_forwards": [{
             "guest": 80,
             "host": 80
-        },
-        {
+        },{
+            "guest": 8000,
+            "host": 8000
+        },{
             "guest": 8080,
             "host": 8080
         },{ // shipyard
