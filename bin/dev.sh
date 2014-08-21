@@ -29,19 +29,23 @@ function init_devenv() {
         error "This setup is not yet tested on cygwin. Please pull request updates!"
     else
         error "Sorry, your environment is unsupported. Please order a macbook :)"
+		exit -1
     fi
 
     # (~/src will be automatically shared into dev nodes)
+    # safely make it if it doesn't exist
     mkdir -p ~/src
 
     require_cask vagrant
     install_all_rubygems
 
-    # ensure we can run dev.sh init more than once without intervention
+    running "generate config files"
+    # remove generated files
     rm -rf Vagrantfile
-
     # create new Vagrantfile from template
     thor devenv:vagrant
+    ok
+
     source ./bin/install_vagrant_plugins.sh
     install_vagrant_plugins
 
@@ -50,7 +54,7 @@ function init_devenv() {
         vagrant reload --provision
         ok
     else
-        running "starting vagrant"
+        echo "starting vagrant..."
         vagrant up
         ok
     fi
