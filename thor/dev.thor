@@ -41,7 +41,7 @@ module Devenv
       current_path = File.expand_path( File.dirname( path ) )
 
       json_file_path = File.join( current_path, json_file )
-      say "json file is #{json_file_path}", :yellow
+      # say "json file is #{json_file_path}", :yellow
       JSON.parse( IO.read( json_file_path ) )
     end
   end

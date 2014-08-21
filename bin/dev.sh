@@ -39,10 +39,10 @@ function init_devenv() {
     require_cask vagrant
     install_all_rubygems
 
-    running "generate config files"
+    echo "generating config files:"
     # remove generated files
-    rm -rf Vagrantfile
-    # create new Vagrantfile from template
+    rm -rf Vagrantfile bin/install_vagrant_plugins.sh
+    # create new configs from templates
     thor devenv:vagrant
     ok
 
@@ -50,11 +50,11 @@ function init_devenv() {
     install_vagrant_plugins
 
     if [[ $reload = 1 ]]; then
-        running "reloading vagrant"
+        echo "reloading vagrant:"
         vagrant reload --provision
         ok
     else
-        echo "starting vagrant..."
+        echo "starting vagrant:"
         vagrant up
         ok
     fi
