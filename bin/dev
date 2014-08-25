@@ -21,7 +21,7 @@ function clean(){
 }
 function init_devenv() {
 
-	bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.disney.com/DTSS/ADE/issues"
+    bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.disney.com/DTSS/ADE/issues"
 
     local reload=$1
 
@@ -36,7 +36,7 @@ function init_devenv() {
         error "This setup is not yet tested on cygwin. Please pull request updates!"
     else
         error "Sorry, your environment is unsupported. Please order a macbook :)"
-		exit -1
+        exit -1
     fi
 
     # (~/src will be automatically shared into dev nodes)
@@ -76,7 +76,14 @@ function purge() {
     brew cask uninstall vagrant > /dev/null 2>&1
     gem uninstall bundle > /dev/null 2>&1
     brew uninstall rbenv > /dev/null 2>&1
-    ok "all clear - now run './bin/dev init' again to spin up anew :)"
+    bot "all clear. We can now run './bin/dev init' again to spin up anew."
+    read -r -p "Would you like me to run 'init' for you now? [Y|n] " response
+
+    if [[ $response =~ ^(no|n|N) ]];then
+        exit 0
+    else
+        init_devenv
+    fi
 }
 
 function reload_devenv() {
@@ -87,7 +94,7 @@ function reload_devenv() {
 }
 
 function recreate() {
-	clean
+    clean
     thor devenv:vagrant
     vagrant destroy -f
     vagrant up
@@ -120,4 +127,3 @@ case "$1" in
 esac
 
 cd - > /dev/null
-
