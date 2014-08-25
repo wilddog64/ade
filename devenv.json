@@ -14,7 +14,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "/vagrant/scripts/lamp.sh"
+            "script": "/vagrant/scripts/portal.sh"
         }
     ],
     "post-processors": [
