@@ -8,8 +8,6 @@
 # install just the normal portal
 #curl -s https://github.disney.com/Portal/portal_application_framework/raw/master/install.sh | bash
 
-source ../lib/lib.sh
-
 #!/bin/bash
 
 # environment
@@ -25,14 +23,12 @@ APACHE_USER="apache";
 # for DTSS Managed, this should be MGMTPROD\\domain^users
 APACHE_GROUP="apache";
 
-running "installing LAMP stack"
 # Install and configure Zend/PHP, Git and needed extensions
 yum install -y -q make gcc dos2unix httpd php php-mysql git-core wget;
 # Create .ini entry to load the env extension
 #echo "extension=env.so" > /usr/local/zend/etc/conf.d/env.ini;
 # Make sure user:group ownership and permissions for the new env.ini match other .ini files
 #chmod 664 /usr/local/zend/etc/conf.d/env.ini;
-ok
 
 # bypass https cert error
 git config --global http.sslVerify false;
