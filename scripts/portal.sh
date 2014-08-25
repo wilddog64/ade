@@ -26,7 +26,7 @@ APACHE_USER="apache";
 APACHE_GROUP="apache";
 
 # Install and configure Zend/PHP, Git and needed extensions
-yum install -y dos2unix httpd php php-mysql git-core;
+yum install -y dos2unix httpd php php-mysql git-corew wget;
 # Create .ini entry to load the env extension
 #echo "extension=env.so" > /usr/local/zend/etc/conf.d/env.ini;
 # Make sure user:group ownership and permissions for the new env.ini match other .ini files
@@ -48,10 +48,13 @@ sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 2000M/' /etc/php.ini;
 sed -i 's/;date.timezone =/date.timezone = "UTC"/' /etc/php.ini;
 sed -i 's/memory_limit = 128M/memory_limit = 512M/' /etc/php.ini;
 sed -i 's/expose_php = On/expose_php = Off/' /etc/php.ini;
+
+
 # esure system time is UTC!
-cp /usr/share/zoneinfo/UTC /etc/localtime;
-sed -i "s/America\/Los_Angeles/UTC/" /etc/sysconfig/clock;
-sed -i "s/America\/NewYork/UTC/" /etc/sysconfig/clock;
+# only required on IaaS default image!
+#cp /usr/share/zoneinfo/UTC /etc/localtime;
+#sed -i "s/America\/Los_Angeles/UTC/" /etc/sysconfig/clock;
+#sed -i "s/America\/NewYork/UTC/" /etc/sysconfig/clock;
 
 # install SSL
 yum install -y mod_ssl;
