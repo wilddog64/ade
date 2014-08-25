@@ -25,6 +25,7 @@
             "keep_input_artifact": true,
             "run_command": [
                 "run",
+                "--name portal",
                 "-d",
                 "-P",
                 "httpd",

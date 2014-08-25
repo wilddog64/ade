@@ -91,7 +91,7 @@ function require_vagrant_plugin() {
 
     if [[ $grepStatus != $grepExpect ]];
         then
-            action "installing vagrant plugin $1 $2"
+            action "missing vagrant plugin $1 $2"
             if [[ ! -z $vagrant_plugin_version ]]; then
                 vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
             else

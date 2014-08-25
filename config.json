@@ -28,6 +28,11 @@
             "name": "vagrant-cachier",
             "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
             "version": ""
+        },
+        {
+            "name": "vagrant-docker-nsenter",
+            "options": [],
+            "version": ""
         }
     ],
     "vagrant_port_forwards": [{
@@ -45,6 +50,12 @@
         },{ // shipyard
             "guest": 8005,
             "host": 8005
+        },{
+        	"guest":49155,
+        	"host":49155
+        },{
+        	"guest":5000,
+        	"host":5000
         }
     ]
 }

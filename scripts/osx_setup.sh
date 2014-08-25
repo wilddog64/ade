@@ -26,11 +26,11 @@ grep desktop.framework.corp.disney.com /etc/hosts
 if [[ $? != 0 ]]; then
 	action "adding hosts file entries"
 	sudo chown $(whoami) /etc/hosts
-	echo "\n127.0.0.1 desktop.framework.corp.disney.com" >> /etc/hosts
+	echo -e "\n127.0.0.1 desktop.framework.corp.disney.com" >> /etc/hosts
 	# if the user is running cisco anyconnect VPN software, they will have a special
 	# /etc/hosts.ac file that copies back over /etc/hosts periodically
 	sudo chown $(whoami) /etc/hosts.ac
-	echo "\n127.0.0.1 desktop.framework.corp.disney.com" >> /etc/hosts.ac
+	echo -e "\n127.0.0.1 desktop.framework.corp.disney.com" >> /etc/hosts.ac
 fi
 ok
 

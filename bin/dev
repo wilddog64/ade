@@ -83,8 +83,7 @@ function reload_devenv() {
     export RELOAD=1
     clean
     thor devenv:vagrant
-    vagrant reload
-    vagrant provision
+    vagrant reload --provision
 }
 
 function recreate() {
