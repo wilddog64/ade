@@ -24,7 +24,11 @@ APACHE_USER="apache";
 APACHE_GROUP="apache";
 
 # Install and configure Zend/PHP, Git and needed extensions
-yum install -y -q make gcc dos2unix httpd php php-mysql git-core wget;
+yum install -y -q dos2unix httpd php php-mysql git-core wget;
+
+# for Redis:
+# yum install -y -q make gcc;
+
 # Create .ini entry to load the env extension
 #echo "extension=env.so" > /usr/local/zend/etc/conf.d/env.ini;
 # Make sure user:group ownership and permissions for the new env.ini match other .ini files

@@ -15,6 +15,10 @@ cd $SCRIPT_HOME/..
 
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
+function clean(){
+    rm -rf Vagrantfile
+    rm -rf ./bin/install_vagrant_plugins.sh
+}
 function init_devenv() {
 
 	bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.disney.com/DTSS/ADE/issues"
@@ -44,7 +48,7 @@ function init_devenv() {
 
     echo "generating config files:"
     # remove generated files
-    rm -rf Vagrantfile bin/install_vagrant_plugins.sh
+    clean
     # create new configs from templates
     thor devenv:vagrant
     ok
@@ -62,14 +66,13 @@ function init_devenv() {
         ok
     fi
 
-    # now we can load shipyard
-    open http://localhost:8000
+    # load server:
+    open http://localhost
 }
 
 function purge() {
     vagrant halt > /dev/null 2>&1
-    rm -rf Vagrantfile
-    rm -rf ./bin/install_vagrant_plugins.sh
+    clean
     brew cask uninstall vagrant > /dev/null 2>&1
     gem uninstall bundle > /dev/null 2>&1
     brew uninstall rbenv > /dev/null 2>&1
@@ -78,18 +81,19 @@ function purge() {
 
 function reload_devenv() {
     export RELOAD=1
-    rm -rf Vagrantfile
+    clean
     thor devenv:vagrant
-    vagrant reload --provision
+    vagrant reload
+    vagrant provision
 }
 
 function recreate() {
-    rm -rf Vagrantfile
-    rm -rf ./bin/install_vagrant_plugins.sh
+	clean
     thor devenv:vagrant
     vagrant destroy -f
     vagrant up
 }
+
 
 case "$1" in
     init)
