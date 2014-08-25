@@ -8,7 +8,7 @@
 # install just the normal portal
 #curl -s https://github.disney.com/Portal/portal_application_framework/raw/master/install.sh | bash
 
-
+source ../lib/lib.sh
 
 #!/bin/bash
 
@@ -25,12 +25,14 @@ APACHE_USER="apache";
 # for DTSS Managed, this should be MGMTPROD\\domain^users
 APACHE_GROUP="apache";
 
+running "installing LAMP stack"
 # Install and configure Zend/PHP, Git and needed extensions
-yum install -y dos2unix httpd php php-mysql git-corew wget;
+yum install -y -q make gcc dos2unix httpd php php-mysql git-core wget;
 # Create .ini entry to load the env extension
 #echo "extension=env.so" > /usr/local/zend/etc/conf.d/env.ini;
 # Make sure user:group ownership and permissions for the new env.ini match other .ini files
 #chmod 664 /usr/local/zend/etc/conf.d/env.ini;
+ok
 
 # bypass https cert error
 git config --global http.sslVerify false;
@@ -57,7 +59,7 @@ sed -i 's/expose_php = On/expose_php = Off/' /etc/php.ini;
 #sed -i "s/America\/NewYork/UTC/" /etc/sysconfig/clock;
 
 # install SSL
-yum install -y mod_ssl;
+yum install -y --quiet mod_ssl;
 
 # change apache to run on 80 and 443:
 sed -i 's/Listen 127.0.0.1:8091/Listen 80/' /etc/httpd/conf/httpd.conf;
@@ -90,16 +92,24 @@ rm -f /etc/httpd/conf.d/welcome.conf;
 
 
 # redis
-wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
-yum install redis -y
+# wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+# wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+# rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
+# yum install redis -y
 
 # for external access
-nohup redis-server&
+# nohup redis-server&
 
 # for internal node access
-/etc/init.d/redis start
+# /etc/init.d/redis start
+
+# only necessary on DOCKER!
+# lest mysqld won't start:
+# /sbin/service mysqld start
+# /etc/init.d/mysqld: line 23: /etc/sysconfig/network: No such file or directory
+# https://www.centos.org/forums/viewtopic.php?t=5050
+# http://erwyn.piwany.com/docker-io-vagrant-for-lxc/
+echo "HOSTNAME=internal.hostname.DOMAIN.com" > /etc/sysconfig/network
 
 # mysql
 yum install -y mysql-server mysql-client;

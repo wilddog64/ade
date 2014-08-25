@@ -16,13 +16,16 @@ cd $SCRIPT_HOME/..
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
 function init_devenv() {
+
+	bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.disney.com/DTSS/ADE/issues"
+
     local reload=$1
 
     platform=`uname`
     running "checking OS compatibility"
     if [[ "$platform" == "Darwin" ]]; then
         ok
-        ./scripts/osx_setup.sh
+        source scripts/osx_setup.sh
         install_homebrew
         install_brewcask
     elif [[ "$platform" == "cygwin" ]]; then
