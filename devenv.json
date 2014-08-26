@@ -27,14 +27,11 @@
             "type": "docker-import",
             "repository": "{{user `private`}}/bde_devenv",
             "tag": "{{user `version`}}",
-            "keep_input_artifact": true,
             "run_command": [
                 "run",
-                "--name portal",
+                "-t {{user `private`}}/bde_devenv",
                 "-d",
-                "-P",
-                "httpd",
-                "-D FOREGROUND"
+                "supervisord -c /etc/ade_supervisord.conf && tail -f /dev/null"
             ]
         }
     ]
