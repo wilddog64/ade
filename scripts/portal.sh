@@ -124,5 +124,3 @@ mysql -u root < portal_test.sql;
 sed -i 's/User apache/User '$APACHE_USER'/' /etc/httpd/conf/httpd.conf;
 sed -i 's/Group apache/Group '$APACHE_GROUP'/' /etc/httpd/conf/httpd.conf;
 chown -R $APACHE_USER:$APACHE_GROUP /var/www/html;
-# restart apache
-/etc/init.d/httpd restart
