@@ -43,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   if not ENV.has_key?( 'RELOAD' )
     config.vm.provision :shell, inline: 'packer build /vagrant/devenv.json'
-    config.vm.provision :shell, inline: 'docker run -d -t -p 8091:8091 docker-reg.cloud.corp.dig.com:5000/bde_devenv bash -c "supervisord -c /etc/ade_supervisord.conf && tail -f /dev/null"'
+    config.vm.provision :shell, inline: 'docker run -d -t -p 8001:8001 docker-reg.cloud.corp.dig.com:5000/bde_devenv bash -c "supervisord -c /etc/ade_supervisord.conf && tail -f /dev/null"'
   end
 
 

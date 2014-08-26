@@ -65,12 +65,12 @@ sed -i 's/expose_php = On/expose_php = Off/' /etc/php.ini;
 yum install -y --quiet mod_ssl;
 
 # change apache to run on 80 and 443:
-#sed -i 's/Listen 127.0.0.1:8091/Listen 80/' /etc/httpd/conf/httpd.conf;
+sed -i 's/Listen 127.0.0.1:8091/Listen 8001/' /etc/httpd/conf/httpd.conf;
 # replace default doc root
 sed -i 's/"\/var\/www\/html"/"\/var\/www\/html\/public"/' /etc/httpd/conf/httpd.conf;
 
 # add vhost
-echo '<VirtualHost *:80>
+echo '<VirtualHost *:8001>
     ServerName '$DOMAIN'
     DocumentRoot "/var/www/html/public"
 
