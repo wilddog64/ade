@@ -112,7 +112,7 @@ rm -f /etc/httpd/conf.d/welcome.conf;
 echo "HOSTNAME=internal.hostname.DOMAIN.com" > /etc/sysconfig/network
 
 # mysql
-yum install -y mysql-server mysql-client;
+yum install -y mysql-server mysql-client supervisord;
 /etc/init.d/mysqld restart;
 cd /var/www/html/db/;
 mysql -u root < portal_user.sql;
