@@ -26,13 +26,7 @@
         {
             "type": "docker-import",
             "repository": "{{user `private`}}/bde_devenv",
-            "tag": "{{user `version`}}",
-            "run_command": [
-                "run",
-                "-t {{user `private`}}/bde_devenv",
-                "-d",
-                "supervisord -c /etc/ade_supervisord.conf && tail -f /dev/null"
-            ]
+            "tag": "{{user `version`}}"
         }
     ]
 }
