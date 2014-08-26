@@ -42,6 +42,9 @@
         },{
             "guest": 8080,
             "host": 8080
+        },{
+            "guest": 8091,
+            "host": 8091
         },{ // shipyard
             "guest": 8005,
             "host": 8005
