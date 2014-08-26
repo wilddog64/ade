@@ -8,8 +8,6 @@
 # install just the normal portal
 #curl -s https://github.disney.com/Portal/portal_application_framework/raw/master/install.sh | bash
 
-#!/bin/bash
-
 # environment
 ENV="desktop_osx";
 DOMAIN="desktop.framework.corp.disney.com";
