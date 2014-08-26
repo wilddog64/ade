@@ -15,6 +15,11 @@
         {
             "type": "shell",
             "script": "/vagrant/scripts/portal.sh"
+        },
+        {
+            "type": "file",
+            "source": "/vagrant/etc/ade_supervisord.conf",
+            "destination": "/etc/ade_supervisord.conf"
         }
     ],
     "post-processors": [
