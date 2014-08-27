@@ -22,10 +22,10 @@ APACHE_USER="apache";
 APACHE_GROUP="apache";
 
 ## Epel Dependency on RHEL/CentOS 6 ##
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -U http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
 ## Remi Dependency on RHEL/CentOS 6 ##
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+rpm -U http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 # Install and configure Zend/PHP, Git and needed extensions
 yum install -y -q dos2unix httpd git-core wget
