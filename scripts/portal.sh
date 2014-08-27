@@ -62,19 +62,20 @@ sed -i 's/expose_php = On/expose_php = Off/' /etc/php.ini;
 # install SSL
 yum install -y --quiet mod_ssl;
 
-# change apache to run on 80 and 443:
-sed -i 's/Listen 127.0.0.1:8091/Listen 8001/' /etc/httpd/conf/httpd.conf;
+# change apache to run on 80:
+sed -i 's/Listen 127.0.0.1:8091/Listen 80/' /etc/httpd/conf/httpd.conf;
 # replace default doc root
 sed -i 's/"\/var\/www\/html"/"\/var\/www\/html\/public"/' /etc/httpd/conf/httpd.conf;
 
 # add vhost
-echo '<VirtualHost *:8001>
+echo '<VirtualHost *:80>
     ServerName '$DOMAIN'
     DocumentRoot "/var/www/html/public"
 
     RewriteEngine On
     RewriteCond %{HTTPS} off
-    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+    RewriteCond %{REQUEST_URI} !^/service-status
+    RewriteRule (.*) https://%{HTTP_HOST}:1901%{REQUEST_URI}
 
     SetEnv APPLICATION_ENV '$ENV'
 
@@ -83,6 +84,8 @@ echo '<VirtualHost *:8001>
         Allow from all
     </Directory>
 </VirtualHost>' > /etc/httpd/conf.d/portal.conf
+
+#sed -i 's/443/1901/' /etc/httpd/conf.d/ssl.conf;
 
 # add .htaccess allowance# add .htaccess allowance
 # make sure the environment is set in SSL mode

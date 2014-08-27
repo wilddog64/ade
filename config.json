@@ -31,24 +31,6 @@
         }
     ],
     "vagrant_port_forwards": [{
-            "guest": 80,
-            "host": 80
-        },{
-            "guest": 443,
-            "host": 443
-        },{
-            "guest": 8000,
-            "host": 8000
-        },{
-            "guest": 8080,
-            "host": 8080
-        },{
-            "guest": 8001,
-            "host": 8001
-        },{ // shipyard
-            "guest": 8005,
-            "host": 8005
-        },{
         	"guest":49155,
         	"host":49155
         },{

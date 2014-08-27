@@ -24,6 +24,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     <%- end -%>
   <%- end -%>
 
+  (18001..18010).each do |port|
+    config.vm.network :forwarded_port, :host => port, :guest => port
+  end
+  (19001..19010).each do |port|
+    config.vm.network :forwarded_port, :host => port, :guest => port
+  end
+
   <%- config[:vagrant_plugins].each do | vagrant_plugin | -%>
   if Vagrant.has_plugin?( '<%=vagrant_plugin["name"]-%>' )
     <%- if vagrant_plugin['options'].count > 0 -%>
