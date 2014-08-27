@@ -21,9 +21,17 @@ APACHE_USER="apache";
 # for DTSS Managed, this should be MGMTPROD\\domain^users
 APACHE_GROUP="apache";
 
+## Epel Dependency on RHEL/CentOS 6 ##
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+
+## Remi Dependency on RHEL/CentOS 6 ##
+rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+
 # Install and configure Zend/PHP, Git and needed extensions
-yum install -y -q dos2unix httpd php php-mysql git-core wget
+yum install -y -q dos2unix httpd git-core wget
 yum install -y -q python python-setuptools.noarch
+yum --enablerepo=remi install -y -q php-ZendFramework
+
 
 easy_install supervisor
 
@@ -74,8 +82,8 @@ echo '<VirtualHost *:80>
 
     RewriteEngine On
     RewriteCond %{HTTPS} off
-    RewriteCond %{REQUEST_URI} !^/service-status
-    RewriteRule (.*) https://%{HTTP_HOST}:1901%{REQUEST_URI}
+    RewriteCond %{REQUEST_URI} !^/service-status [NC]
+    RewriteRule ^http://([^:]+)(.*)?$ https://%1:1901%{REQUEST_URI}
 
     SetEnv APPLICATION_ENV '$ENV'
 
