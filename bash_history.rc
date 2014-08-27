@@ -1,0 +1,2000 @@
+ls /tmp
+ls /tmp/log/
+sudo ls /var/lib/docker/volumes
+sudo ls /var/lib/docker/
+sudo ls /var/lib/docker/containers
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec
+sudo vi /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec-json.log
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hostconfig.json
+sudo vi /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hostconfig.json
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hostname
+sudo vi /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hostname
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/
+sudo ls /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hosts
+sudo vi /var/lib/docker/containers/3253aaf4a69e953e5a3982a2fb51362d62cf98ca3a1a459da552d9ee41ca32ec/hosts
+ls -al
+docker ps -a
+ps aux
+docker run -i -t jarvis:all_in_one bash
+iptables -L -n
+sudo iptables -L -n
+ifconfig
+udo iptables -t nat -L -n
+sudo iptables -t nat -L -n
+docker run -i --rm -t jarvis:all_in_one bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker images
+docker ps -a
+sudo netstat -an
+sudo netstat -an | grep 3032
+telnet 127.0.0.1 3032
+telnet 127.0.0.1 22
+docker run -v /usr/local/bin:/target jpetazzo/nsenter
+docker ps -a
+docker inspect --format {{.State.Pid}} 3253aaf4a69e
+netsenter --target $(docker inspect --format {{.State.Pid}} 3253aaf4a69e) --mount -uts --ipc --net --pid
+docker run -i --rm -t jarvis:all_in_one bash
+docker-enter 
+docker-enter 6146
+docker-enter 
+docker-enter 3253aaf4a69e
+sudo docker-enter 3253aaf4a69e
+docker-enter 3253aaf4a69e ls -al
+docker-enter 32554f0e46f7
+where docker-enter
+which docker-enter 
+file $(which docker-enter)
+vi $(which docker-enter)
+docker images
+docker-enter jarvis:all_in_one
+docker-enter 34cfc8b784d7
+docker ps -a
+docker-enter 3253aaf4a69e
+sudo docker-enter 3253aaf4a69e
+ls /proc/6146
+ls /proc/6146/cwd
+sudo ls /proc/6146/cwd
+sudo docker-enter 3253aaf4a69e
+sudo ls /proc/6146/ns
+docker inspect --format {{.State.Pid}} jarvis::all_in_one
+docker inspect --format {{.State.Pid}} jarvis:all_in_one
+docker ps -a
+docker inspect --format {{.State.Pid}} 3253aaf4a69e
+nsenter --target 6146 --mount --uts --net --pid
+sudo nsenter --target 6146 --mount --uts --net --pid
+sudo nsenter --target 6146 --mount --uts --net --ipc
+sudo nsenter --target 6146 --uts --net --ipc
+docker run
+docker ps -a
+docker stop 3253aaf4a69e
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 -v /var/log -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+ls /tmp/
+ls /tmp/log/
+sudo nsenter --target $(docker inspect --format {{.State.Pid}}) --uts --net --ipc
+sudo nsenter --target $(docker inspect --format {{.State.Pid}} 7005d27a1f3b) --uts --net --ipc
+
+docker stop 7005d27a1f3b
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 --rm -v /var/log -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker run -p 127.0.0.1:3032:3032  -v /var/log -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+sudo nsnter --target $(docker inspect --format {{.State.Pid}} jarvis:all_in_one) --uts --net --ipc
+sudo nsenter --target $(docker inspect --format {{.State.Pid}} jarvis:all_in_one) --uts --net --ipc
+sudo nsenter --target $(docker inspect --format {{.State.Pid}} 042de3c3324a) --uts --net --ipc
+ls -al
+ps aux
+docker images
+docker ps -a
+docker inspect 042de3c3324a
+docker ps -a
+docker stop 042de3c3324a
+ls -al
+docker ps -a -q | xargs docker rm
+docker ps
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+ps -aux
+ps aux
+docker ps -a
+sudo nsenter --target $(docker inspect --format {{.State.Pid}} 9e9bef27581c) --uts --net --ipc
+ls -al
+sudo netstat -anel
+telnet 
+ifconfig 
+telnet 172.17.42.1 6379
+telnet 172.17.42.1 
+telnet 127.0.0.1 3032
+sudo apt-get install redis
+sudo apt-get install redis-server
+sudo service redis-server stop
+redis-cli -h 172.17.42.1
+docker ps
+docker stop 9e9bef27581c
+ls -al
+docker run -P -d -t jarvis:all_in_one bash -c 'redis-server& && nodemon /data/apps/prod/jarvis/server.js'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -P -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+redis-cli -h 172.17.42.1
+ls -al
+ifconfig docker0
+ifconfig docker0 | awk '{ print }'
+ifconfig docker0 | perl -ne 'print $1 if /inet addr:(.*?) /'
+ssh root@$(ifconfig docker0 | perl -ne 'print $1 if /inet addr:(.*?) /')
+ssh vagrant@$(ifconfig docker0 | perl -ne 'print $1 if /inet addr:(.*?) /')
+ls /var/lib/docker/
+sudo ls /var/lib/docker/
+sudo ls /var/lib/docker/containers
+sudo ls /var/lib/docker/containers/vfs
+sudo ls /var/lib/docker/containers/
+sudo ls /var/lib/docker/containers/b55ca00bb815ec0bfc786cb8473e2ca5456b2fe9e21d6f4dd9c993312b753f40
+sudo ls /var/lib/docker/
+sudo ls /var/lib/docker/vfs
+sudo ls /var/lib/docker/vfs/dir
+sudo ls /var/lib/docker/vfs/dir/0e021fdf0022dd5431e1b48963838ed3da5b76f09895c37b195f77548272962b
+sudo ls /var/lib/docker/vfs/dir/0e021fdf0022dd5431e1b48963838ed3da5b76f09895c37b195f77548272962b/redis
+sudo ls /var/lib/docker/vfs/dir/2e37f77d984064e9eb5b0097fba0ec63882f5b12addfe8107ce485a6066a7ada
+sudo ls /var/lib/docker/vfs/dir/2e37f77d984064e9eb5b0097fba0ec63882f5b12addfe8107ce485a6066a7ada/yum.log
+sudo cat /var/lib/docker/vfs/dir/2e37f77d984064e9eb5b0097fba0ec63882f5b12addfe8107ce485a6066a7ada/yum.log
+sudo ls /var/lib/docker/
+sudo ls /var/lib/docker/volumes
+sudo ls /var/lib/docker/volumes/0e021fdf0022dd5431e1b48963838ed3da5b76f09895c37b195f77548272962b
+sudo ls /var/lib/docker/volumes/2e37f77d984064e9eb5b0097fba0ec63882f5b12addfe8107ce485a6066a7ada
+sudo ls /var/lib/docker/volumes/_tmp
+sudo su -
+docker ps -a
+ssh vagrant@$(ifconfig docker0 | perl -ne 'print $1 if /inet addr:(.*?) /')
+ps aux
+ls -al
+ssh vagrant@$(ifconfig docker0 | perl -ne 'print $1 if /inet addr:(.*?) /')
+docker ps -a
+whoami
+history 
+history  | grep nsenter
+docker ps -a
+telnet localhost 49154
+ifconfig docker0
+telnet 172.17.42.1 3032
+telnet 172.17.42.1 6379
+docker ps -a
+docker stop b55ca00bb815
+docker images
+docker inspect 34cfc8b784d7
+docker run -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+telnet 172.17.42.1 3032
+docker ps -a
+ps aux
+docker ps -a
+docker stop 08a503a5ceaa
+docker run -P --name jarvis -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+netstat -anel
+ls -al
+netstat -anel
+ps aux
+cd /vagrant/redis_build/
+docker build --no-cache --rm -t redis_server .
+docker ps -a
+docker stop 80ac8e35768c
+docker build --no-cache --rm -t redis_server .
+netstat -anel
+ps aux
+vi /etc/redis/redis.conf 
+ls -al
+cd /vagrant/redis_build/
+docker build --no-cache --rm -t redis_server .
+docker images
+docker run -d -t redis_server --name redis_server bash -c '/usr/sbin/redis-server'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run --name redis-server -d -t redis_server bash -c '/usr/sbin/redis-server'
+docker ps -a
+docker run --link redis-server:db -P --name jarvis -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker run -i -t jarvis:all_in_one bash
+docker ps -a
+docker stop cc59525b738b
+docker stop 10d497bbb3a4
+docker ps -a -q | xargs docker rm
+docker ps 
+ls -al
+vi Dockerfile 
+docker ps 
+docker images
+docker rmi redis_server
+docker build --no-cache --rm -t bde_redis .
+docker ps
+docker ps -a -q | xargs docker rm
+ps aux
+docker run --name redis -t redis_server bash -c '/usr/sbin/redis-server'
+docker images
+docker run --name redis -t bde_redis bash -c '/usr/sbin/redis-server'
+docker run -d --name redis -t bde_redis bash -c '/usr/sbin/redis-server'
+docker ps -a
+netstat -anel
+telnet 127.0.0.1 6379
+redis-cli -h 127.0.0.1
+netstat -anel
+ls -al
+cd ../jarvis_build/
+ls -al
+docker build --no-cache --rm -t bde_jarvis .
+docker images
+docker rmi bde_jarvis
+ls -al
+cd all_in_one/
+docker build --no-cache --rm -t bde_jarvis .
+docker run -i -t bde_jarvis bash
+ls -al
+docker ps -a -q | xargs docker rm
+docker ps
+docker run --rm -i --link redis:db -t bde_jarvis bash
+docker ps
+ll
+ls -al
+history 
+docker run --link redis-server:db -P --name jarvis -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker images
+docker run --link redis-server:db -P --name jarvis -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker run -P --name jarvis -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker run -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+sudo nsenter --target $(docker inspect --format {{.State.Pid}} ed790af63157) --uts --net --ipc
+ls -al
+docker run --rm -i -t bde_jarvis bash
+ps aux
+ls /proc/sys/
+which nsenter
+vi $(which nsenter)
+file $(which nsenter)
+ps aux
+docker ps
+docker stop ed790af63157
+docker run --name jarvis -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps
+docker stop 7f3d663d0afc
+docker run -i --link jarvis:service -t bde_redis bash -c '/usr/sbin/redis-server'
+docker ps -a
+docker stop 96d9abd60f2b
+docker ps -a --no-trunc
+docker stop ed790af63157844f7d076237bbaf304afac94ba35570f4b93d43d62a2582f246
+docker stop 2c1ade6c3b100ec3a0b017d87dc18dc553fa2b8ab2abd0f850726f8791c84493
+docker run -i --link jarvis:service -t bde_redis bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+docker run --name jarvis -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker images
+docker run -i --link jarvis:service -t bde_redis bash
+cd /vagrant/jarvis_build/all_in_one/
+vi supervisord.conf 
+ls -al
+docker images
+docker rmi bde_redis
+docker ps 
+docker stop 741d84c64acf
+docker ps -a -q | xargs docker rm
+docker ps
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi bde_jarvis
+docker images
+docker build --no-cache --rm -t bde_jarvis .
+docker ps
+docker run --name jarvis -d -t bde_jarvis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+ifconfig docker0
+telnet 172.17.42.1 3032
+ps aux
+docker ps -a
+docker stop 6325deaeaa57
+ls -al
+docker ps 
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker build --no-cache --rm -t bde_jarvis .
+docker run --name jarvis -i -t bde_jarvis bash
+lynx http://172.17.42.1:3032
+sudo yum install lynx -y
+sudo apt-get install lynx -y
+lynx http://172.17.42.1:3032
+ll
+ps aux
+docker ps -a
+docker attatch 46d4b53de6a2
+docker attach 46d4b53de6a2
+yum search forever
+aptitude search forever
+gem list -r forever
+ruby -v
+ls -al
+ls .aptitude/
+ls .aptitude/config 
+cat .aptitude/config 
+cat .aptitude/cache 
+ls .aptitude/cache 
+file .aptitude/cache 
+brew update.sh 
+ls -al
+cd /vagrant/
+ls -al
+cd jarvis_build/
+ls -al
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+ls -al
+vi Dockerfile 
+ls -al
+
+ls -al
+docker images
+vi Dockerfile
+docker build --no-cache --rm -t jarvis:all_in_one .
+ls -al
+h
+history
+history | grep -p
+history | grep 3032
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+ps aux
+telnet localhost 3032
+ls -al
+which nsenter
+file $(which nsenter)
+docker --version
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+pwd
+ls -al
+pwd
+ls -al
+ls /data/
+ls -al
+ls /var/lib/docker/
+ls -al /var/lib/docker/
+ls -al /var/lib/docker/volumes/
+ls -al /var/lib/docker/containers/
+ls -al /var/lib/docker/containers/568accb0cc1d744245f0d703fc4c3e61fb69996c542a7ab016a2230ac8616e1b/
+cat /var/lib/docker/containers/568accb0cc1d744245f0d703fc4c3e61fb69996c542a7ab016a2230ac8616e1b/config.json 
+netstat -anel
+ps aux
+file $(which nsenter)
+docker-enter 
+vi $(which docker-enter)
+docker ps -a
+docker-enter 568accb0cc1d
+sudo docker-enter 568accb0cc1d
+sudo vi $(which docker-enter)
+sudo docker-enter 568accb0cc1d
+sudo vi $(which docker-enter)
+sudo docker-enter 568accb0cc1d
+docker ps -a
+ifconfig docker0
+telnet 172.17.42.1 6379
+ps aux
+docker ps -a
+docker stop 568accb0cc1d
+docker run --rm --name jarvis -i -t jarvis:all_in_one bash
+docker ps -a
+docker attach f53051eea553
+telnet 172.17.42.1 6379
+docker attach f53051eea553
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker images
+docker ps -a
+ls -al
+cd ..
+ls -al
+cat Dockerfile 
+nsenter
+j cms_tomcat_app
+cd /vagrant/jarvis_build/
+cd all_in_one/
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker build --rm -t jarvis:all_in_one .
+history 
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+telnet localhost 3032
+dcoker run
+docker run
+docker
+docker events 
+docker logs
+docker images
+docker ps -a
+docker logs 568accb0cc1d
+ls -al
+nsenter
+docker logs
+docker logs --tail 0 -f 568accb0cc1d
+docker ps -a
+docker logs --tail 0 -f 568accb0cc1d
+docker logs 568accb0cc1d
+sudo netstat -anel
+ssh vagrant@127.0.0.1
+ifconfig docker0
+lynx http://172.17.42.1:3032
+sudo apt-get install lynx
+sudo apt-get install lynx -y
+lynx http://172.17.42.1:3032
+ls -al
+docker run -v /usr/local/bin:/target jpetazzo/nsenter
+nsenter
+j cms_tomcat_app
+cd /vagrant/
+ls -al
+cd redis_build/
+ls -al
+docker build --no-cache --rm -t redis .
+docker ps -a
+docker run -p 127.0.0.1:6379:6379 -d -t redis --name redis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker run --name redis -p 127.0.0.1:6379:6379 -d -t redis bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run --name redis -p 127.0.0.1:6379:6379 -d -t redis bash -c '/usr/bin/supervisord -n -c /usr/sbin/redis-server'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run --name redis -p 127.0.0.1:6379:6379 -d -t redis bash -c '/usr/sbin/redis-server'
+docker ps -a
+sudo apt-get install redis -y
+sudo apt-get install redis-server -y
+sudo service redis-server stop
+redis-cli -h 127.0.0.1
+ls -al
+ifconfig docker0
+redis-cli -h 172.17.42.1
+docker ps -a
+ls -al
+cd ../jarvis_build/
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi 995f27f8956c
+docker rmi jarvis
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+vi Dockerfile 
+docker build --no-cache --rm -t jarvis:0.0.44 .
+docker tag 0be1542859bc docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.44
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.44
+cd all_in_one/
+ls -al
+vi Dockerfile
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker images
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi jarvi:0.0.44
+docker rmi jarvis:0.0.44
+docker images
+docker ps -a -q | xargs docker rm
+ls -al
+docker images
+docker run -i --link redis:db -t jarvis:all_in_one bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -i --link redis:db -t jarvis:all_in_one bash
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker images
+docker run -i --link redis:db -t jarvis:all_in_one bash
+docker ps -a
+ifconfig docker0
+docker inspect 64826734f307
+lynx http://172.17.0.21:3032
+ps -aux
+docker build --no-cache --rm -t jarvis:test_supervisor .
+docker run -i --link redis:db -t jarvis:test_supervisor bash -c '/usr/bin/supervisord -
+history 
+history | grep supervisor
+docker run -d -t jarvis:test_supervisor bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker inspect 2628ae21f894
+lynx http://172.17.0.21:3032
+lynx http://172.17.0.26:3032
+docker ps -a
+docker stop 2628ae21f894
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -d -t jarvis:test_supervisor bash -c '/usr/sbin/redis-server& && nodemon /data/apps/prod/jarvis/server.js'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+ls -al
+docker ps -a
+docker attach 64826734f307
+ls -al
+docker ps -aux
+ps aux
+ls -al
+docker ps -a
+docker run -i jarvis:all_in_one bash
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker images
+ls -al
+cd /vagrant/jarvis_build/
+docker images
+docker run -i -t jarvis::all_in_one bash
+docker run -i -t jarvis:all_in_one bash
+docker ps -a -q | xargs docker rm
+docker ps
+cd all_in_one/
+ls -al
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker ps -a
+history 
+history | grep supervisor
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps -a
+lynx http://127.0.0.1:3032
+docker ps -a
+docker logs ac67e37cc555
+ps aux
+docker ps -a
+docker stop ac67e37cc555
+docker ps -a -q | xargs docker rm
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker run -p 127.0.0.1:3032:3032 -i jarvis:all_in_one bash 
+docker ps -aux
+docker ps
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/sbin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 -i jarvis:all_in_one bash 
+docker ps
+docker run -p 127.0.0.1:3032:3032 -i jarvis:all_in_one bash 
+cd /vagrant/jarvis_build/
+cd all_in_one/
+cd ~
+ls -al
+ln /vagrant/bash_history .bash_history
+ln -s /vagrant/bash_history .bash_history
+b
+cd -
+exec -l $SHELL
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker ps -a
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/sbin/supervisord -c /etc/supervisor.conf'
+docker ps -a
+exec -l $SHELL
+docker ps -a -q | xargs docker rm
+history 
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+ls -al
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -c /etc/supervisor.conf'
+docker ps
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:3032:3032 -i jarvis:all_in_one bash 
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker run -p 127.0.0.1:3032:3032 -i jarvis:all_in_one bash 
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -c /etc/supervisor.conf'
+docker ps 
+lynx http://127.0.0.1:3032
+ps aux
+docker ps
+docker stop 2aa317adb084
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -n -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps aux
+lynx http://127.0.0.1:3032
+ls -al
+docker ps aux
+docker stop 41c40b95ada5
+docker run -p 127.0.0.1:3032:3032 -i -t jarvis:all_in_one bash 
+lynx http://127.0.0.1:3032
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+docker attach c673a7934acd
+docker ps ax
+docker run -p 127.0.0.1:3032:3032 -i -t jarvis:all_in_one bash 
+docker ps -a
+docker ps -a -q | xargs docker rm
+ls -al
+lynx http://127.0.0.1:3032
+ls -al
+cd /vagrant/jarvis_build/all_in_one/
+ls -al
+vi Dockerfile
+ls -al
+ps aux
+cd /var/log/jarvis
+ls -al
+docker ps
+cd ../../base_images/
+ls -al
+vi Dockerfile 
+ls -al
+docker build --no-cache --rm -t bde_base .
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/base_images/
+ls -al
+docker build --no-cache --rm -t bde_base .
+docker tag 5e07cb32d24a docker-reg.cloud.corp.dig.com:5000/bde_base:0.0.44
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:0.0.44
+docker tag 5e07cb32d24a docker-reg.cloud.corp.dig.com:5000/bde_base
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base
+docker images
+cd jarvis/
+docker build --no-cache --rm -t bde_base:jarvis .
+docker tag d056c7cd8b10 docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+cd ../redis/
+docker build --no-cache --rm -t bde_base:redis .
+docker tag 5dec5c0dac24 docker-reg.cloud.corp.dig.com:5000/bde_base:redis
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:redis
+docker images
+docker rmi bde_base
+docker rmi bde_base:jarvis
+docker rmi bde_base:redis
+docker images
+docker rmi docker-reg.cloud.corp.dig.com:5000/bde_base:0.0.44
+docker images
+cd ../../jarvis_build/all_in_one/
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker ps
+docker images
+docker rmi fa2c932cd7bd
+docker ps
+docker ps -a
+docker images
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+cd ..
+vi Dockerfile 
+docker build --no-cache --rm -t jarvis:0.0.45 .
+ls -al
+
+docker tag 6c5304199d05 docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.45
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.45
+docker images
+docker rmi jarvis:0.0.45
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+
+
+cd all_in_one/
+vi Dockerfile
+docker build --no-cache --rm -t jarvis:all_in_one .
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+lynx http://127.0.0.1:3032
+telnet localhost 3032
+sudo apt-get install lynx -y
+lynx http://127.0.0.1:3032
+ifconfig docker0
+docker ps
+docker inspect 515095c95d58
+docker inspect 172.17.0.24
+docker ps
+docker inspect 515095c95d58
+lynx http://172.17.0.24:3032
+
+ls /proc/
+docker ps -a --no-trunc
+ps aux
+ifconfig docker0
+netstat -anle
+tcpdump 
+sudo tcpdump 
+sudo tcpdump -i lo
+ls -al
+cd ..
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+ps aux
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+lynx http://172.17.0.24:3032
+ps aux
+docker ps -a
+docker inspect 08d774a93dbf
+lynx http://172.17.0.2:3032
+docker ps -a
+docker ps -a --no-trunc
+docker images
+docker ps 
+docker stop 08d774a93dbf
+docker ps 
+docker stop 08d774a93dbf
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps 
+lynx http://localhost:3032
+docker ps
+docker inspect 87943515eca4
+ls -al
+docker ps 
+docker inspect 87943515eca4
+ifconfig 
+clear
+ls -al
+cd /vagrant/jarvis_build/
+ls -al
+vi Dockerfile 
+docker build --no-cache --rm -t jarvis:0.0.46 .
+cd /vagrant/jarvis_build/
+ls -al
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+docker build --no-cache --rm -t jarvis:0.0.46 .
+docker tag 159e89fe976b docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.46
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.46
+cd all_in_one/
+docker build --no-cache --rm -t jarvis:all_in_one .
+ps aux
+docker ps -a
+docker build --no-cache --rm -t jarvis:all_in_one .
+ps aux
+docker ps -a
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps
+sudo apt-get install lynx -y
+lynx http://localhost:3032
+ls -al
+docker ps
+ls -al
+clear
+cd /vagrant/guineapig_build/
+ls -al
+docker ps -a
+cat Dockerfile 
+docker build --no-cache --rm -t guineapig:1.2.0 .
+docker images
+docker ps -a -q | xargs docker rm
+docker ps
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker build --no-cache --rm -t guineapig:1.2.0 .
+docker run -d -t guineapig:1.2.0 bash -c '/tmp/run_guineapig.sh'
+docker ps
+docker ps -a
+docker stop ec46d3a5e571
+docker run -d -p 127.0.0.1:8480:8480 -t guineapig:1.2.0 bash -c '/tmp/run_guineapig.sh'
+docker ps -a --no-trunc
+docker ps -a -q | xargs docker rm
+docker ps -a
+lynx http://localhost:8480
+clear
+ls -al
+ps aux
+cd /vagrant/jarvis_build/
+docker ps -a
+docker start 8d43e272da91
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+ls -al
+..
+docker ps -a
+lynx http://localhost:8480
+lynx http://localhost:3032
+docker images
+cd /vagrant/jarvis_build/
+ls -al
+vi Dockerfile 
+ls -al
+cd all_in_one/
+ls -al
+vi Dockerfile
+docker search jarvis:0.0.45
+docker help search
+docker
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search jarvis:0.0.45
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search jarvis:0.0.46
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search
+docker search
+docker images
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search jarvis
+docker -v -H tcp://docker-reg.cloud.corp.dig.com:5000 search jarvis
+docker
+docker 
+docker search
+
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search bde_base
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search 
+docker -H tcp://docker-reg.cloud.corp.dig.com:5000 search tomcat
+ll
+docker 
+docker -H=tcp://docker-reg.cloud.corp.dig.com:5000 search tomcat
+docker -H=tcp://docker-reg.cloud.corp.dig.com:5000 search 
+docker -H=tcp://docker-reg.cloud.corp.dig.com:5000 search i
+docker help
+sudo ls /var/lib/docker/
+sudo ls /var/lib/docker/repositories-aufs
+sudo ls /var/lib/docker/repositories-aufs/
+sudo file /var/lib/docker/repositories-aufs
+sudo cat /var/lib/docker/repositories-aufs
+docker search docker-reg.cloud.corp.dig.com:5000/jarvis
+docker search docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.46
+docker search docker-reg.cloud.corp.dig.com:5000
+docker search docker-reg.cloud.corp.dig.com:5000 jarvis
+docker search docker-reg.cloud.corp.dig.com:5000/jarvi
+sudo cat /var/lib/docker/repositories-aufs | python -mjson.tool
+sudo ls /var/lib/docker
+sudo ls /var/lib/docker/graph
+sudo ls /var/lib/docker/graph/c906ee3ade600a56b51697e665903d22b244558afab67da147c4b96954898e5a
+sudo ls /var/lib/docker/graph/a5310e0c503afe023a0877d1e34a8a5d4e5fc73b557b42d2a5928108fcdbde65
+
+sudo cat /var/lib/docker/graph/c906ee3ade600a56b51697e665903d22b244558afab67da147c4b96954898e5a/json | python -mjson.tool
+sudo su 
+ls -al
+vi Dockerfile
+ll
+vi supervisord.conf 
+docker images
+rm -f .bash_history 
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/all_in_one/
+ls -al
+docker build --rm -t jarvis_all_in_one:0.0.1 .
+docker images
+docker tag 5c2e4ab04d44 docker-reg.cloud.corp.dig.com:5000/jarvis_all_in_one:0.0.46
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis_all_in_one:0.0.46
+history 
+history  | grep run 
+docker run -p 127.0.0.1:3032:3032 -d -t jarvis:all_in_one bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+
+docker images
+
+docker ps -a
+
+docker ps -a
+docker inspect 75d4f7b8dc72
+ifconfig docker0
+tidy
+yum search packer
+apt-get search packer
+aptitude search packer
+cd /vagrant/jarvis_build/
+ls -al
+packer build -var version=0.0.50 jarvis.json
+ls -al
+packer version
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.50 jarvis.json
+docker images
+docker ps 
+docker rmi cc3b0ac90302
+ln /vagrant/bash_history ~/.bash_history
+ln -s /vagrant/bash_history ~/.bash_history
+packer build -var version=0.0.50 jarvis.json
+sudo service docker restart
+docker ps -a
+history 
+cd ~
+rm -f .bash_history 
+ln -s /vagrant/bash_history .bash_history
+cat .bash_history 
+exec -l $SHELL
+ls -al
+cd /vagrant/jarvis_build/
+ls
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.50 jarvis.json
+cd scripts/
+ls -al
+packer build -var version=0.0.50 jarvis.json
+cd ..
+packer build -var version=0.0.50 jarvis.json
+ls -al
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+docker run -p 127.0.0.1:3032:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash
+docker ps -aux
+docker ps -a
+docker ps -a -q | xargs docker rm
+history
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a --no-trunc
+docker ps -a -q | xargs docker rm
+history 
+ls -al
+vi etc/supervisor.conf 
+ls -al
+history 
+docker run -p 127.0.0.1:3032:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash
+ls -al
+docker build --rm -t jarvis:0.0.50 .
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+docker build --rm -t jarvis:0.0.50 .
+docker images
+
+docker images
+docker run -i -t jarvis:0.0.50 bash
+
+docker run -p 127.0.0.1:3032:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash
+ls -al
+packer build -var version=0.0.50 jarvis.json
+docker run -p 127.0.0.1:3032:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash
+history 
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+ls -al
+docker build --rm -t jarvis:0.0.50 .
+docker ps -a
+docker stop aadfb3e9a647
+docker ps -a -q | xargs docker rm
+history
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps 
+docker stop d5c4e0191e73
+docker ps -a
+docker stop d5c4e0191e73
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi d3d6011f0704
+cd /vagrant/jarvis_build/
+docker build --rm -t jarvis:0.0.53 .
+ls -al
+docker build --rm -t jarvis:0.0.53 .
+docker images
+docker run -i -t jarvis:0.0.53 bash
+docker images
+docker rmi jarvis:0.0.52
+docker rmi jarvis:0.0.53
+docker images
+docker rmi jarvis:0.0.50
+docker ps -a
+docker stop 06ad15e860dc
+docker ps -a -q | xargs docker rm
+
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker build --rm -t jarvis:0.0.53 .
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker ps -a
+docker stop b2fae6b0e3f5
+cd /vagrant/
+cd jarvis_build/
+ls -al
+packer build -var version=0.0.53 jarvis.json
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker ps
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi 368d30d3d8e1
+docker rmi -f 368d30d3d8e1
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps aux
+ls -al
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker ps -a
+docker images
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53 bash
+ls -al
+docker ps -a
+ls /var/lib/docker
+sudo ls /var/lib/docker
+sudo ls /var/lib/docker/containers
+sudo ls /var/lib/docker/containers/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b
+sudo ls /var/lib/docker/containers/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b.json
+sudo ls /var/lib/docker/containers/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b-json.log
+sudo vi /var/lib/docker/containers/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b/80d443606d114b6d95bdd1495b07310dd2f366312215e598497d7c79f71a445b-json.log
+ll
+ls packer_cache/
+ls scripts/
+vi jarvis.json 
+ls -al
+packer build -var version=0.0.53 jarvis.json
+
+ls -al
+packer build -var version=0.0.52 jarvis.json
+vi Dockerfile 
+docker build --rm -t jarvis:0.0.53 .
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+ls -al
+cd /vagrant/jarvis_build/
+vi Dockerfile 
+docker build --rm -t jarvis:0.0.53 .
+fg
+ls -al
+docker images
+docker ps -a
+packer build -var version=0.0.52 jarvis.json
+docker ps -a
+
+docker ps -a
+docker images
+packer build -var version=0.0.53 jarvis.json
+docker images
+docker ps -a -q | xargs docker rm
+docker ps -a
+packer build -var version=0.0.51 jarvis.json
+packer build -var version=0.0.49 jarvis.json
+docker images
+docker diff d406a599f04b
+docker diff
+docker
+docker images
+docker help images
+docker images -q
+docker images
+docker images | grep 0.0.49
+docker images | perl -anle 'print "$F[0]:$F[1]" if /0.0.49/'
+docker run -i $(docker images | perl -anle 'print "$F[0]:$F[1]" if /0.0.49/') bash
+cd /vagrant/
+history 
+docker run -i -t $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/') bash
+ls -al
+vi bashrc 
+printenv
+printenv DB_
+printenv 
+printenv TERM
+env TERM
+ls -al
+docker images
+cd jarvis_build/
+packer build -var version=0.0.50 jarvis.json
+cd /vagrant/jarvis_build/
+docker images
+packer build -var version=0.0.50 jarvis.json
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+docker images
+packer build -var version=0.0.50 jarvis.json
+docker images
+docker ps -a
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+cd /vagrant/jarvis_build/
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+packer build -var version=0.0.50 jarvis.json
+ping nexus.display.com
+docker images
+docker rmi 11d989bd0939
+docker images
+cd /vagrant/jarvis_build/
+docker images
+vi Dockerfile 
+docker build --rm -t jarvis:0.0.53 .
+docker images
+docker rmi 0643a3ba427e
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker build --rm -t jarvis:0.0.53 .
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+
+docker images
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.50 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+ifconfig docker0
+packer build -var version=0.0.51 jarvis.json
+docker images
+docker ps -a
+docker run -p 127.0.0.1:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.51 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker run -p 127.0.0.1:3033:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.51 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+packer build -var version=0.0.53 jarvis.json
+docker run -p 127.0.0.1:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+lynx
+sudo apt-get install lynx -y
+docker ps -a -q | xargs docker rm
+docker ps -a
+lynx http://localhost
+ls -al
+docker ps -a
+
+lynx http://localhost:3032
+lynx http://localhost:3033
+ls -al
+docker ps -a
+packer build -var version=0.0.49 jarvis.json
+
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker version
+docker --version
+docker info
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker ps -a -q | xargs docker rm
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.53 jarvis.json
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+cd /vagrant/jarvis_build/
+ls -al
+packer build -var version=0.0.53 jarvis.json
+docker images
+packer build -var version=0.0.53 jarvis.json
+docker images
+docker run -i -t $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/') bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -i -t $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/') bash
+docker images
+docker run -i -t $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/') bash
+docker rmi c9cf2741f160
+docker rmi ad7de62ec509
+docker images
+docker export 5fe5ba79dc9d | docker import
+docker export docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53 | dcoker import docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+
+docker export $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/')
+docker export 5fe5ba79dc9d
+docker docker-reg.cloud.corp.dig.com:5000/jarvis
+docker export docker-reg.cloud.corp.dig.com:5000/jarvis
+docker export docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+docker ps -a
+cd /vagrant/
+ll
+cd jarvis_build/
+ll
+vi jarvis.json 
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.53 jarvis.json
+rm -f /tmp/com.com.disney.bde.orchestration.jarvis.tar.gz 
+packer build -var version=0.0.53 jarvis.json
+rm /tmp/com.disney.bde.orchestration.jarvis.tar.gz 
+packer build -var version=0.0.53 jarvis.json
+echo $?
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+ls -al
+rm -f com.disney.bde.orchestration.jarvis.tar.gz 
+docker images
+docker export $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/')
+docker ps -a -q | xargs docker rm
+docker images -a
+docker export $(docker images | perl -ane 'print "$F[0]:$F[1]" if /0.0.49/')
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker export docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+packer build -var version=0.0.53 jarvis.json
+docker images
+docker tag ab07de86dba6 docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53
+docker images
+docker rmi ab07de86dba6
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+packer build -var version=0.0.53 jarvis.json
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis
+packer build -var version=0.0.53 jarvis.json
+docker images
+packer build -var version=0.0.53 jarvis.json
+docker images
+docker export bde_base/jarvis:0.0.53 | docker import 
+docker export bde_base/jarvis:0.0.53 | docker import -
+docker export bde_base/jarvis:0.0.53 
+docker export 
+docker export d0f2c1846da0
+docker export bde_base/jarvis:0.0.53
+docker help export
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker images
+ls -al
+
+docker images
+docker rmi d0f2c1846da0
+docker rmi -f d0f2c1846da0
+docker images
+docker rmi -f d0f2c1846da0
+docker images
+packer build -var version=0.0.53 jarvis.json
+docker images
+
+ping 172.17.42.1
+ping 172.17.0.5
+ping 172.17.42.1
+docker images
+docker run -i docker-reg.cloud.corp.dig.com:5000/bde_base bash
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images -a
+docker run -i docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker images
+docker run -i docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker images
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+cd /vagrant/base_images/
+docker images
+docker run -v /vagrant/base_images/scripts:/tmp/scripts -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/base_images/
+docker run --rm -v /vagrant/base_images/scripts:/tmp/scripts -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker ps -a
+docker images
+vi scripts/install_ruby.sh 
+docker images
+docker run --rm -v /vagrant/base_images/scripts:/tmp/scripts -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker ps -a
+docker run --rm -v /vagrant/base_images/scripts:/tmp/scripts -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+docker ps -a
+docker run --rm -v /vagrant/base_images/scripts:/tmp/scripts -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:jarvis bash
+cd /vagrant/base_images/jarvis/
+docker build --rm -t bde_base:node .
+cd /vagrant/jarvis_build/
+packer build jarvis.json 
+docker images
+docker rmi 2112f6815dbf
+
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+packer build jarvis.json 
+history
+docker run -p 127.0.0.1:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.53 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker images
+docker rmi cf9f28ef5ae0
+ls -al
+cd /vagrant/
+cd jarvis_build/
+packer build -var version=0.0.54 jarvis.json
+docker run -p 127.0.0.1:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+ps aux
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -p 127.0.0.1:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+
+docker run --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker images
+docker run --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+cd /vagrant/
+vi jarvis_build/scripts/install_jarvis_app
+docker run --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+ls -al
+docker images
+docker rmi 4d3664de6b64
+packer build -var version=0.0.54 jarvis.json
+cd jarvis_build/
+packer build -var version=0.0.54 jarvis.json
+docker run --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+ls -al
+docker run -v scripts:/tmp/scripts --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker run -v $(pwd)/scripts:/tmp/scripts --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+cd /vagrant/jarvis_build/
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+packer build -var version=0.0.54 jarvis.json
+docker run -v $(pwd)/scripts:/tmp/scripts --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker run -p 127.0.0.1:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+
+docker ps -a
+docker stop cb068b419f9e
+ifconfig 
+docker run -p 10.0.2.15:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 10.0.2.15:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker images
+docker ps
+docker run -v $(pwd)/scripts:/tmp/scripts --rm -p 127.0.0.1:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+cd /vagrant/base_images/
+ls -al
+docker build --rm -t bde_base:homestar .
+docker images
+docker run -i -t bde_base:homestar bash
+ls -al
+vi scripts/install_ruby.sh 
+ls -al
+cd node/
+ls -al
+..
+cd ..
+ls -al
+md homestar
+mkdir -p homestar
+ls -al
+docker images
+ls -al
+docker images
+docker rmi bde_base:homestar
+docker ps -a
+docker stop 3402f887ff62
+docker ps -a -q | xargs docker rm
+ls -al
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+cd /vagrant/base_images/
+ls -al
+docker help build
+docker images 
+cd ..
+ls -al
+md homestar
+ls -al
+cd bde_base
+cd base_images/
+ls -al
+docker images
+docker run -i -t bde_base:node bash
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:node
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:node bash
+ls -al
+
+docker build --rm -t bde_base .
+docker tag 8e1eca0525f8 docker-reg.cloud.corp.dig.com:5000/bde_base
+vi node/Dockerfile 
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base
+cd node/
+docker build --rm -t bde_base:node .
+docker tag b510dcfb910b docker-reg.cloud.corp.dig.com:5000/bde_base:node
+docker images
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:node bash
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:node
+cd ..
+ls -al
+cd ..
+cd jarvis_build/
+ls -al
+docker images
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+packer build -var version=0.0.55-SNAPSHOT jarvis.json
+docker ps -a -q | xargs docker rm
+packer build -var version=0.0.55-SNAPSHOT jarvis.json
+docker images
+docker run --rm -i -t bde_base:node bash
+cd /vagrant/base_images/
+docker build --rm -t bde_base .
+docker images
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker stop 0a71f1d454ba
+docker build --rm -t bde_base .
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/base_images/node/
+ls -al
+cd ..
+cd node/
+cd ..
+docker build --rm -t bde_base .
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker stop ee39494368f9
+docker ps -a -q | xargs docker rm
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:node
+
+docker build --rm -t bde_base .
+docker tag 5aee7e3b3185 docker-reg.cloud.corp.dig.com:5000/bde_base
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base
+docker images
+docker run --rm -i -t bde_base bash
+cd node/
+ls -al
+docker build --rm -t bde_base:node .
+docker tag 4bd33d2a9217 docker-reg.cloud.corp.dig.com:5000/bde_base:node
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:node
+cd ../..
+ls -al
+cd homestar_build/
+ls -al
+vi Dockerfile 
+ls -al
+ls scripts/
+ls -al
+docker build --rm -t bde_base:homestar .
+docker run --rm -i -t bde_base:homestar bash
+cd /vagrant/homestar_build/
+docker build --rm -t bde_base:homestar .
+docker build --rm -i -t bde_base:homestar bash
+docker run --rm -i -t bde_base:homestar bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+history 
+docker build --rm -t bde_base:homestar .
+docker run --rm -i -t bde_base:homestar bash
+cd /vagrant/homestar_build/
+docker build --rm -t bde_base:homestar .
+docker run --rm -i -t bde_base:homestar bash
+docker build --rm -t bde_base:homestar .
+docker run --rm -i -t bde_base:homestar bash
+docker run -u homestar --rm -i -t bde_base:homestar bash
+sudo useradd
+sudo useradd homestar
+docker run -u homestar --rm -i -t bde_base:homestar bash
+sudo userdel homestar
+docker run --rm -i -t bde_base:homestar bash
+ln -s /vagrant/bash_history ~/.bash_history
+cd /vagrant/homestar_build/
+exec -l $SHELL
+docker build --rm -t bde_base:homestar .
+docker run --rm -i -t bde_base:homestar bash
+docker run -u homestar --rm -i -t bde_base:homestar bash
+ls -al
+docker build --rm -t bde_base:homestar .
+ls -al
+cd /vagrant/data_bags/
+ls -al
+ls /tmp
+ls -al /tmp
+ls /tmp/vagrant/
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+cd /vagrant/homestar_build/
+docker images
+docker build --rm -t bde_base:homestar .
+
+docker build --no-cache --rm -t bde_base:homestar .
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+docker ps -a
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker rmi 3dd2483de7bd
+docker build --no-cache --rm -t bde_base:homestar .
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+
+docker build --no-cache --rm -t bde_base:homestar .
+docker run -v /tmp/vagrant/homestar:/var/ -u homestar --rm -i -t bde_base:homestar bash
+ls /tmp/vagrant/homestar/
+ls /tmp/vagrant/homestar/homestar 
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+docker ps -a
+ls /tmp/vagrant
+ls -al
+vi /etc/init.d/hostname 
+vi /etc/init.d/homestar
+ls -al
+docker ps -a
+docker attach 90560d046a45
+docker start 90560d046a45
+docker ps -a -q | xargs docker rm
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+ls /tmp/vagrant/homestar/
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+cd /vagrant/homestar_build/
+docker run -v /tmp/vagrant/homestar:/var/homestar -u homestar --rm -i -t bde_base:homestar bash
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+ls -al
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+docker run -v /tmp/vagrant/creds:/var/homestar/creds -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+ls /tmp/vagrant
+ps
+docker ps -a
+docker stop 59d311e91a11
+ls -al
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+ls -al
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+ls -al
+cd /vagrant/homestar_build/
+docker build --no-cache --rm -t bde_base:homestar .
+docker tag 23c1712d1411 docker-reg.cloud.corp.dig.com:5000/bde_base:homestar
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:homestar
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -i -t bde_base:homestar bash
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+ls -al
+docker ps -a
+cd ../jarvis_build/
+ls -al
+packer build -var version=0.0.54 jarvis.json
+docker images
+docker ps -a -q | xargs docker rm
+docker ps
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
+
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -p 10.0.2.15:80:3032 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+ls -al
+packer build -var version=0.0.54 jarvis.json
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+docker ps -a
+docker stop d651de6de070
+docker top
+docker ps -a
+docker top d651de6de070
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -u homestar --rm -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -u homestar --rm -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -u homestar -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker images
+ls -al
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.54 jarvis.json
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -u homestar -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -u homestar -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 172.17.0.3:9980:9980 -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar -p 172.17.0.3:9980 bash
+docker run -i -p 172.17.0.3:9980:9980 -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar bash
+docker run -i -p 172.17.0.3:9980:9990 -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar bash
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar bash 
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker top d651de6de070
+docker ps -a
+docker top 247f22297e0e
+docker inspect 247f22297e0e
+docker ps -aux
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker stop ac52572ab03e
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker stop 247f22297e0e
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -u homestar -d -p 127.0.0.1:9980:9980 -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config  -d -p 127.0.0.1:9980:9980 -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker inspect d3e2feab8207
+telnet 172.17.0.12 9980
+ls -al
+docker ps -a
+docker stop d3e2feab8207
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm --pp 127.0.0.1:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -p 127.0.0.1:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 127.0.0.1:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps aux
+docker ps -a
+telnet 127.0.0.1 9980
+docker stop a9dff7be6e7e
+docker ps -a
+docker stop a9dff7be6e7e
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker stop 8cbd00fb9e39
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 127.0.0.1:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker ps -a
+telnet 127.0.0.1 9980
+docker inspect c354f467f3b5
+telnet 172.17.0.15 9980
+ifconfig 
+docker ps -a
+docker stop c354f467f3b5
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.0.2.15:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+telnet locahost 9980
+telnet 10.0.2.15 9980
+ping 10.0.2.15
+ifconfig
+ping 10.20.1.11
+docker ps -a
+docker stop 99e18bbfdd99
+docker ps -a -q | xargs docker rm
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11\:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker ps -a
+telnet 10.20.1.11 9980
+docker inspect 7851cf622d63
+telnet 172.17.0.17 9980
+docker ps -a
+docker stop 7851cf622d63
+docker inspect 4bb83090ff7c
+telnet 172.17.0.18 9980
+docker ps -a
+docker inspect 4bb83090ff7c
+telnet 172.17.0.18 9980
+curl http://172.17.0.18:9980/status?deep=true
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1
+docker tag 3819f768ae63 docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1 bash
+ls -al
+docker ps -a
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config --rm -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1 bash
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11\:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c 'ruby /var/homestar/bin/homestar'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11\:9980:9980 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1 bash -c 'ruby /var/homestar/bin/homestar'
+docker ps -a
+curl http://localhost:9980/status?deep=true
+ping 10.20.1.11
+curl http://10.20.1.11:9980/status?deep=true
+docker ps -a
+docker inspect 7c7d81256eca
+curl http://172.17.0.5:9980/status?deep=true
+curl http://172.17.0.5:3032
+lynx
+docker ps -a
+docker stop 7c7d81256eca
+ls -al
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11:3032:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps aux
+sudo yum install lynx -y
+sudo apt-get install lynx -y
+lynx http://localhost:3032
+ls -al
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+docker top de9199666f08
+telnet 10.20.1.11 3032
+lynx http://10.20.1.11:3032
+ls -al
+
+docker ps -a
+docker stop de9199666f08
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -p 10.20.1.11:80:3032 -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1 bash -c '/usr/bin/supervisord -d /data/apps/prod/jarvis -c /etc/supervisor.conf && tail -f /dev/null'
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps
+lynx http://10.20.1.11
+knife
+ls -al
+whoami
+ls -al
+knife
+knife data bag list
+ls -al
+cat minimize.sh 
+cat sshd.sh 
+cat sudoers.sh 
+cat .cache/
+ls .cache/
+ls .cache/motd.legal-displayed 
+cat .cache/motd.legal-displayed 
+thor homestar:policy_generator /tmp/pipeline -o /tmp/policies
+cd /vagrant/
+ruby
+ls -al
+vi .bash_history 
+ls -al
+cd /vagrant/
+ll
+ls -al
+ll
+vi
+ls /var/homestar
+ls -al
+docker ps -a
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.54.1
+cd /vagrant/
+thor homestar:policy_generator /tmp/pipeline -o /tmp/policies
+gem install thor
+sudo apt-get install ruby1.9.1 -y
+sudo gem install thor 
+thor homestar:policy_generator /tmp/pipeline -o /tmp/policies
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+cd /vagrant/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+rm -rf /tmp/pipeline/
+rm -rf /tmp/policies/
+rm -rf /tmp/databag/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+ls /tmp/policies/
+ls /tmp/databag/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+rm -rf /tmp/{databag,policies}
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+rm -rf /tmp/{databag,policies}
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+ls -al
+ls /tmp/
+ls /tmp/policies/
+ls -al /tmp/policies/
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.55 jarvis.json
+docker images
+ls -al
+docker ps -a
+docker ps -a -q | xargs docker rm
+docker ps -a
+ll
+vi Dockerfile 
+
+
+ls /tmp/vagrant/homestar-config/
+docker images
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -v /tmp/databag:/data/apps/prod/databag -v /tmp/policies:/var/homestar-config/policies -d -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.55 bash
+ls /var/lib/
+ps aux
+docker ps -a
+docker attach 435a309509fa
+docker stop 435a309509fa
+docker ps -a -q | xargs docker rm
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -v /tmp/databag:/data/apps/prod/databag -v /tmp/policies:/var/homestar-config/policies -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.55 bash
+ls /tmp/policies/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+cd /vagrant/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+rm -rf /tmp/databag/
+sudo rm -rf /tmp/databag/
+docker ps -a
+docker ps -a -q | xargs docker rm
+ls /tmp/policies/
+rm -rf /tmp/policies/
+sudo rm -rf /tmp/policies/
+thor homestar:policy_generator /tmp/databag -o /tmp/policies
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -v /tmp/databag:/data/apps/prod/databag -v /tmp/policies:/var/homestar-config/policies -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.55 bash
+ls -al
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.56 jarvis.json
+ls -al
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.56 jarvis.json
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.56
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=jarvis
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=jar
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=jarvis:0.0.56
+docker --version
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=jarvis
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=bde_base
+curl -XGET http://docker-reg.cloud.corp.dig.com:5000/v1/search?q=bde_jarvis
+curl http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/bde_jarvis/tags
+curl http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/jarvis/tags
+curl http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/jarvis/tags | python json.tool
+curl http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/jarvis/tags | python json.tools
+curl http://docker-reg.cloud.corp.dig.com:5000/v1/repositories/jarvis/tags | python -mjson.tools
+docker images
+ls -al
+ls /tmp/vagrant/homestar-config/
+ls -al
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.57 jarvis.json
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.57 jarvis.json
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -v /tmp/databag:/data/apps/prod/databag -v /tmp/policies:/var/homestar-config/policies -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.55 bash
+docker run -v /tmp/vagrant/homestar:/var/homestar -v /tmp/vagrant/homestar-config:/var/homestar-config -v /tmp/databag:/data/apps/prod/databag -v /tmp/policies:/var/homestar-config/policies -i -t docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57 bash
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/0.0.57
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57
+cd /vagrant/jarvis_build/
+ls -al
+packer build -var version=0.0.57.1 jarvis.json
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/jarvis_build/
+packer build -var version=0.0.57.1 jarvis.json
+docker images
+docker rmi 618d9f3cdcfc
+packer build -var version=0.0.57 jarvis.json
+docker images
+docker tag 364298d5a677 docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57.1
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57.1
+cd /vagrant/
+cd jarvis_build/
+ls -al
+cd ..
+ls -al
+cd homestar_build/
+ls -al
+vi Dockerfile 
+ls -al
+vi scripts/homestar.sh 
+grep chef -r *
+cd ..
+grep chef -r *
+grep chef -r * | less
+ls -al
+cd homestar_build/
+ls
+vi scripts/homestar.sh 
+ls -al
+vi Dockerfile 
+cd ..
+ls -al
+cd base_images/
+ls -al
+grep chef -r *
+vi scripts/install_ruby.sh 
+ls -al
+cd ~
+ls -al
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+cd /vagrant/base_images/
+ls -al
+docker images
+docker pull docker-reg.cloud.corp.dig.com:5000/bde_base
+docker images
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar bash
+docker ps -a -q | xargs docker rm
+ls -al
+docker images
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar
+docker 
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar
+docker run -i -t docker-reg.cloud.corp.dig.com:5000/bde_base:homestar bash
+docker build --no-cache --rm -t bde_base:homestar_latest_chef .
+docker tag 7200534c6dbb docker-reg.cloud.corp.dig.com:5000/bde_base:chef_11.12.8
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:chef_11.12.8
+docker images
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:homestar_latest_chef
+docker tag abb261eae7ec docker-reg.cloud.corp.dig.com:5000/bde_base:chef_11.12.8
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:chef_11.12.8
+clear
+ls -al
+cd node/
+ls -al
+vi Dockerfile 
+ls -al
+docker build --no-cache --rm -t bde_base:node .
+docker tag 357adb310a14 docker-reg.cloud.corp.dig.com:5000/bde_base:node_1.0
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:node_1.0
+cd ..
+ls -al
+cd ..
+cd base_images/
+ls -al
+cd ..
+cd homestar
+cd homestar_build/
+ls -al
+vi Dockerfile 
+docker images
+vi Dockerfile 
+docker build --no-cache --rm -t bde_base:node_1.0 .
+docker build --no-cache --rm -t bde_base:homestar_1.0 .
+docker tag 1d85cdb2e104 docker-reg.cloud.corp.dig.com:5000/bde_base:homestar_1.0
+docker push docker-reg.cloud.corp.dig.com:5000/bde_base:homestar_1.0
+docker run -i -t bde_base:homestar_1.0 bash
+docker ps -a -q | xargs docker rm
+cd ..
+cd jarvis_build/
+packer build -var version=0.0.57 jarvis.json
+docker images
+docker tag 64f12253ae97 docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57.2
+docker push docker-reg.cloud.corp.dig.com:5000/jarvis:0.0.57.2
+ls -al
+cd /vagrant/base_images/
+docker images
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+docker images
+ln -s /vagrant/bash_history .bash_history
+rm -f .bash_history 
+ln -s /vagrant/bash_history .bash_history
+exec -l $SHELL
+cd /vagrant/
+packer build -var version=0.0.57 jarvis.json
+ls -al
+packer build -var version=0.0.57 devenv.json 
+ll
+packer build -var version=0.0.57 devenv.json 
+docker images
+docker ps -a -q | xargs docker rm
+docker images
+ln -s /vagrant/bash_history ~/.bash_history
+rm -f ~/.bash_history 
+ln -s /vagrant/bash_history ~/.bash_history
+exec -l $SHELL
+docker ps -a -q | xargs docker rm
+docker images
+docker rmi $(docker images -a | awk '$1 ~ /<none>/ { print $3 }')
+docker images
