@@ -25,8 +25,6 @@ APACHE_GROUP="apache";
 yum install -y -q dos2unix httpd php php-mysql git-core wget
 yum install -y -q python python-setuptools.noarch
 
-mkdir /var/log/mysqld
-
 easy_install supervisor
 
 # for Redis:
