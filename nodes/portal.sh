@@ -28,8 +28,8 @@ rpm -U http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -U http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
 # Install and configure Zend/PHP, Git and needed extensions
-yum install -y -q dos2unix httpd git-core wget
-yum install -y -q python python-setuptools.noarch
+yum install -y dos2unix httpd git-core wget
+yum install -y python python-setuptools.noarch
 #yum install -y php-ZendFramework
 yum --enablerepo=remi install -y php-ZendFramework-Db-Adapter-Pdo-Mysql
 
@@ -48,10 +48,10 @@ git config --global http.sslVerify false;
 # remove current html dir (if exists)
 rm -rf /var/www/html;
 
-git clone $REPO /var/www/html;
+#git clone $REPO /var/www/html;
 
-cd /var/www/html;
-./deploy.sh -b master -l;
+#cd /var/www/html;
+#./deploy.sh -b master -l;
 
 # setup php.ini settings
 sed -i 's/post_max_size = 8M/post_max_size = 2000M/' /etc/php.ini;
@@ -68,7 +68,7 @@ sed -i 's/expose_php = On/expose_php = Off/' /etc/php.ini;
 #sed -i "s/America\/NewYork/UTC/" /etc/sysconfig/clock;
 
 # install SSL
-yum install -y --quiet mod_ssl;
+yum install -y mod_ssl;
 
 # change apache to run on 80:
 sed -i 's/Listen 127.0.0.1:8091/Listen 80/' /etc/httpd/conf/httpd.conf;

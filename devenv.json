@@ -14,7 +14,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "/vagrant/scripts/portal.sh"
+            "script": "/vagrant/nodes/portal.sh"
         },
         {
             "type": "file",

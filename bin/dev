@@ -25,11 +25,18 @@ function init_devenv() {
 
     local reload=$1
 
+    # (~/ade/src will be automatically shared into dev nodes)
+    # safely make it if it doesn't exist
+    mkdir -p ~/ade/src
+    # make the logs directory
+    # each node will mount /var/log in ~/ade/log/{node_name}
+    mkdir -p /ade/log
+
     platform=`uname`
     running "checking OS compatibility"
     if [[ "$platform" == "Darwin" ]]; then
         ok
-        source scripts/osx_setup.sh
+        source host/portal_osx.sh
         install_homebrew
         install_brewcask
     elif [[ "$platform" == "cygwin" ]]; then
@@ -39,9 +46,6 @@ function init_devenv() {
         exit -1
     fi
 
-    # (~/src will be automatically shared into dev nodes)
-    # safely make it if it doesn't exist
-    mkdir -p ~/src
 
     require_cask vagrant
     install_all_rubygems

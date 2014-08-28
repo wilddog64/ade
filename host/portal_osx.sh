@@ -34,4 +34,13 @@ if [[ $? != 0 ]]; then
 fi
 ok
 
+
+if [ ! -d ~/ade/src/portal ]; then
+	# get the code repo
+	git clone git://github.disney.com/Portal/portal_application_framework.git ~/ade/src/portal
+	cd ~/ade/src/portal
+	./deploy.sh -b master -l
+	cd -
+fi
+
 # all done

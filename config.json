@@ -1,8 +1,8 @@
 {
     "mounts": [
         {
-            "path": "~/src",
-            "mount_point": "/tmp/vagrant/src"
+            "path": "~/ade",
+            "mount_point": "/tmp/vagrant/ade"
         },
         {
             "path": "./scripts",
