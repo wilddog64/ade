@@ -86,6 +86,7 @@ function purge() {
     if [[ $response =~ ^(no|n|N) ]];then
         exit 0
     else
+        vagrant destroy -f
         init_devenv
     fi
 }
