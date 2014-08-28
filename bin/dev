@@ -30,7 +30,7 @@ function init_devenv() {
     mkdir -p ~/ade/src
     # make the logs directory
     # each node will mount /var/log in ~/ade/log/{node_name}
-    mkdir -p /ade/log
+    mkdir -p ~/ade/log
 
     platform=`uname`
     running "checking OS compatibility"
