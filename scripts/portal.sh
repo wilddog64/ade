@@ -30,8 +30,8 @@ rpm -U http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 # Install and configure Zend/PHP, Git and needed extensions
 yum install -y -q dos2unix httpd git-core wget
 yum install -y -q python python-setuptools.noarch
-yum --enablerepo=remi install -y -q php-ZendFramework
-
+#yum install -y php-ZendFramework
+yum --enablerepo=remi install -y php-ZendFramework-Db-Adapter-Pdo-Mysql
 
 easy_install supervisor
 
