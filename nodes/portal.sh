@@ -11,7 +11,7 @@
 # environment
 ENV="desktop_osx";
 DOMAIN="desktop.framework.corp.disney.com";
-REPO="git://github.disney.com/Portal/portal_application_framework.git";
+#REPO="git://github.disney.com/Portal/portal_application_framework.git";
 # APACHE_USER is the apache running user
 # for DTSS IaaS, this should be cloud\-user
 # for DTSS Managed, this should be MGMTPROD\\_dtsssvc_portal
@@ -27,9 +27,8 @@ rpm -U http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 ## Remi Dependency on RHEL/CentOS 6 ##
 rpm -U http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
 
-# Install and configure Zend/PHP, Git and needed extensions
-yum install -y dos2unix httpd git-core wget
-yum install -y python python-setuptools.noarch
+# Install and configure Zend/PHP, etc
+yum install -y httpd wget python python-setuptools.noarch
 #yum install -y php-ZendFramework
 yum --enablerepo=remi install -y php-ZendFramework-Db-Adapter-Pdo-Mysql
 
@@ -44,9 +43,9 @@ easy_install supervisor
 #chmod 664 /usr/local/zend/etc/conf.d/env.ini;
 
 # bypass https cert error
-git config --global http.sslVerify false;
+#git config --global http.sslVerify false;
 # remove current html dir (if exists)
-rm -rf /var/www/html;
+#rm -rf /var/www/html;
 
 #git clone $REPO /var/www/html;
 
@@ -73,12 +72,12 @@ yum install -y mod_ssl;
 # change apache to run on 80:
 sed -i 's/Listen 127.0.0.1:8091/Listen 80/' /etc/httpd/conf/httpd.conf;
 # replace default doc root
-sed -i 's/"\/var\/www\/html"/"\/var\/www\/html\/public"/' /etc/httpd/conf/httpd.conf;
+sed -i 's/"\/var\/www\/html"/"\/var\/www\/portal\/public"/' /etc/httpd/conf/httpd.conf;
 
 # add vhost
 echo '<VirtualHost *:80>
     ServerName '$DOMAIN'
-    DocumentRoot "/var/www/html/public"
+    DocumentRoot "/var/www/portal/public"
 
     RewriteEngine On
     RewriteCond %{HTTPS} off
@@ -87,7 +86,7 @@ echo '<VirtualHost *:80>
 
     SetEnv APPLICATION_ENV '$ENV'
 
-    <Directory "/var/www/html/public">
+    <Directory "/var/www/portal/public">
         AllowOverride All
         Allow from all
     </Directory>
@@ -126,7 +125,7 @@ echo "HOSTNAME=internal.hostname.DOMAIN.com" > /etc/sysconfig/network
 # mysql
 yum install -y mysql-server mysql-client supervisord;
 /etc/init.d/mysqld restart;
-cd /var/www/html/db/;
+cd /var/www/portal/db/;
 mysql -u root < portal_user.sql;
 mysql -u root < portal_schema.sql;
 mysql -u root < portal_data.sql;
@@ -135,4 +134,4 @@ mysql -u root < portal_test.sql;
 # make apache run as the user we want
 sed -i 's/User apache/User '$APACHE_USER'/' /etc/httpd/conf/httpd.conf;
 sed -i 's/Group apache/Group '$APACHE_GROUP'/' /etc/httpd/conf/httpd.conf;
-chown -R $APACHE_USER:$APACHE_GROUP /var/www/html;
+chown -R $APACHE_USER:$APACHE_GROUP /var/www;
