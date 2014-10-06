@@ -32,8 +32,9 @@ function install_ruby_bundle() {
     bundle install >> /dev/null
 }
 
-function install_all_rubygems() {
+function install_ruby() {
+    local ruby_version=$1
     install_rbenv
     install_ruby_bundle
-    require_ruby 1.9.3-p547
+    require_ruby $ruby_version
 }

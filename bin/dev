@@ -42,6 +42,7 @@ function init_devenv() {
 
     require_cask vagrant
     install_all_rubygems
+    install_ruby 1.9.3-547
 
     echo "generating config files:"
     # remove generated files
