@@ -35,6 +35,6 @@ function install_ruby_bundle() {
 function install_ruby() {
     local ruby_version=$1
     install_rbenv
-    install_ruby_bundle
     require_ruby $ruby_version
+    install_ruby_bundle
 }

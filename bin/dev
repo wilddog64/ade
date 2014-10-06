@@ -29,7 +29,7 @@ function init_devenv() {
     running "checking OS compatibility"
     if [[ "$platform" == "Darwin" ]]; then
         ok
-        source host/portal_osx.sh
+        # source host/portal_osx.sh
         install_homebrew
         install_brewcask
     elif [[ "$platform" == "cygwin" ]]; then
@@ -42,7 +42,7 @@ function init_devenv() {
 
     require_cask vagrant
     install_all_rubygems
-    install_ruby 1.9.3-547
+    install_ruby '1.9.3-p547'
 
     echo "generating config files:"
     # remove generated files
