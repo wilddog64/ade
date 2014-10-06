@@ -60,18 +60,6 @@ function init_devenv() {
     source ./bin/install_vagrant_plugins.sh
     install_vagrant_plugins
 
-    if [[ $reload = 1 ]]; then
-        echo "reloading vagrant:"
-        vagrant reload --provision
-        ok
-    else
-        echo "starting vagrant:"
-        vagrant up
-        ok
-    fi
-
-    # load server:
-    open http://localhost
 }
 
 function purge() {
