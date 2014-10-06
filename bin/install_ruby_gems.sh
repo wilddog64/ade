@@ -23,6 +23,7 @@ function init_rbenv() {
 function install_rbenv() {
     require_brew rbenv
     require_brew ruby-build
+    init_rbenv ~/.bashrc
 }
 
 function install_ruby_bundle() {
@@ -34,6 +35,5 @@ function install_ruby_bundle() {
 function install_all_rubygems() {
     install_rbenv
     install_ruby_bundle
-    init_rbenv ~/.bashrc
     require_ruby 1.9.3-p547
 }
