@@ -100,3 +100,16 @@ function require_vagrant_plugin() {
     fi
     ok
 }
+
+function require_ruby() {
+    local version=$1
+    running "need ruby version $version"
+    output=$(rbenv versions | grep $version);
+    if [[ $? != 0 ]]; then
+        action "installing ruby $version"
+        rbenv install $version
+        rbenv local $version
+    fi
+    ok
+}
+
