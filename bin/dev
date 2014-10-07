@@ -15,7 +15,7 @@ cd $SCRIPT_HOME/..
 
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
-function clean(){
+function clean() {
     rm -rf Vagrantfile
     rm -rf ./bin/install_vagrant_plugins.sh
 }
