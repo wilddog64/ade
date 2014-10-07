@@ -1,0 +1,6 @@
+function install_brews() {
+<%- config[:brewcasks].each do | cask | -%>
+  require_cask <%=cask%>
+<%- end -%>
+}
+

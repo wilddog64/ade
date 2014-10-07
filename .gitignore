@@ -33,4 +33,5 @@ chef
 Vagrantfile
 bin/install_vagrant_plugins.sh
 bin/install_brews.sh
+bin/install_casks.sh
 .ruby-version

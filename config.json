@@ -44,5 +44,9 @@
         "zsh",
         "autojump",
         "colordiff"
+    ],
+    "brewcasks": [
+        "google-chrome",
+        "sourcetree"
     ]
 }
