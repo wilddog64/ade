@@ -56,6 +56,9 @@ function init_devenv() {
     source ./bin/install_vagrant_plugins.sh
     install_vagrant_plugins
 
+    source ./bin/install_brews.sh
+    install_brews
+
 }
 
 function purge() {

@@ -1,4 +1,4 @@
-function install_brew() {
+function install_brews() {
 <%- config[:brews].each do | brew | -%>
   require_brew <%=brew%>
 <%- end %>

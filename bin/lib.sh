@@ -113,4 +113,3 @@ function require_ruby() {
     fi
     ok
 }
-
