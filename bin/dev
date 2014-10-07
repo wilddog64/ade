@@ -59,6 +59,9 @@ function init_devenv() {
     source ./bin/install_brews.sh
     install_brews
 
+    source ./bin/install_casks.sh
+    install_casks
+
 }
 
 function purge() {
