@@ -32,4 +32,5 @@ chef
 *.lock
 Vagrantfile
 bin/install_vagrant_plugins.sh
+bin/install_brews.sh
 .ruby-version
