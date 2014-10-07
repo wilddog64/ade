@@ -43,7 +43,20 @@
     "brews": [
         "zsh",
         "autojump",
-        "colordiff"
+        "colordiff",
+        "macvim",
+        "terminal-notifier",
+        "rbenv-readline",
+        "dtach",
+        "curl",
+        "git",
+        "git-extra",
+        "p7zip",
+        "ctags",
+        "dos2unix",
+        "clib",
+        "lynx",
+        "coreutils"
     ],
     "brewcasks": [
         "google-chrome",
