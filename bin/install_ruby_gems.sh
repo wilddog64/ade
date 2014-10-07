@@ -27,7 +27,7 @@ function install_rbenv() {
 }
 
 function install_ruby_bundle() {
-    require_gem bundle
+    require_gem bundler
     bundle update >> /dev/null
     bundle install >> /dev/null
 }
@@ -36,5 +36,6 @@ function install_ruby() {
     local ruby_version=$1
     install_rbenv
     require_ruby $ruby_version
+    rbenv local $ruby_versioin
     install_ruby_bundle
 }
