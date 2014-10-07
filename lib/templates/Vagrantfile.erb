@@ -19,9 +19,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   <%- end -%>
 
   <%- if config[:vagrant_port_forwards].count > 0 -%>
-    <%- config[:vagrant_port_forwards].each do | port_forward | -%>
-    config.vm.network :forwarded_port, guest: <%=port_forward['guest']-%>, host: <%=port_forward['host']%>, auto_correct: true
-    <%- end -%>
+  <%- config[:vagrant_port_forwards].each do | port_forward | -%>
+  config.vm.network :forwarded_port, guest: <%=port_forward['guest']-%>, host: <%=port_forward['host']%>, auto_correct: true
+  <%- end -%>
   <%- end -%>
 
   (18001..18010).each do |port|
