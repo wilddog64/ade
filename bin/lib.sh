@@ -113,3 +113,7 @@ function require_ruby() {
     fi
     ok
 }
+
+function cleanup_untrack_bin_files() {
+   git clean -f -X ./bin
+}
