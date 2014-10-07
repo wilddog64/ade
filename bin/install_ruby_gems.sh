@@ -26,8 +26,15 @@ function install_rbenv() {
     init_rbenv ~/.bashrc
 }
 
+function rbenv_rehash() {
+    action 'rehash rbenv'
+    eval "$(rbenv init -)"
+    rbenv rehash
+}
+
 function install_ruby_bundle() {
     require_gem bundler
+    rbenv_rehash
     bundle update >> /dev/null
     bundle install >> /dev/null
 }
