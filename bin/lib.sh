@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Colors
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
@@ -66,7 +65,8 @@ function require_brew() {
 
 function require_gem() {
     running "gem $1"
-    if [[ $(gem list --local | grep $1 ) != $1 ]];
+    gem list --local | grep $1
+    if [[ $? != 0 ]];
         then
             action "installing gem $1"
             gem install $1
