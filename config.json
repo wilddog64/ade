@@ -30,12 +30,14 @@
             "version": ""
         }
     ],
-    "vagrant_port_forwards": [{
-        	"guest":49155,
-        	"host":49155
-        },{
-        	"guest":5000,
-        	"host":5000
+    "vagrant_port_forwards": [
+	{
+            "guest": 49155,
+            "host":  49155
+        },
+	{
+            "guest": 5000,
+            "host":  5000
         }
     ]
 }
