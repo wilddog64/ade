@@ -48,13 +48,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ]
   end
 
-  if not ENV.has_key?( 'RELOAD' )
-    config.vm.provision :shell, inline: 'packer build /vagrant/devenv.json'
-    config.vm.provision :shell, path: './bin/run_image.sh'
-  end
-
-
-
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
