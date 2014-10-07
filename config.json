@@ -39,5 +39,10 @@
             "guest": 5000,
             "host":  5000
         }
+    ],
+    "brews": [
+        "zsh",
+        "autojump",
+        "colordiff"
     ]
 }

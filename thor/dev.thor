@@ -21,6 +21,17 @@ module Devenv
       )
     end
 
+    def generate_install_brew_script
+      config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
+      template_name   = 'install_brews.sh.erb'
+      output_filename = File.join( options[:shell_script_output_dir], 'install_brews.sh' )
+      template(
+        template_name,
+        output_filename,
+        :brews => config['brews']
+      )
+    end
+
     def create_vagrant_file
       config = load_json_config_file( project_root, options[:vagrant_mount_file] )
       template(
