@@ -7,7 +7,7 @@
 source ./bin/lib.sh
 source ./bin/install_homebrew.sh
 source ./bin/install_brewcask.sh
-source ./bin/install_ruby_gems.sh
+source ./bin/install_ruby.sh
 
 SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
 
