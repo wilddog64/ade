@@ -96,6 +96,8 @@ function recreate() {
 }
 
 
+getScriptDir
+
 case "$1" in
     init)
         init_devenv
