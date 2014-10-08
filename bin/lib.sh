@@ -69,7 +69,7 @@ function require_gem() {
     if [[ $? != 0 ]];
         then
             action "installing gem $1"
-            gem install $1
+            gem install --no-rdoc --no-ri $1
     fi
     ok
 }
