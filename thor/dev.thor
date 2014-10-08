@@ -2,7 +2,7 @@ module Devenv
   class Vagrant < Thor::Group
     include Thor::Actions
 
-    argument :project_root, :type => :string, :default => '.'
+    argument :project_root, :type => :string, :default => File.expand_path( File.dirname( __FILE__ ) )
     class_option :vagrant_mount_file, :type => :string, :aliases => [ '-V' ], :default => 'config.json'
     class_option :output_file, :type => :string, :aliases => [ '-o' ], :default => 'Vagrantfile'
     class_option :shell_script_output_dir, :type => :string, :aliases => [ '-s' ], :default => './bin'
