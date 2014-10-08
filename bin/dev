@@ -42,7 +42,6 @@ function init_devenv() {
 
 
     require_cask vagrant
-    install_all_rubygems
     install_ruby '1.9.3-p547'
     rbenv_rehash
 
