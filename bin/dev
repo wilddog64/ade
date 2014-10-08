@@ -6,21 +6,28 @@
 # directory.  The script # will also follow the symlink to find out the
 # correct directory.  It takes no parameters.
 function getScriptDir() {
-    local dir=$1
-    perl -e 'print readlink( shift )' $dir
-}
+    SOURCE="${BASH_SOURCE[0]}"
+    while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+      DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+      SOURCE="$(readlink "$SOURCE")"
+      [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+    done
+    echo "$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
+}
 
 SCRIPT_HOME=$(dirname $(getScriptDir $0))
 
-source $SCRIPT_HOME/lib.sh
-source $SCRIPT_HOME/install_homebrew.sh
-source $SCRIPT_HOME/install_brewcask.sh
-source $SCRIPT_HOME/install_ruby.sh
-
-cd $SCRIPT_HOME/..
+cd $SCRIPT_HOME
 
 SCRIPT_BIN=$SCRIPT_HOME/bin
+
+echo $(pwd)
+source $SCRIPT_BIN/lib.sh
+source $SCRIPT_BIN/install_homebrew.sh
+source $SCRIPT_BIN/install_brewcask.sh
+source $SCRIPT_BIN/install_ruby.sh
+
 
 function clean() {
     rm -rf Vagrantfile
@@ -59,13 +66,13 @@ function init_devenv() {
     thor devenv:vagrant
     ok
 
-    source $SCRIPT_HOME/install_brews.sh
+    source $SCRIPT_BIN/install_brews.sh
     install_brews
 
-    source $SCRIPT_HOME/install_casks.sh
+    source $SCRIPT_BIN/install_casks.sh
     install_casks
 
-    source $SCRIPT_HOME/install_vagrant_plugins.sh
+    source $SCRIPT_BIN/install_vagrant_plugins.sh
     install_vagrant_plugins
 
 }
