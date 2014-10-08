@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function init_rbenv() {
-	running "init rbenv"
+    running "init rbenv"
     local rcfile=$1
     local rc=0
 
