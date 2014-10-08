@@ -2,14 +2,21 @@
 
 #set -e
 
-# vagrant up
+# getScriptDir is a bash function that return the current execution script
+# directory.  The script # will also follow the symlink to find out the
+# correct directory.  It takes no parameters.
+function getScriptDir() {
+    local dir=$1
+    perl -e 'print readlink( shift )' $dir
+}
 
-source ./bin/lib.sh
-source ./bin/install_homebrew.sh
-source ./bin/install_brewcask.sh
-source ./bin/install_ruby.sh
 
-SCRIPT_HOME="$( cd "$( dirname "$0" )" && pwd )"
+SCRIPT_HOME=$(dirname $(getScriptDir $0))
+
+source $SCRIPT_HOME/lib.sh
+source $SCRIPT_HOME/install_homebrew.sh
+source $SCRIPT_HOME/install_brewcask.sh
+source $SCRIPT_HOME/install_ruby.sh
 
 cd $SCRIPT_HOME/..
 
@@ -52,13 +59,13 @@ function init_devenv() {
     thor devenv:vagrant
     ok
 
-    source ./bin/install_brews.sh
+    source $SCRIPT_HOME/install_brews.sh
     install_brews
 
-    source ./bin/install_casks.sh
+    source $SCRIPT_HOME/install_casks.sh
     install_casks
 
-    source ./bin/install_vagrant_plugins.sh
+    source $SCRIPT_HOME/install_vagrant_plugins.sh
     install_vagrant_plugins
 
 }
