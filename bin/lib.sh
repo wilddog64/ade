@@ -117,3 +117,23 @@ function require_ruby() {
 function cleanup_untrack_bin_files() {
    git clean -f -X ./bin
 }
+
+# getScriptDir is a bash function that return the current execution script
+# directory.  The script # will also follow the symlink to find out the
+# correct directory.  It takes no parameters.
+function getScriptDir() {
+    SCRIPT_PATH="${BASH_SOURCE[0]}"
+    if ([ -h "${SCRIPT_PATH}" ])
+    then
+        while([ -h "${SCRIPT_PATH}" ])
+        do
+            SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`
+        done
+    fi
+    pushd . > /dev/null
+    cd `dirname ${SCRIPT_PATH}` > /dev/null
+    SCRIPT_PATH=`pwd`
+    popd > /dev/null
+    echo $SCRIPT_PATH
+}
+
