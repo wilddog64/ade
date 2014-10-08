@@ -60,6 +60,9 @@
     ],
     "brewcasks": [
         "google-chrome",
-        "sourcetree"
+        "sourcetree",
+        "firefox",
+        "textmate",
+        "virtualbox"
     ]
 }
