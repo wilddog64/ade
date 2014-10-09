@@ -38,7 +38,7 @@ function install_all() {
     # remove generated files
     clean
     # create new configs from templates
-    thor devenv:vagrant
+    thor dev:env
     ok
 
     source $SCRIPT_BIN/install_brews.sh

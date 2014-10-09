@@ -1,5 +1,5 @@
-module Devenv
-  class Vagrant < Thor::Group
+module Dev
+  class Env < Thor::Group
     include Thor::Actions
 
     argument :project_root, :type => :string, :default => File.expand_path( File.dirname( __FILE__ ) )
