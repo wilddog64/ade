@@ -34,4 +34,5 @@ Vagrantfile
 bin/install_vagrant_plugins.sh
 bin/install_brews.sh
 bin/install_casks.sh
+bin/install_gems.sh
 .ruby-version
