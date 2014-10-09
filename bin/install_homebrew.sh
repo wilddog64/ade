@@ -7,8 +7,8 @@ function install_homebrew() {
     	action "installing homebrew"
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         if [[ $? != 0 ]]; then
-        	error "unable to install homebrew, script $0 abort!"
-        	exit -1
+            error "unable to install homebrew, script $0 abort!"
+            exit -1
     	fi
     fi
     ok
