@@ -28,6 +28,33 @@ source $SCRIPT_BIN/install_homebrew.sh
 source $SCRIPT_BIN/install_brewcask.sh
 source $SCRIPT_BIN/install_ruby.sh
 
+function install_all() {
+
+    install_ruby '1.9.3-p547'
+    rbenv_rehash
+
+    echo "generating config files:"
+
+    # remove generated files
+    clean
+    # create new configs from templates
+    thor devenv:vagrant
+    ok
+
+    source $SCRIPT_BIN/install_brews.sh
+    install_brews
+
+    source $SCRIPT_BIN/install_casks.sh
+    install_casks
+
+    source $SCRIPT_BIN/install_vagrant_plugins.sh
+    install_vagrant_plugins
+
+    source $SCRIPT_BIN/install_gems.sh
+    install_gems
+
+    rbenv rehash
+}
 
 function clean() {
     rm -rf Vagrantfile
@@ -53,30 +80,7 @@ function init_devenv() {
         error "Sorry, your environment is unsupported. Please order a macbook :)"
         exit -1
     fi
-
-
-    require_cask vagrant
-    install_ruby '1.9.3-p547'
-    rbenv_rehash
-
-    echo "generating config files:"
-    # remove generated files
-    clean
-    # create new configs from templates
-    thor devenv:vagrant
-    ok
-
-    source $SCRIPT_BIN/install_brews.sh
-    install_brews
-
-    source $SCRIPT_BIN/install_casks.sh
-    install_casks
-
-    source $SCRIPT_BIN/install_vagrant_plugins.sh
-    install_vagrant_plugins
-
-    source $SCRIPT_BIN/install_gems.sh
-    install_gems
+    install_all
 
 }
 
