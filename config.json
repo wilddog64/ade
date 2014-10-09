@@ -57,6 +57,7 @@
        ,"clib"
        ,"lynx"
        ,"coreutils"
+       ,"tree"
     ],
     "brewcasks": [
         "google-chrome"
