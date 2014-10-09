@@ -29,7 +29,6 @@ function install_rbenv() {
 function rbenv_rehash() {
     action 'rehash rbenv'
     eval "$(rbenv init -)"
-    rbenv rehash
 }
 
 function install_ruby_bundle() {
