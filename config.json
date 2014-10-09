@@ -67,5 +67,12 @@
        ,"iterm2"
        ,"adium"
        ,"quicksilver"
+    ],
+    "gems": [
+        "os",
+        "puppet",
+        "facter",
+        "chef",
+        "berkshelf"
     ]
 }

@@ -75,6 +75,9 @@ function init_devenv() {
     source $SCRIPT_BIN/install_vagrant_plugins.sh
     install_vagrant_plugins
 
+    source $SCRIPT_BIN/install_gems.sh
+    install_gems
+
 }
 
 function purge() {
