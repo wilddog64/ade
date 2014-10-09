@@ -67,6 +67,7 @@
        ,"iterm2"
        ,"adium"
        ,"quicksilver"
+       ,"vagrant"
     ],
     "gems": [
         "os",
