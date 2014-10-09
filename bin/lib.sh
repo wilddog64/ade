@@ -66,10 +66,9 @@ function require_brew() {
 function require_gem() {
     running "gem $1"
     gem list --local | grep $1
-    if [[ $? != 0 ]];
-        then
-            action "installing gem $1"
-            gem install --no-rdoc --no-ri $1
+    if [[ $? != 0 ]]; then
+       action "installing gem $1"
+       gem install --no-rdoc --no-ri $1
     fi
     ok
 }
