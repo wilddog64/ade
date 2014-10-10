@@ -5,6 +5,7 @@ RUBY_BIN=/usr/bin/ruby
 RUBY_GEM=/usr/bin/gem
 
 function _getScriptDir() {
+    unset CDPATH               # so this script won't be affect by CDPATH variable
     SOURCE="${BASH_SOURCE[0]}"
     while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
       DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -21,4 +22,5 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 
 cd $SCRIPT_HOME
 source $SCRIPT_BIN/console.sh
+
 
