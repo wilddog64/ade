@@ -78,5 +78,9 @@
         ,"chef"
         ,"berkshelf"
         ,"veewee"
+        ,"boson"
+        ,"alias"
+        ,"hirb"
+        ,"boson-more"
     ]
 }
