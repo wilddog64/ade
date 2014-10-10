@@ -70,6 +70,7 @@
        ,"quicksilver"
        ,"vagrant"
        ,"cord"
+       ,"controlplane"
     ],
     "gems": [
         "os"
