@@ -76,6 +76,7 @@
         "puppet",
         "facter",
         "chef",
-        "berkshelf"
+        "berkshelf",
+        "veewee"
     ]
 }
