@@ -23,6 +23,7 @@ cd $SCRIPT_HOME
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
 echo $(pwd)
+source $SCRIPT_BIN/console.sh
 source $SCRIPT_BIN/lib.sh
 source $SCRIPT_BIN/install_homebrew.sh
 source $SCRIPT_BIN/install_brewcask.sh
