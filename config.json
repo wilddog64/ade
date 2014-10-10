@@ -72,11 +72,11 @@
        ,"cord"
     ],
     "gems": [
-        "os",
-        "puppet",
-        "facter",
-        "chef",
-        "berkshelf",
-        "veewee"
+        "os"
+        ,"puppet"
+        ,"facter"
+        ,"chef"
+        ,"berkshelf"
+        ,"veewee"
     ]
 }
