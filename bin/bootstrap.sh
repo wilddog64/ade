@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 # use system ruby
-RUBY_BIN=/usr/bin/ruby
-RUBY_GEM=/usr/bin/gem
 
 function _getScriptDir() {
     unset CDPATH               # so this script won't be affect by CDPATH variable
@@ -22,5 +20,28 @@ SCRIPT_BIN=$SCRIPT_HOME/bin
 
 cd $SCRIPT_HOME
 source $SCRIPT_BIN/console.sh
+source $SCRIPT_BIN/lib.sh
 
+function check_system_ruby() {
+    which ruby
+}
 
+function check_brew_exist() {
+    local brew_exists=0
+    if [[ -e /usr/local/bin/brew ]]; then
+	brew_exists=1
+    fi
+
+    echo $brew_exists
+}
+
+function install_required_gems() {
+
+    if [[ -z check_system_ruby ]]; then
+	bot 'Looks like you do not have brew on your system so I am working on it ...'	
+    else
+	require_gem facter 1
+    fi
+}
+
+install_required_gems
