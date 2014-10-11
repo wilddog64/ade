@@ -30,4 +30,6 @@ function warn() {
 
 function error() {
     echo -e "$COL_RED[error]$COL_RESET "$1
+    exit -1
 }
+
