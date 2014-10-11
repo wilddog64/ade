@@ -15,11 +15,21 @@ function require_cask() {
 }
 
 function require_gem() {
-    running "gem $1"
-    gem list --local | grep "$1\b"
+   local gem=$1
+   local running_as_root=$2
+
+   [[ -z $running_as_root ]] && running_as_root=0
+    running "gem $gem"
+    gem list --local | grep "$gem\b"
     if [[ $? != 0 ]]; then
-       action "installing gem $1"
-       gem install --no-rdoc --no-ri $1
+       action "installing gem $gem"
+       if [[ $running_as_root = 1 ]]; then
+         action install $gem as a privillege user
+         sudo gem install --no-rdoc --no-ri $gem
+       else
+         gem install --no-rdoc --no-ri $gem
+       fi
+
     fi
     ok
 }
