@@ -44,4 +44,12 @@ function install_required_gems() {
     fi
 }
 
-install_required_gems
+function get_os_platform() {
+    install_required_gems
+
+    local facter_bin=$(which facter)
+    if [[ -z $facter_bin ]]; then
+	error 'facter does not install script abort'
+    fi
+    $facter_bin os -y | ruby -ryaml -e "print YAML.load( STDIN.read )['os']['name']"	
+}
