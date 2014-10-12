@@ -40,7 +40,7 @@ function install_required_gems() {
     if [[ -z check_system_ruby ]]; then
 	bot 'Looks like you do not have brew on your system so I am working on it ...'	
     else
-	require_gem facter 1
+	require_gem facter 1 > /dev/null
     fi
 }
 
@@ -53,3 +53,45 @@ function get_os_platform() {
     fi
     $facter_bin os -y | ruby -ryaml -e "print YAML.load( STDIN.read )['os']['name']"	
 }
+
+function install_centos_brew() {
+    action install prereq for centos
+    sudo yum groupinstall 'Development Tools'
+    ok
+    sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel
+    ok
+}
+
+function install_homebrew() {
+    local platform_name=$(get_os_platform)
+
+    case $platform_name in
+	CentOS*)
+	    echo platform is $platform_name
+	    install_centos_preq
+	    ;;
+	Ubuntu*)
+	    echo platform is $platform_name
+	    install_ubuntu_preq
+	    ;;
+	Darwin*)
+	    echo platform is $platform
+	    install_darwin_preq
+    esac
+    ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
+}
+
+install_centos_preq() {
+    sudo yum groupinstall 'Development Tools' -y
+    sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel -y
+    echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+    source ~/.bashrc
+}
+
+install_ubuntu_preq() {
+    sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
+    echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+    source ~/.bashrc
+}
+
+install_homebrew
