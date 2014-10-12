@@ -77,7 +77,7 @@ function install_homebrew() {
 	    install_linux_brew
 	    ;;
 	Darwin*)
-	    echo platform is $platform
+	    echo platform is $platform_name
     esac
 }
 
