@@ -83,25 +83,27 @@ function install_homebrew() {
     esac
 }
 
-install_centos_preq() {
+function install_centos_preq() {
     sudo yum groupinstall 'Development Tools' -y
     sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel -y
     echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
     source ~/.bashrc
 }
 
-install_ubuntu_preq() {
+
+
+function install_ubuntu_preq() {
     sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
     echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
     source ~/.bashrc
 }
 
-install_linux_brew() {
+function install_linux_brew() {
     # ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
     install_brew https://raw.github.com/Homebrew/linuxbrew/go/install
 }
 
-install_darwin_brew() {
+function install_darwin_brew() {
     install_brew https://raw.githubusercontent.com/Homebrew/install/master/install
 }
 
