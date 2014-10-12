@@ -41,6 +41,7 @@ function install_required_gems() {
 	bot 'Looks like you do not have brew on your system so I am working on it ...'	
     else
 	require_gem facter 1 > /dev/null
+	require_gem thor 1 > /dev/null
     fi
 }
 
