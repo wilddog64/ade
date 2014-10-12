@@ -69,16 +69,16 @@ function install_homebrew() {
 	CentOS*)
 	    echo platform is $platform_name
 	    install_centos_preq
+	    install_linux_brew
 	    ;;
 	Ubuntu*)
 	    echo platform is $platform_name
 	    install_ubuntu_preq
+	    install_linux_brew
 	    ;;
 	Darwin*)
 	    echo platform is $platform
-	    install_darwin_preq
     esac
-    ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
 }
 
 install_centos_preq() {
@@ -92,6 +92,10 @@ install_ubuntu_preq() {
     sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
     echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
     source ~/.bashrc
+}
+
+install_linux_brew() {
+    ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
 }
 
 install_homebrew
