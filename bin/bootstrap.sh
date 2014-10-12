@@ -118,5 +118,3 @@ function install_brew() {
     fi
     ok
 }
-
-install_homebrew
