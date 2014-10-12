@@ -54,18 +54,18 @@ module Dev
       )
     end
 
-    def create_vagrant_file
-      config = load_json_config_file( project_root, options[:vagrant_mount_file] )
-      template(
-        'Vagrantfile.erb',
-        options[:output_file],
-        {
-          :mounts                => config['mounts'],
-          :vagrant_plugins       => config['vagrant_plugins'],
-          :vagrant_port_forwards => config['vagrant_port_forwards']
-        }
-      )
-    end
+    # def create_vagrant_file
+    #   config = load_json_config_file( project_root, options[:vagrant_mount_file] )
+    #   template(
+    #     'Vagrantfile.erb',
+    #     options[:output_file],
+    #     {
+    #       :mounts                => config['mounts'],
+    #       :vagrant_plugins       => config['vagrant_plugins'],
+    #       :vagrant_port_forwards => config['vagrant_port_forwards']
+    #     }
+    #   )
+    # end
 
     private
 
