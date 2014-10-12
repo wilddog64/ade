@@ -78,6 +78,7 @@ function install_homebrew() {
 	    ;;
 	Darwin*)
 	    echo platform is $platform_name
+	    install_darwin_brew
     esac
 }
 
@@ -97,6 +98,10 @@ install_ubuntu_preq() {
 install_linux_brew() {
     # ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
     install_brew https://raw.github.com/Homebrew/linuxbrew/go/install
+}
+
+install_darwin_brew() {
+    install_brew https://raw.githubusercontent.com/Homebrew/install/master/install
 }
 
 function install_brew() {
