@@ -95,7 +95,23 @@ install_ubuntu_preq() {
 }
 
 install_linux_brew() {
-    ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
+    # ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
+    install_brew https://raw.github.com/Homebrew/linuxbrew/go/install
+}
+
+function install_brew() {
+    local brew_url=$1
+    running "checking homebrew"
+    brew_bin=$(which brew) 2>&1 > /dev/null
+    if [[ $? != 0 ]]; then
+	action "installing homebrew"
+	ruby -e "$(curl -fsSL $brew_url)"
+	if [[ $? != 0 ]]; then
+	    error "unable to install homebrew, script $0 abort!"
+	    exit -1
+	fi
+    fi
+    ok
 }
 
 install_homebrew
