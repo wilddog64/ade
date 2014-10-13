@@ -27,12 +27,16 @@ echo $(pwd)
 source $SCRIPT_BIN/console.sh
 source $SCRIPT_BIN/bootstrap.sh
 source $SCRIPT_BIN/lib.sh
+source $SCRIPT_BIN/install_rbenv.sh
 source $SCRIPT_BIN/install_homebrew.sh
 source $SCRIPT_BIN/install_brewcask.sh
 source $SCRIPT_BIN/install_ruby.sh
 
+PATH=/usr/local/bin:~/.linuxbrew/bin:$PATH
+
 function install_all() {
 
+    install_rbenv
     install_ruby '1.9.3-p547'
     rbenv_rehash
 
