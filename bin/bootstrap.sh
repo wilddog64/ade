@@ -86,14 +86,20 @@ function install_homebrew() {
 function install_centos_preq() {
     sudo yum groupinstall 'Development Tools' -y
     sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel -y
-    echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+    add_homebrew_path
     source ~/.bashrc
 }
 
 function install_ubuntu_preq() {
     sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
-    echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+    add_homebrew_path
     source ~/.bashrc
+}
+
+function add_homebrew_path() {
+    if [[ $(grep linuxbrew ~/.bashrc) != 0 ]]; then
+	echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+    fi
 }
 
 function install_linux_brew() {
