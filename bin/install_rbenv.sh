@@ -19,6 +19,14 @@ function init_rbenv() {
         fi
     fi
     ok
+
+    action 'install ruby-build'
+    require_brew ruby-build
+    if [[ $? != 0 ]]; then
+        error "unable to install ruby-build"
+        exit -1
+    fi
+    ok
 }
 
 function install_rbenv() {
