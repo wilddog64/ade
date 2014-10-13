@@ -6,6 +6,7 @@
 # directory.  The script # will also follow the symlink to find out the
 # correct directory.  It takes no parameters.
 function getScriptDir() {
+    unset CDPATH               # so this script won't be affect by CDPATH variable
     SOURCE="${BASH_SOURCE[0]}"
     while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
       DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -23,13 +24,19 @@ cd $SCRIPT_HOME
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
 echo $(pwd)
+source $SCRIPT_BIN/console.sh
+source $SCRIPT_BIN/bootstrap.sh
 source $SCRIPT_BIN/lib.sh
+source $SCRIPT_BIN/install_rbenv.sh
 source $SCRIPT_BIN/install_homebrew.sh
 source $SCRIPT_BIN/install_brewcask.sh
 source $SCRIPT_BIN/install_ruby.sh
 
+PATH=/usr/local/bin:~/.linuxbrew/bin:$PATH
+
 function install_all() {
 
+    install_rbenv
     install_ruby '1.9.3-p547'
     rbenv_rehash
 
@@ -57,7 +64,6 @@ function install_all() {
 }
 
 function clean() {
-    rm -rf Vagrantfile
     cleanup_untrack_bin_files
 }
 
@@ -67,19 +73,8 @@ function init_devenv() {
 
     local reload=$1
 
-    platform=`uname`
-    running "checking OS compatibility"
-    if [[ "$platform" == "Darwin" ]]; then
-        ok
-        # source host/portal_osx.sh
-        install_homebrew
-        install_brewcask
-    elif [[ "$platform" == "cygwin" ]]; then
-        error "This setup is not yet tested on cygwin. Please pull request updates!"
-    else
-        error "Sorry, your environment is unsupported. Please order a macbook :)"
-        exit -1
-    fi
+    install_homebrew
+    install_brewcask
     install_all
 
 }

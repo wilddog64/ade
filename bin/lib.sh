@@ -1,39 +1,5 @@
 #!/usr/bin/env bash
 
-# Colors
-ESC_SEQ="\x1b["
-COL_RESET=$ESC_SEQ"39;49;00m"
-COL_RED=$ESC_SEQ"31;01m"
-COL_GREEN=$ESC_SEQ"32;01m"
-COL_YELLOW=$ESC_SEQ"33;01m"
-COL_BLUE=$ESC_SEQ"34;01m"
-COL_MAGENTA=$ESC_SEQ"35;01m"
-COL_CYAN=$ESC_SEQ"36;01m"
-
-function ok() {
-    echo -e "$COL_GREEN[ok]$COL_RESET "$1
-}
-
-function bot() {
-    echo -e "\n$COL_GREEN\[._.]/$COL_RESET - "$1
-}
-
-function running() {
-    echo -en " ⇒ "$1"..."
-}
-
-function action() {
-    echo -e "\n$COL_YELLOW[action]:$COL_RESET\n ⇒ $1..."
-}
-
-function warn() {
-    echo -e "$COL_YELLOW[warning]$COL_RESET "$1
-}
-
-function error() {
-    echo -e "$COL_RED[error]$COL_RESET "$1
-}
-
 function require_cask() {
     running "brew cask $1"
     brew cask list $1 > /dev/null 2>&1 | true
@@ -48,27 +14,22 @@ function require_cask() {
     ok
 }
 
-function require_brew() {
-    local brew=$1
-    running "brew $brew $2"
-    brew list $brew > /dev/null 2>&1 | true
-    if [[ ${PIPESTATUS[0]} != 0 ]]; then
-        action "brew install $brew $2"
-        brew install $brew $2
-        if [[ $? != 0 ]]; then
-            error "failed to install $brew! aborting..."
-            exit -1
-        fi
-    fi
-    ok
-}
-
 function require_gem() {
-    running "gem $1"
-    gem list --local | grep "$1\b"
+   local gem=$1
+   local running_as_root=$2
+
+   [[ -z $running_as_root ]] && running_as_root=0
+    running "gem $gem"
+    gem list --local | grep "$gem\b"
     if [[ $? != 0 ]]; then
-       action "installing gem $1"
-       gem install --no-rdoc --no-ri $1
+       action "installing gem $gem"
+       if [[ $running_as_root = 1 ]]; then
+         action install $gem as a privillege user
+         sudo gem install --no-rdoc --no-ri $gem
+       else
+         gem install --no-rdoc --no-ri $gem
+       fi
+
     fi
     ok
 }
@@ -89,8 +50,7 @@ function require_vagrant_plugin() {
 
     #echo 'checking if '$grepExpect' is installed via grepStatus: '$grepStatus
 
-    if [[ $grepStatus != $grepExpect ]];
-        then
+    if [[ $grepStatus != $grepExpect ]]; then
             action "missing vagrant plugin $1 $2"
             if [[ ! -z $vagrant_plugin_version ]]; then
                 vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
@@ -101,33 +61,6 @@ function require_vagrant_plugin() {
     ok
 }
 
-function require_ruby() {
-    local version=$1
-    running "need ruby version $version"
-    output=$(rbenv versions | grep $version);
-    if [[ $? != 0 ]]; then
-        action "installing ruby $version"
-        rbenv install $version
-        rbenv local $version
-    fi
-    ok
-}
-
 function cleanup_untrack_bin_files() {
    git clean -f -X ./bin
 }
-
-# getScriptDir is a bash function that return the current execution script
-# directory.  The script # will also follow the symlink to find out the
-# correct directory.  It takes no parameters.
-function _getScriptDir() {
-    SOURCE="${BASH_SOURCE[0]}"
-    while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-      DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-      SOURCE="$(readlink "$SOURCE")"
-      # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-      [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
-    done
-    echo "$( cd -P "$( dirname "$SOURCE" )" && pwd )"
-}
-
