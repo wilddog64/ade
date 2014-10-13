@@ -1,4 +1,9 @@
 function install_casks() {
+  platform=$(get_os_platform)
+  if [[ "$platform" != "Darwin" ]]; then
+    warn "brew-cask only support MacOSX"
+    return 1
+  fi
 <%- config[:brewcasks].each do | cask | -%>
   require_cask <%=cask%>
 <%- end -%>

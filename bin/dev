@@ -74,6 +74,7 @@ function init_devenv() {
     local reload=$1
 
     install_homebrew
+    install_brewcask
     install_all
 
 }
