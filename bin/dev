@@ -64,7 +64,6 @@ function install_all() {
 }
 
 function clean() {
-    rm -rf Vagrantfile
     cleanup_untrack_bin_files
 }
 
