@@ -58,6 +58,8 @@
        ,"lynx"
        ,"coreutils"
        ,"tree"
+       ,"maven"
+       ,"gradle"
     ],
     "brewcasks": [
         "google-chrome"
@@ -71,6 +73,7 @@
        ,"vagrant"
        ,"cord"
        ,"controlplane"
+       ,"hipchat"
     ],
     "gems": [
         "os"
