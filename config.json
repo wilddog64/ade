@@ -29,6 +29,11 @@
             "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
             "version": ""
         }
+       ,{
+            "name": "vagrant-puppet-install",
+            "option": ["config.puppet_install.puppet_version = :latest"],
+            "version": ""
+        }
     ],
     "vagrant_port_forwards": [
 	{
