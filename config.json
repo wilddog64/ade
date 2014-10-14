@@ -61,6 +61,7 @@
        ,"maven"
        ,"gradle"
        ,"ssh-copy-id"
+       ,"keychain"
     ],
     "brewcasks": [
         "google-chrome"
