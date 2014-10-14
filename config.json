@@ -60,6 +60,7 @@
        ,"tree"
        ,"maven"
        ,"gradle"
+       ,"ssh-copy-id"
     ],
     "brewcasks": [
         "google-chrome"
