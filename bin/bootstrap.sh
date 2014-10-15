@@ -40,8 +40,8 @@ function install_required_gems() {
     if [[ -z check_system_ruby ]]; then
 	bot 'Looks like you do not have required gems thor and facter on your system so I am going to get it form you ...'	
     else
-	require_gem facter 1 > /dev/null
-	require_gem thor 1 > /dev/null
+       require_gem facter 1 > /dev/null
+       require_gem thor 1 > /dev/null
     fi
 }
 
@@ -50,7 +50,7 @@ function get_os_platform() {
 
     local facter_bin=$(which facter)
     if [[ -z $facter_bin ]]; then
-	error 'facter does not install script abort'
+       error 'facter does not install script abort'
     fi
     $facter_bin os -y | ruby -ryaml -e "print YAML.load( STDIN.read )['os']['name']"	
 }
