@@ -38,7 +38,7 @@ function check_brew_exist() {
 function install_required_gems() {
 
     if [[ -z check_system_ruby ]]; then
-	bot 'Looks like you do not have brew on your system so I am working on it ...'	
+	bot 'Looks like you do not have required gems thor and facter on your system so I am going to get it form you ...'	
     else
 	require_gem facter 1 > /dev/null
 	require_gem thor 1 > /dev/null
