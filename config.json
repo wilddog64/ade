@@ -67,6 +67,9 @@
        ,"gradle"
        ,"ssh-copy-id"
        ,"keychain"
+       ,"packer"
+       ,"docker"
+       ,"boot2docker"
     ],
     "brewcasks": [
         "google-chrome"
