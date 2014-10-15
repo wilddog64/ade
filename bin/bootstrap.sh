@@ -98,7 +98,7 @@ function install_ubuntu_preq() {
 
 function add_homebrew_path() {
     if [[ $(grep linuxbrew ~/.bashrc) != 0 ]]; then
-	echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
+        echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
     fi
 }
 
@@ -116,12 +116,12 @@ function install_brew() {
     running "checking homebrew"
     brew_bin=$(which brew) 2>&1 > /dev/null
     if [[ $? != 0 ]]; then
-	action "installing homebrew"
-	ruby -e "$(curl -fsSL $brew_url)"
-	if [[ $? != 0 ]]; then
-	    error "unable to install homebrew, script $0 abort!"
-	    exit -1
-	fi
+        action "installing homebrew"
+        ruby -e "$(curl -fsSL $brew_url)"
+        if [[ $? != 0 ]]; then
+            error "unable to install homebrew, script $0 abort!"
+            exit -1
+        fi
     fi
     ok
 }
