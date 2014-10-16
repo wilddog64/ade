@@ -84,6 +84,7 @@
        ,"cord"
        ,"controlplane"
        ,"hipchat"
+       ,"keepassx"
     ],
     "gems": [
         "os"
