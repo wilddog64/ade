@@ -97,5 +97,7 @@
         ,"alias"
         ,"hirb"
         ,"boson-more"
+        ,"r10k"
+        ,"librarian-puppet"
     ]
 }
