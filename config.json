@@ -99,5 +99,6 @@
         ,"boson-more"
         ,"r10k"
         ,"librarian-puppet"
+        ,"puppet-lint"
     ]
 }
