@@ -75,6 +75,7 @@ function init_devenv() {
 
     install_homebrew
     install_brewcask
+    install_node
     install_all
 
 }
@@ -111,6 +112,9 @@ function recreate() {
     vagrant up
 }
 
+function install_nodejs() {
+    require_brew node
+}
 
 case "$1" in
     init)
