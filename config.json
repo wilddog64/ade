@@ -70,6 +70,7 @@
        ,"packer"
        ,"docker"
        ,"boot2docker"
+       ,"node"
     ],
     "brewcasks": [
         "google-chrome"
