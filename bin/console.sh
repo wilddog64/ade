@@ -17,19 +17,26 @@ function bot() {
 }
 
 function running() {
-    echo -en " ⇒ "$1"..."
+    echo -en "${FUNCNAME[1]} ⇒ "$1"..."
+    logging $1
 }
 
 function action() {
     echo -e "\n$COL_YELLOW[action]:$COL_RESET\n ⇒ $1..."
+    logging $1
 }
 
 function warn() {
     echo -e "$COL_YELLOW[warning]$COL_RESET "$1
+    logging $1
 }
 
 function error() {
     echo -e "$COL_RED[error]$COL_RESET "$1
+    logging $1
     exit -1
 }
 
+function logging() {
+    logger ${BASHSOURCE[1]} ${FUNCNAME[1]} $1
+}
