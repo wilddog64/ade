@@ -72,6 +72,7 @@
        ,"boot2docker"
        ,"node"
        ,"gpg"
+       ,"awscli"
     ],
     "brewcasks": [
         "google-chrome"
