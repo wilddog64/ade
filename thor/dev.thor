@@ -54,6 +54,17 @@ module Dev
       )
     end
 
+    def generate_install_npm
+      config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
+      template_name   = 'install_npms.sh.erb'
+      output_filename = File.join( options[:shell_script_output_dir], 'install_npms.sh' )
+      template(
+        template_name,
+        output_filename,
+        :npms => config['npms']
+      )
+    end
+
     # def create_vagrant_file
     #   config = load_json_config_file( project_root, options[:vagrant_mount_file] )
     #   template(

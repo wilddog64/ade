@@ -64,3 +64,19 @@ function require_vagrant_plugin() {
 function cleanup_untrack_bin_files() {
    git clean -f -X ./bin
 }
+
+function require_npm() {
+    local node_package=$1
+
+    running "checking $node_package"
+    npm list -g $node_package > /dev/null 2>&1 | true
+    if [[ ${PIPESTATUS[0]} != 0 ]]; then
+       action "npm install -g $node_package"
+       npm install -g $node_package 2>&1 > /dev/null
+       if [[ $? != 0 ]]; then
+          error "failed to install $node_package"
+       fi
+    fi
+    ok
+}
+
