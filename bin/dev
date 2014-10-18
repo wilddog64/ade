@@ -60,6 +60,11 @@ function install_all() {
     source $SCRIPT_BIN/install_gems.sh
     install_gems
 
+    source $SCRIPT_BIN/install_npms.sh
+    install_npms
+
+
+
     rbenv rehash
 }
 
@@ -75,6 +80,7 @@ function init_devenv() {
 
     install_homebrew
     install_brewcask
+    install_nodejs
     install_all
 
 }
@@ -111,6 +117,9 @@ function recreate() {
     vagrant up
 }
 
+function install_nodejs() {
+    require_brew node
+}
 
 case "$1" in
     init)

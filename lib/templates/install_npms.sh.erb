@@ -1,0 +1,5 @@
+function install_npms() {
+<%- config[:npms].each do | npm | -%>
+  require_npm <%=npm%>
+<%- end -%>
+}
