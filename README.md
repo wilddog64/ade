@@ -2,8 +2,6 @@
 
 Desktop environment configuration or management is always a beast.  It takes time to get your new machine into a state you like it too be.  When machine went south, it is also hard to get all the favior packages and configuration back.  This project is created to help on that perspective.
 
-### \\[._.]/ - On OSX?
-If you are running a mac, you might want to setup a better developer experience using [the dotfiles project](https://github.disney.com/DTSS/dotfiles) before you begin.
 
 ### Getting Started
 
@@ -17,10 +15,7 @@ The simplest way to get started with a fresh new machine is to download this rep
 
 ### Requirements (installed via ./bin/dev init)
 
-* git                   - for cloning this repo
-* Vagrant >= 1.6.3      - to spin up and configure vagrant box to have packer and docker installed
-* Berkshef >= 2.0.1     - for managing chef cookbooks
-* Bundler               - for managing ruby gems
+* Xcode and the command line tools
 
 ### Managing Environment
 
