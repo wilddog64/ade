@@ -174,32 +174,23 @@ The npm sections tells `ADE` what `node js` packages you like to be installed on
 ### Directory Structure
 
 ```
-    .
-    ├── Berksfile                 # Chef cookbooks managment files
-    ├── Gemfile                   # Ruby Gems manage file
-    ├── README.md                 # This document
-    ├── Thorfile                  # Thor initialize file
-    ├── bin                       # A directory contains various scripts related to environment/docker configuration
-    │   ├── dev
-    │   ├── devenv
-    │   ├── devenv.rb
-    │   ├── install_brewcask.sh
-    │   ├── install_homebrew.sh
-    │   ├── install_php.sh
-    │   ├── install_ruby_gems.sh
-    │   └── install_vagrant.sh
-    ├── devenv.json              # A packer template
-    ├── files                    # A directory for uploading files to container
-    │   └── test.txt
-    ├── lib                      # Thor library
-    │   ├── Devenv
-    │   └── templates
-    ├── metadata.rb              # A chef metadata file
-    ├── mount.json               # A json file that contains vagrant mount info
-    ├── nodes                    # A directory contains scripts to build nodes
-    │   └── php.sh
-    ├── roles                    # A chef role for configuring and setup vagrant box
-    │   └── bde_packer.json
-    └── thor                     # Thor tasks directory
-        └── dev.thor
+.
+├── README.md                # this document
+├── Thorfile                 # tells thor where to find its tasks
+├── Vagrantfile              # a vagrant configuration file for building a test environment (linux ubuntu distro).
+├── bin                      # all the magic stores here
+│   ├── bootstrap.sh        # a library to detect os platform and install apporiate packages before anything can start
+│   ├── console.sh          # a console output library
+│   ├── dev                 # main script
+│   ├── install_homebrew.sh # install brew before we can manage brew packages
+│   ├── install_brewcask.sh # install brew-cask before we can install cask packages
+│   ├── install_nodes.sh    # install node so we can use npm
+│   ├── install_ruby.sh     # install ruby
+│   ├── install_rbenv.sh    # install rbenv to manage ruby versions and gems
+│   ├── lib.sh              # various shell functions
+├── config.json              # a json configuration file to drive dev shell script
+├── lib                      # a thor library
+│   └── templates           # where thor uses to generate various shell scripts on the fly based on config.json
+└── thor                     # a thor tasks directory
+    └── dev.thor             # a thor tasks
 ```
