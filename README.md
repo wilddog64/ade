@@ -25,54 +25,6 @@ git clone git@github.disney.com:DTSS/ADE.git;
 cd ADE;
 ./bin/dev init               # initialze working environment, setup vagrant box, and build docker a base image
 
-# extra commands
-./bin/dev start              # only spin up vagrant box and a build docker base image
-./bin/dev reload             # restart vagrant box and rebuild a docker base image
-./bin/dev recreate           # cleanup vagrant environment and rebuild everything
-```
-
-### Configure Mount Directories (optional)
-
-If you need to mount directories into your node(s), you can add mount locations to mount section in config.json
-By default, we will mount ~/src, assuming all your git repos are cloned under that path (if not, you can `ln -s /path/to/git/repos ~/src`).
-
-Additionally, each node has it's own config where you can specify mount points specific for a single node!
-
-### Node Config
-
-Each node config can contain any of these options:
-
-```
-{
-    // if there is a chef section in your node config
-    // then chef will be used to create this node
-    "chef":{
-        // a chef cookbook repo is required
-        "repo": "git://github.disney.com:DisneyID/DisneyID_UI_Chef.git",
-        // also a raw link to the environment config file is required
-        "env": "https://github.disney.com/DisneyID/DisneyID_UI_Chef/raw/master/environments/did-qa/UI-Desktop.json"
-    },
-    // specific mounts for this node only
-    "mounts": [
-        {
-            // path is the location of the host directory
-            "path": "~/src",
-            // mount_point is where it will be located on the node
-            "mount_point": "/var/www/html"
-        }
-    ],
-    // any ports that should forward from your native OS into the node
-    ports:[{
-    	// the port inside the VM
-        "guest": 80,
-        // the port on your native OS that will direct into the box on the guest port
-        "host": 8080
-        // so with this config, you can access localhost:8080 and it will load :80 on the node
-    }],
-    // a shell script to add additional config to this node (after chef runs or instead of chef)
-    "script":"disneyid_ui.sh"
-}
-
 ```
 
 ### Pull Request Additions to the Baseline
