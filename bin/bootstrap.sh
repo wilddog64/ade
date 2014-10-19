@@ -65,7 +65,6 @@ function get_os_platform() {
     $facter_bin os -y | ruby -ryaml -e "print YAML.load( STDIN.read )['os']['name']"	
 }
 
-
 function install_homebrew() {
     local platform_name=$(get_os_platform)
 
