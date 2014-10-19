@@ -17,7 +17,7 @@ The simplest way to get started with a fresh new machine is to download this rep
 
 * Xcode and the command line tools
 
-### Managing Environment
+### Managing An Environment
 
 ```
 # basic setup
