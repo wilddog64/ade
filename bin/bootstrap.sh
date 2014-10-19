@@ -22,10 +22,14 @@ cd $SCRIPT_HOME
 source $SCRIPT_BIN/console.sh
 source $SCRIPT_BIN/lib.sh
 
+# check_system_ruby is used to find out where is ruby for a given
+# system
 function check_system_ruby() {
     which ruby
 }
 
+# check_brew_exist checks if brew exists for any
+# given environment
 function check_brew_exist() {
     local brew_exists=0
     if [[ -e /usr/local/bin/brew ]]; then
@@ -35,6 +39,8 @@ function check_brew_exist() {
     echo $brew_exists
 }
 
+# install_required_gems will install some gems that are used
+# by dev shell script. In this case facter and thor.
 function install_required_gems() {
 
     if [[ -z check_system_ruby ]]; then
@@ -45,6 +51,10 @@ function install_required_gems() {
     fi
 }
 
+# get_os_platform check os platform when
+# script run.  This function depends on 
+# facter for such functionality.  The facter installation
+# is done by install_required_gems
 function get_os_platform() {
     install_required_gems
 
@@ -83,6 +93,8 @@ function install_homebrew() {
     esac
 }
 
+# install_centos_preq install all the necessary centos packages before 
+# install homebrew
 function install_centos_preq() {
     sudo yum groupinstall 'Development Tools' -y
     sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel -y
@@ -90,27 +102,33 @@ function install_centos_preq() {
     source ~/.bashrc
 }
 
+# install_ubuntu_preq install all the necessary ubuntu packages
+# before installing homebrew
 function install_ubuntu_preq() {
     sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev -y
     add_homebrew_path
     source ~/.bashrc
 }
 
+# add homebrew path into .bashrc
 function add_homebrew_path() {
     if [[ $(grep linuxbrew ~/.bashrc) != 0 ]]; then
         echo PATH=~/.linuxbrew/bin:$PATH >> ~/.bashrc
     fi
 }
 
+# install_linux_brew takes care of install homebrew for linux OSes
 function install_linux_brew() {
     # ruby -e "$(wget -O- https://raw.github.com/Homebrew/linuxbrew/go/install)"
     install_brew https://raw.github.com/Homebrew/linuxbrew/go/install
 }
 
+# install_darwin_brew installs homebrew for OSX
 function install_darwin_brew() {
     install_brew https://raw.githubusercontent.com/Homebrew/install/master/install
 }
 
+# install_brew is the main entry for taking care of brew installation
 function install_brew() {
     local brew_url=$1
     running "checking homebrew"
