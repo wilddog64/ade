@@ -24,6 +24,8 @@ cd $SCRIPT_HOME
 SCRIPT_BIN=$SCRIPT_HOME/bin
 
 echo $(pwd)
+
+# loading various libraries
 source $SCRIPT_BIN/console.sh
 source $SCRIPT_BIN/bootstrap.sh
 source $SCRIPT_BIN/lib.sh
@@ -32,8 +34,10 @@ source $SCRIPT_BIN/install_homebrew.sh
 source $SCRIPT_BIN/install_brewcask.sh
 source $SCRIPT_BIN/install_ruby.sh
 
+# setup correct path
 PATH=/usr/local/bin:~/.linuxbrew/bin:$PATH
 
+# install all our perks
 function install_all() {
 
     install_rbenv
@@ -68,10 +72,12 @@ function install_all() {
     rbenv rehash
 }
 
+# clean up generated shell scripts before we start
 function clean() {
     cleanup_untrack_bin_files
 }
 
+# entry point
 function init_devenv() {
 
     bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.com/wilddog64/ade/issues"
