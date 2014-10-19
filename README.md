@@ -103,6 +103,29 @@ brews section describe what packages you want to install for your particular env
 
 ```
 
+#### brewcasks
+
+brewcasks is a section that tells `brew cask` to install `OSX` specific DMG package.  This is an array, and it looks like this:
+
+```
+"brewcasks": [
+    "google-chrome"
+   ,"sourcetree"
+   ,"firefox"
+   ,"textmate"
+   ,"virtualbox"
+   ,"iterm2"
+   ,"adium"
+   ,"quicksilver"
+   ,"vagrant"
+   ,"cord"
+   ,"controlplane"
+   ,"hipchat"
+   ,"keepassx"
+],
+
+```
+
 ### Pull Request Additions to the Baseline
 
 - fork this repo to your own github account or team
