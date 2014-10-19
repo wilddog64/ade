@@ -22,3 +22,23 @@ function require_brew() {
     ok
 }
 
+function update_brew() {
+    action updating brew ...
+    brew update
+    if [[ $? != 0 ]]; then
+        error unable to update brew!
+    fi
+    ok
+}
+
+function upgrade_brews() {
+    update_brew
+
+    action upgrade brew packages
+    brew upgrade
+    if [[ $? != 0 ]]; then
+        error fail to upgrade packages
+    fi
+    ok
+}
+

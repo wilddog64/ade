@@ -147,6 +147,9 @@ case "$1" in
         git pull
         vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh update"
         ;;
+    upgrade-brew)
+        upgrade_brews
+        ;;
     *)
         vagrant ssh -c "sudo /vagrant/bin/devenv-inner.sh $1"
         ;;
