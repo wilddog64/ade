@@ -11,7 +11,7 @@ The simplest way to get started with a fresh new machine is to download this rep
 - in a command line (terminal for OSX, cygwin for Windows), cd into the folder
 - run `./bin/dev init`
 
-> NOTE: OSX is currently supported, Windows is coming soon :)
+> NOTE: current support platforms are OSX, and Ubuntu Linux Distro (some packages from brew may not work)
 
 ### Requirements (installed via ./bin/dev init)
 
