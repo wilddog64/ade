@@ -1,7 +1,6 @@
-## Automated Development Environments (ADE)
+## Mac Automated Desktop Environment (ADE)
 
-Ever wish Java and PHP projects were as simple as `git clone {project}; cd {project}; npm install; grunt server`? Well, now it can be.
-This project will install, configure and run a development environment using Vagrant and Docker instances with minimal configuration by a development team (and no knowledge of Vagrant/Docker is required).
+Desktop environment configuration or management is always a beast.  It takes time to get your new machine into a state you like it too be.  When machine went south, it is also hard to get all the favior packages and configuration back.  This project is created to help on that perspective.
 
 ### \\[._.]/ - On OSX?
 If you are running a mac, you might want to setup a better developer experience using [the dotfiles project](https://github.disney.com/DTSS/dotfiles) before you begin.
