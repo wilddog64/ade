@@ -1,4 +1,4 @@
-## Mac Automated Desktop Environment (ADE)
+## Automated Desktop Environment (ADE)
 
 Desktop environment configuration or management is always a beast.  It takes time to get your new machine into a state you like it too be.  When machine went south, it is also hard to get all the favior packages and configuration back.  This project is created to help on that perspective.
 
