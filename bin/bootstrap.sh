@@ -65,13 +65,6 @@ function get_os_platform() {
     $facter_bin os -y | ruby -ryaml -e "print YAML.load( STDIN.read )['os']['name']"	
 }
 
-function install_centos_brew() {
-    action install prereq for centos
-    sudo yum groupinstall 'Development Tools'
-    ok
-    sudo yum install curl git m4 ruby texinfo bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel
-    ok
-}
 
 function install_homebrew() {
     local platform_name=$(get_os_platform)
