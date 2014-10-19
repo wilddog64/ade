@@ -66,6 +66,43 @@ vagrant-plugins is an array of hashes and each hash contains three keys,
 * options is a list of plugin specific options that you like.  If no options require, simply provide an empty list like `[]`
 * version is a desired plugin version like you.  If you want to use the latest one, just provide an empty string like `""`
 
+#### brews
+
+brews section describe what packages you want to install for your particular environment.  It is a list, and it looks like this:
+
+```
+"brews": [
+    "zsh"
+   ,"autojump"
+   ,"colordiff"
+   ,"macvim"
+   ,"terminal-notifier"
+   ,"rbenv-readline"
+   ,"dtach"
+   ,"curl"
+   ,"git"
+   ,"git-extras"
+   ,"p7zip"
+   ,"ctags"
+   ,"dos2unix"
+   ,"clib"
+   ,"lynx"
+   ,"coreutils"
+   ,"tree"
+   ,"maven"
+   ,"gradle"
+   ,"ssh-copy-id"
+   ,"keychain"
+   ,"packer"
+   ,"docker"
+   ,"boot2docker"
+   ,"node"
+   ,"gpg"
+   ,"awscli"
+],
+
+```
+
 ### Pull Request Additions to the Baseline
 
 - fork this repo to your own github account or team
