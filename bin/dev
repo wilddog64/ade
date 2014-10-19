@@ -74,7 +74,7 @@ function clean() {
 
 function init_devenv() {
 
-    bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.disney.com/DTSS/ADE/issues"
+    bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.com/wilddog64/ade/issues"
 
     local reload=$1
 
