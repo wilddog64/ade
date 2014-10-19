@@ -170,16 +170,6 @@ The npm sections tells `ADE` what `node js` packages you like to be installed on
 - pull-request your feature branch to this repo
 
 
-### Create Your Own Docker Dev Setup!
-
-- fork this repo into your own github profile or team account
-- git clone your fork
-- add the original as an upstream remote `git remote add upstream git@github.disney.com:DTSS/ADE.git`
-- add files needed to build your nodes into the ./files directory
-- add a script for each node you want to run locally in ./nodes
-- commit and push to your own repo
-- now new team members can download your fork, run `./bin/dev init` and be off running!
-
 
 ### Directory Structure
 
