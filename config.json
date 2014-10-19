@@ -107,5 +107,9 @@
     "npms": [
         "azure"
        ,"azure-cli"
+       ,"azure-completion"
+       ,"azure-scripty"
+       ,"azure-common"
+       ,"sql-cli"
     ]
 }
