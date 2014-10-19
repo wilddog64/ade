@@ -27,6 +27,45 @@ cd ADE;
 
 ```
 
+### Package Configuration
+
+ADE uses config.json as a authoring sources to drive packages installation.  The config.json contains the following section,
+
+#### vagrant-plugins
+This section tells  `ADE` what `vagrant plugins` you like it to installed. The structure is like this,
+
+```
+    "vagrant_plugins": [
+        {
+            "name": "vagrant-omnibus",
+            "options": ["config.omnibus.chef_version = :latest"],
+            "version": ""
+        },
+        {
+            "name": "vagrant-berkshelf",
+            "options": ["config.berkshelf.enabled = true"],
+            "version": "2.0.1"
+        },
+        {
+            "name": "vagrant-cachier",
+            "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
+            "version": ""
+        }
+       ,{
+            "name": "vagrant-puppet-install",
+            "option": ["config.puppet_install.puppet_version = :latest"],
+            "version": ""
+        }
+    ],
+
+```
+
+vagrant-plugins is an array of hashes and each hash contains three keys,
+
+* name is vagrant plugin name
+* options is a list of plugin specific options that you like.  If no options require, simply provide an empty list like `[]`
+* version is a desired plugin version like you.  If you want to use the latest one, just provide an empty string like `""`
+
 ### Pull Request Additions to the Baseline
 
 - fork this repo to your own github account or team
