@@ -126,6 +126,27 @@ brewcasks is a section that tells `brew cask` to install `OSX` specific DMG pack
 
 ```
 
+#### gems
+gems section tells `ade` what ruby-gem package you like to have for your development environment.  It is an array, and it looks like this:
+
+```
+"gems": [
+    "os"
+    ,"puppet"
+    ,"facter"
+    ,"chef"
+    ,"berkshelf"
+    ,"veewee"
+    ,"boson"
+    ,"alias"
+    ,"hirb"
+    ,"boson-more"
+    ,"r10k"
+    ,"librarian-puppet"
+    ,"puppet-lint"
+],
+```
+
 ### Pull Request Additions to the Baseline
 
 - fork this repo to your own github account or team
