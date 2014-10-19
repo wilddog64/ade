@@ -147,6 +147,20 @@ gems section tells `ade` what ruby-gem package you like to have for your develop
 ],
 ```
 
+#### npms
+The npm sections tells `ADE` what `node js` packages you like to be installed on your development environment.  It is an array, and it looks like this:
+
+```
+    "npms": [
+        "azure"
+       ,"azure-cli"
+       ,"azure-completion"
+       ,"azure-scripty"
+       ,"azure-common"
+       ,"sql-cli"
+    ]
+```
+
 ### Pull Request Additions to the Baseline
 
 - fork this repo to your own github account or team
