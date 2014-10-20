@@ -72,61 +72,6 @@ function install_all() {
     rbenv rehash
 }
 
-# clean up generated shell scripts before we start
-function clean() {
-    cleanup_untrack_bin_files
-}
-
-# entry point
-function init_devenv() {
-
-    bot "Hi. I'm going to initialize your development environment. My changes are idempotent so you can run './bin/dev init' again if you hit an issue. Please report any issues to https://github.com/wilddog64/ade/issues"
-
-    local reload=$1
-
-    install_homebrew
-    install_brewcask
-    install_nodejs
-    install_all
-
-}
-
-function purge() {
-    vagrant destroy > /dev/null 2>&1
-    clean
-    brew cask uninstall vagrant > /dev/null 2>&1
-    gem uninstall bundle > /dev/null 2>&1
-    brew uninstall rbenv > /dev/null 2>&1
-    bot "all clear. We can now run './bin/dev init' again to spin up anew."
-    read -r -p "Would you like me to run 'init' for you now? [Y|n] " response
-
-    if [[ $response =~ ^(no|n|N) ]];then
-        exit 0
-    else
-        vagrant destroy -f
-        init_devenv
-    fi
-}
-
-function reload_devenv() {
-    export RELOAD=1
-    clean
-    thor devenv:vagrant
-    vagrant reload
-    vagrant provision
-}
-
-function recreate() {
-    clean
-    thor devenv:vagrant
-    vagrant destroy -f
-    vagrant up
-}
-
-function install_nodejs() {
-    require_brew node
-}
-
 case "$1" in
     init)
         init_devenv
