@@ -36,3 +36,4 @@ bin/install_casks.sh
 bin/install_gems.sh
 bin/install_npms.sh
 .ruby-version
+tags
