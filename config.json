@@ -90,6 +90,7 @@
        ,"controlplane"
        ,"hipchat"
        ,"keepassx"
+       ,"dropbox"
     ],
     "gems": [
         "os"
