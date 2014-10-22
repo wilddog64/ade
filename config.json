@@ -73,6 +73,8 @@
        ,"node"
        ,"gpg"
        ,"awscli"
+       ,"freetds"
+       ,"sqsh"
     ],
     "brewcasks": [
         "google-chrome"
