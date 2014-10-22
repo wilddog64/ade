@@ -67,8 +67,6 @@ function install_all() {
     source $SCRIPT_BIN/install_npms.sh
     install_npms
 
-
-
     rbenv rehash
 }
 
