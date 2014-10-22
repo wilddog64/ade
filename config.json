@@ -78,6 +78,7 @@
     ],
     "brewcasks": [
         "google-chrome"
+       ,"google-drive"
        ,"sourcetree"
        ,"firefox"
        ,"textmate"
