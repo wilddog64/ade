@@ -191,3 +191,19 @@ function install_nodejs() {
     require_brew node
 }
 
+function create_ade_symlink() {
+    local source_file=$1
+    local link_target_file=$2
+
+    # if symlink already exist, we will remove it before link
+    if [[ -e $link_target_file ]]; then
+	rm -rf $link_target_file
+    fi
+
+    # create a symlink here
+    ln -s $source_file $link_target_file
+    if [[ $? != 0 ]]; then
+	error unable to create a symlink from $source_file to $link_target_file
+    fi
+}
+
