@@ -98,6 +98,7 @@
        ,"hipchat"
        ,"keepassx"
        ,"dropbox"
+       ,"chefdk"
     ],
     "gems": [
         "os"
