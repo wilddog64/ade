@@ -34,7 +34,7 @@
             "option": ["config.puppet_install.puppet_version = :latest"],
             "version": ""
         }
-        ,{
+       ,{
             "name": "sahara",
             "option": ["puts 'sahara is here'"],
             "version": ""
