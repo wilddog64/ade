@@ -75,6 +75,7 @@
        ,"awscli"
        ,"freetds"
        ,"sqsh"
+       ,"bats"
     ],
     "brewcasks": [
         "google-chrome"
@@ -107,6 +108,11 @@
         ,"r10k"
         ,"librarian-puppet"
         ,"puppet-lint"
+        ,"test-kitchen"
+        ,"test-kitchen-provisioners"
+        ,"kitchen-vagrant"
+        ,"kitchen-vagrant_sandbox"
+        ,"kitchen-vagrant_winrm"
     ],
     "npms": [
         "azure"
