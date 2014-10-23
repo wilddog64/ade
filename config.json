@@ -81,6 +81,7 @@
        ,"freetds"
        ,"sqsh"
        ,"bats"
+       ,"dtach"
     ],
     "brewcasks": [
         "google-chrome"
