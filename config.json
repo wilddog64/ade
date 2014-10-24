@@ -82,6 +82,8 @@
        ,"sqsh"
        ,"bats"
        ,"dtach"
+       ,"tmux"
+       ,"byobu"
     ],
     "brewcasks": [
         "google-chrome"
