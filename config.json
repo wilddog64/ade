@@ -84,6 +84,7 @@
        ,"dtach"
        ,"tmux"
        ,"byobu"
+       ,"git-flow-avh"
     ],
     "brewcasks": [
         "google-chrome"
