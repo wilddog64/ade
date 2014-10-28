@@ -124,6 +124,7 @@
         ,"kitchen-vagrant_sandbox"
         ,"kitchen-vagrant_winrm"
         ,"busser-bash"
+        ,"serverspec"
     ],
     "npms": [
         "azure"
