@@ -22,7 +22,7 @@
         {
             "name": "vagrant-berkshelf",
             "options": ["config.berkshelf.enabled = true"],
-            "version": "2.0.1"
+            "version": ""
         },
         {
             "name": "vagrant-cachier",
