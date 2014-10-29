@@ -44,6 +44,10 @@
             "option": "config.auto_network.enabled = true",
             "version": ""
         }
+       ,{
+           "name": "vagrant-azure",
+           "option": "configure.azsure.enabled = true"
+        }
     ],
     "vagrant_port_forwards": [
 	{
