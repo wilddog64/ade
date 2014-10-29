@@ -90,6 +90,7 @@
        ,"tmux"
        ,"byobu"
        ,"git-flow-avh"
+       ,"lesspipe"
     ],
     "brewcasks": [
         "google-chrome"
