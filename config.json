@@ -135,6 +135,7 @@
         ,"kitchen-vagrant_winrm"
         ,"busser-bash"
         ,"serverspec"
+        ,"em-winrm"
     ],
     "npms": [
         "azure"
