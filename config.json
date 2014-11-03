@@ -95,6 +95,8 @@
        ,"byobu"
        ,"git-flow-avh"
        ,"lesspipe"
+       ,"pyenv"
+       ,"pyenv-virtualenv"
     ],
     "brewcasks": [
         "google-chrome"
