@@ -115,6 +115,7 @@
        ,"keepassx"
        ,"dropbox"
        ,"chefdk"
+       ,"skype"
     ],
     "gems": [
         "os"
