@@ -97,6 +97,7 @@
        ,"lesspipe"
        ,"pyenv"
        ,"pyenv-virtualenv"
+       ,"ngrep"
     ],
     "brewcasks": [
         "google-chrome"
