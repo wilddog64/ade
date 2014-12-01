@@ -98,6 +98,7 @@
        ,"pyenv"
        ,"pyenv-virtualenv"
        ,"ngrep"
+       ,"hub"
     ],
     "brewcasks": [
         "google-chrome"
