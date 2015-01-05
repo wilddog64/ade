@@ -101,6 +101,7 @@
        ,"hub"
        ,"postgresql92"
        ,"psqlodbc"
+       ,"mysql"
     ],
     "brewcasks": [
         "google-chrome"
