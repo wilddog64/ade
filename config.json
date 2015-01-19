@@ -102,6 +102,7 @@
        ,"postgresql92"
        ,"psqlodbc"
        ,"mysql"
+       ,"percona-toolkit"
     ],
     "brewcasks": [
         "google-chrome"
