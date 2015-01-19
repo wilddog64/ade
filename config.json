@@ -103,6 +103,7 @@
        ,"psqlodbc"
        ,"mysql"
        ,"percona-toolkit"
+       ,"xmlstarlet"
     ],
     "brewcasks": [
         "google-chrome"
