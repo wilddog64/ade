@@ -104,6 +104,7 @@
        ,"mysql"
        ,"percona-toolkit"
        ,"xmlstarlet"
+       ,"ack"
     ],
     "brewcasks": [
         "google-chrome"
