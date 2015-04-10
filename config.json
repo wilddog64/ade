@@ -108,6 +108,7 @@
        ,"parallel"
        ,"groovy"
        ,"lastpass-cli"
+       ,"wifi-password"
     ],
     "brewcasks": [
         "google-chrome"
@@ -128,6 +129,7 @@
        ,"chefdk"
        ,"skype"
        ,"wechat"
+       ,"terraform"
     ],
     "gems": [
         "os"
