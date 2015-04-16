@@ -51,12 +51,12 @@ function require_vagrant_plugin() {
     #echo 'checking if '$grepExpect' is installed via grepStatus: '$grepStatus
 
     if [[ $grepStatus != $grepExpect ]]; then
-            action "missing vagrant plugin $1 $2"
-            if [[ ! -z $vagrant_plugin_version ]]; then
-                vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
-            else
-                vagrant plugin install $vagrant_plugin
-            fi
+       action "missing vagrant plugin $1 $2"
+       if [[ ! -z $vagrant_plugin_version ]]; then
+           vagrant plugin install $vagrant_plugin --plugin-version $vagrant_plugin_version
+       else
+           vagrant plugin install $vagrant_plugin
+       fi
     fi
     ok
 }
