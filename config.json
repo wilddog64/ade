@@ -107,6 +107,7 @@
        ,"ack"
        ,"parallel"
        ,"groovy"
+       ,"lastpass-cli"
     ],
     "brewcasks": [
         "google-chrome"
