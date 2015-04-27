@@ -109,6 +109,7 @@
        ,"groovy"
        ,"lastpass-cli"
        ,"wifi-password"
+       ,"git-now"
     ],
     "brewcasks": [
         "google-chrome"
@@ -129,7 +130,11 @@
        ,"chefdk"
        ,"skype"
        ,"wechat"
+<<<<<<< HEAD
        ,"terraform"
+=======
+       ,"graphviz"
+>>>>>>> add git-now and graphviz packages
     ],
     "gems": [
         "os"
