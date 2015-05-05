@@ -110,6 +110,7 @@
        ,"lastpass-cli"
        ,"wifi-password"
        ,"git-now"
+       ,"pdfgrep"
     ],
     "brewcasks": [
         "google-chrome"
@@ -132,6 +133,7 @@
        ,"wechat"
        ,"terraform"
        ,"graphviz"
+       ,"xquartz"
     ],
     "gems": [
         "os"
