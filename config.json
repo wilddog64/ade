@@ -130,11 +130,8 @@
        ,"chefdk"
        ,"skype"
        ,"wechat"
-<<<<<<< HEAD
        ,"terraform"
-=======
        ,"graphviz"
->>>>>>> add git-now and graphviz packages
     ],
     "gems": [
         "os"
