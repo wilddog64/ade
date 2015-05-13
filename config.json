@@ -111,6 +111,8 @@
        ,"wifi-password"
        ,"git-now"
        ,"pdfgrep"
+       ,"saltstack"
+       ,"shellcheck"
     ],
     "brewcasks": [
         "google-chrome"
