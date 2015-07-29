@@ -113,6 +113,7 @@
        ,"pdfgrep"
        ,"saltstack"
        ,"shellcheck"
+       ,"putty"
     ],
     "brewcasks": [
         "google-chrome"
@@ -136,6 +137,7 @@
        ,"terraform"
        ,"graphviz"
        ,"xquartz"
+       ,"gas-mask"
     ],
     "gems": [
         "os"
