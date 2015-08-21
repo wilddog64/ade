@@ -101,7 +101,6 @@
        ,"hub"
        ,"postgresql92"
        ,"psqlodbc"
-       ,"mysql"
        ,"percona-toolkit"
        ,"xmlstarlet"
        ,"ack"
@@ -114,6 +113,7 @@
        ,"saltstack"
        ,"shellcheck"
        ,"putty"
+       ,"multitail"
     ],
     "brewcasks": [
         "google-chrome"
