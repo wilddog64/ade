@@ -114,6 +114,8 @@
        ,"shellcheck"
        ,"putty"
        ,"multitail"
+       ,"stormssh"
+       ,"jenkins-job-builder"
     ],
     "brewcasks": [
         "google-chrome"
