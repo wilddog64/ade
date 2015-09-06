@@ -116,6 +116,7 @@
        ,"multitail"
        ,"stormssh"
        ,"jenkins-job-builder"
+       ,"reattach-to-user-namespace"
     ],
     "brewcasks": [
         "google-chrome"
