@@ -117,6 +117,7 @@
        ,"stormssh"
        ,"jenkins-job-builder"
        ,"reattach-to-user-namespace"
+       ,"the_silver_searcher"
     ],
     "brewcasks": [
         "google-chrome"
