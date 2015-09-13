@@ -119,6 +119,7 @@
        ,"reattach-to-user-namespace"
        ,"the_silver_searcher"
        ,"ansible"
+       ,"tmate"
     ],
     "brewcasks": [
         "google-chrome"
