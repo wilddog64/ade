@@ -121,6 +121,7 @@
        ,"ansible"
        ,"tmate"
        ,"bash"
+       ,"flyway"
     ],
     "brewcasks": [
         "google-chrome"
