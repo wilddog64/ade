@@ -120,6 +120,7 @@
        ,"the_silver_searcher"
        ,"ansible"
        ,"tmate"
+       ,"bash"
     ],
     "brewcasks": [
         "google-chrome"
