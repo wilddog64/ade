@@ -14,33 +14,39 @@ module Dev
       config           = load_json_config_file( project_root, options[:vagrant_mount_file] )
       template_name    = 'install_vagrant_plugins.sh.erb'
       output_file_name = File.join( options[:shell_script_output_dir],  'install_vagrant_plugins.sh' )
-      template(
-        template_name,
-        output_file_name,
-        :vagrant_plugins => config['vagrant_plugins']
-      )
+      if config.has_key?('vagrant_plugins')
+        template(
+          template_name,
+          output_file_name,
+          :vagrant_plugins => config['vagrant_plugins']
+        )
+      end
     end
 
     def generate_install_brew_script
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
       template_name   = 'install_brews.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_brews.sh' )
-      template(
-        template_name,
-        output_filename,
-        :brews => config['brews']
-      )
+      if config.has_key?('brews')
+        template(
+          template_name,
+          output_filename,
+          :brews => config['brews']
+        )
+      end
     end
 
     def generate_install_brewcasks_script
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
       template_name   = 'install_casks.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_casks.sh' )
-      template(
-        template_name,
-        output_filename,
-        :brewcasks => config['brewcasks']
-      )
+      if config.has_key?('brewcasks')
+        template(
+          template_name,
+          output_filename,
+          :brewcasks => config['brewcasks']
+        )
+      end
     end
 
     def generate_install_gems
@@ -60,11 +66,13 @@ module Dev
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
       template_name   = 'install_npms.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_npms.sh' )
-      template(
-        template_name,
-        output_filename,
-        :npms => config['npms']
-      )
+      if config.has_key('npms')
+        template(
+          template_name,
+          output_filename,
+          :npms => config['npms']
+        )
+      end
     end
 
     # def create_vagrant_file
