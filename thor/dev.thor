@@ -23,7 +23,6 @@ module Dev
 
     def generate_install_brew_script
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
-      return unless config.nil?
       template_name   = 'install_brews.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_brews.sh' )
       template(
@@ -35,7 +34,6 @@ module Dev
 
     def generate_install_brewcasks_script
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
-      return unless config.nil?
       template_name   = 'install_casks.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_casks.sh' )
       template(
@@ -47,7 +45,6 @@ module Dev
 
     def generate_install_gems
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
-      return unless config.nil?
       template_name   = 'install_gems.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_gems.sh' )
       template(
@@ -59,7 +56,6 @@ module Dev
 
     def generate_install_npm
       config          = load_json_config_file( project_root, options[:vagrant_mount_file] )
-      return unless config.nil?
       template_name   = 'install_npms.sh.erb'
       output_filename = File.join( options[:shell_script_output_dir], 'install_npms.sh' )
       template(
