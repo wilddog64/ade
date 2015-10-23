@@ -149,7 +149,6 @@
        ,"gas-mask"
        ,"multifirefox"
     ],
-    "gems":[],
     "npms": [
         "azure"
        ,"azure-cli"
