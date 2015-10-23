@@ -122,6 +122,7 @@
        ,"tmate"
        ,"bash"
        ,"flyway"
+       ,"terraform"
     ],
     "brewcasks": [
         "google-chrome"
@@ -146,7 +147,9 @@
        ,"graphviz"
        ,"xquartz"
        ,"gas-mask"
+       ,"multifirefox"
     ],
+    "gems":[],
     "npms": [
         "azure"
        ,"azure-cli"
