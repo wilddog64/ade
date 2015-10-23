@@ -52,30 +52,20 @@ function install_all() {
     thor dev:env
     ok
 
-    if [[ -r ${SCRIPT_BIN}/install_brews.sh ]]; then
-        source "${SCRIPT_BIN}/install_brews.sh"
-        install_brews
-    fi
+    source $SCRIPT_BIN/install_brews.sh
+    install_brews
 
-    if [[ -r ${SCRIPT_BIN}/install_casks.sh ]]; then
-        source "${SCRIPT_BIN}/install_casks.sh"
-        install_casks
-    fi
+    source $SCRIPT_BIN/install_casks.sh
+    install_casks
 
-    if [[ -r ${SCRIPT_BIN}/install_vagrant_plugins.sh ]]; then
-        source "${SCRIPT_BIN}/install_vagrant_plugins.sh"
-        install_vagrant_plugins
-    fi
+    source $SCRIPT_BIN/install_vagrant_plugins.sh
+    install_vagrant_plugins
 
-    if [[ -r ${SCRIPT_BIN}/install_gems.sh ]]; then
-        source "${SCRIPT_BIN}/install_gems.sh"
-        install_gems
-    fi
+    source $SCRIPT_BIN/install_gems.sh
+    install_gems
 
-    if [[ -r ${SCRIPT_BIN}/install_npms.sh ]]; then
-        source "${SCRIPT_BIN}/install_npms.sh"
-        install_npms
-    fi
+    source $SCRIPT_BIN/install_npms.sh
+    install_npms
 
     rbenv rehash
 }
