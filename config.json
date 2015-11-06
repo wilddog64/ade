@@ -123,6 +123,7 @@
        ,"bash"
        ,"flyway"
        ,"terraform"
+       ,"go"
     ],
     "brewcasks": [
         "google-chrome"
