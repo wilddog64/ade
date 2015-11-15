@@ -122,6 +122,7 @@
        ,"flyway"
        ,"terraform"
        ,"go"
+       ,"google-sql-tool"
     ],
     "brewcasks": [
         "google-chrome"
@@ -141,7 +142,6 @@
        ,"dropbox"
        ,"chefdk"
        ,"skype"
-       ,"wechat"
        ,"terraform"
        ,"graphviz"
        ,"xquartz"
@@ -149,6 +149,9 @@
        ,"multifirefox"
        ,"karabiner"
        ,"bettertouchtool"
+       ,"google-drive"
+       ,"google-hangouts"
+       ,"flowdock"
     ],
     "npms": [
         "azure"
