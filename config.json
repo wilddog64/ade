@@ -123,6 +123,7 @@
        ,"terraform"
        ,"go"
        ,"google-sql-tool"
+       ,"nvm"
     ],
     "brewcasks": [
         "google-chrome"
@@ -152,6 +153,7 @@
        ,"google-drive"
        ,"google-hangouts"
        ,"flowdock"
+       ,"dropbox"
     ],
     "npms": [
         "azure"

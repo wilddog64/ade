@@ -18,6 +18,7 @@ function getScriptDir() {
 }
 
 SCRIPT_HOME=$(dirname $(getScriptDir $0))
+echo $SCRIPT_HOME
 
 cd $SCRIPT_HOME
 
