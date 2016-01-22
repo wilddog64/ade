@@ -154,6 +154,8 @@
        ,"google-hangouts"
        ,"flowdock"
        ,"dropbox"
+       ,"sequel-pro"
+       ,"vimr"
     ],
     "npms": [
         "azure"
