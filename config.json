@@ -125,6 +125,7 @@
        ,"google-sql-tool"
        ,"nvm"
        ,"jad"
+       ,"mono"
     ],
     "brewcasks": [
         "google-chrome"
