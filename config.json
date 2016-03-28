@@ -14,40 +14,6 @@
         }
     ],
     "vagrant_plugins": [
-        {
-            "name": "vagrant-omnibus",
-            "options": ["config.omnibus.chef_version = :latest"],
-            "version": ""
-        },
-        {
-            "name": "vagrant-berkshelf",
-            "options": ["config.berkshelf.enabled = true"],
-            "version": ""
-        },
-        {
-            "name": "vagrant-cachier",
-            "options": ["config.cache.enable :chef", "config.cache.enable :yum"],
-            "version": ""
-        }
-       ,{
-            "name": "vagrant-puppet-install",
-            "option": ["config.puppet_install.puppet_version = :latest"],
-            "version": ""
-        }
-       ,{
-            "name": "sahara",
-            "option": ["puts 'sahara is here'"],
-            "version": ""
-        }
-       ,{
-            "name": "vagrant-auto_network",
-            "option": "config.auto_network.enabled = true",
-            "version": ""
-        }
-       ,{
-           "name": "vagrant-azure",
-           "option": "configure.azsure.enabled = true"
-        }
     ],
     "vagrant_port_forwards": [
 	{
