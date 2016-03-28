@@ -127,6 +127,7 @@
        ,"jad"
        ,"mono"
        ,"wimlib"
+       ,"sshrc"
     ],
     "brewcasks": [
         "google-chrome"
@@ -144,7 +145,6 @@
        ,"hipchat"
        ,"keepassx"
        ,"dropbox"
-       ,"chefdk"
        ,"skype"
        ,"terraform"
        ,"graphviz"
