@@ -8,4 +8,5 @@ function install_vagrant_plugins() {
         require_vagrant_plugin <%= vagrant_plugin['name'] -%> <%= vagrant_plugin['version'] %>
     <%- end -%>
 <%- end %>
+    return
 }

@@ -2,5 +2,6 @@ function install_gems() {
 <%- config[:gems].each do | gem | -%>
   require_gem <%=gem%>
 <%- end -%>
+  return
 }
 
