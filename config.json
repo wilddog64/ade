@@ -126,6 +126,7 @@
        ,"nvm"
        ,"jad"
        ,"mono"
+       ,"wimlib"
     ],
     "brewcasks": [
         "google-chrome"
