@@ -42,7 +42,7 @@ PATH=/usr/local/bin:~/.linuxbrew/bin:$PATH
 function install_all() {
 
     install_rbenv
-    install_ruby '1.9.3-p547'
+    install_ruby '2.3.0'
     rbenv_rehash
 
     echo "generating config files:"

@@ -94,6 +94,7 @@
        ,"mono"
        ,"wimlib"
        ,"sshrc"
+       ,"s3cmd"
     ],
     "brewcasks": [
         "google-chrome"
