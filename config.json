@@ -95,6 +95,7 @@
        ,"wimlib"
        ,"sshrc"
        ,"s3cmd"
+       ,"git-when-merged"
     ],
     "brewcasks": [
         "google-chrome"
