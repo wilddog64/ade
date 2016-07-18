@@ -96,6 +96,7 @@
        ,"sshrc"
        ,"s3cmd"
        ,"git-when-merged"
+       ,"vifm"
     ],
     "brewcasks": [
         "google-chrome"
