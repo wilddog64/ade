@@ -97,6 +97,7 @@
        ,"s3cmd"
        ,"git-when-merged"
        ,"vifm"
+       ,"maven"
     ],
     "brewcasks": [
         "google-chrome"
